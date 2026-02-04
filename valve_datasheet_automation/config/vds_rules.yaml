@@ -1,0 +1,314 @@
+# VDS Number Decoding Rules
+# ============================
+# This configuration defines how VDS numbers are parsed and decoded.
+#
+# Pattern: {Prefix}{BoreType}[MetalSeated]{PipingClass}[Modifiers]{EndConnection}
+# Examples:
+#   - BSFA1R    = BS + F + A1 + R
+#   - BSFB1NR   = BS + F + B1N + R
+#   - BSFMG1LNJ = BS + F + M + G1LN + J
+#
+# The rules are configurable to support new valve types and patterns.
+
+version: "1.0"
+
+# Valve Type Prefixes (2 or 3 characters)
+valve_type_prefixes:
+  # 2-character prefixes (legacy format)
+  BS:
+    name: "Ball Valve"
+    full_name: "Ball Valve Datasheet"
+    primary_standard: "API 6D"
+    secondary_standards:
+      - "ISO 17292"
+      - "ASME B16.34"
+    applicable_bore_types:
+      - F  # Full bore
+      - R  # Reduced bore
+      - M  # Metal seated
+
+  GS:
+    name: "Gate Valve"
+    full_name: "Gate Valve Datasheet"
+    primary_standard: "API 6D"
+    secondary_standards:
+      - "API 600"
+      - "ASME B16.34"
+    applicable_bore_types:
+      - F  # Full bore
+      - R  # Reduced bore
+
+  CS:
+    name: "Check Valve"
+    full_name: "Check Valve Datasheet"
+    primary_standard: "API 6D"
+    secondary_standards:
+      - "API 594"
+      - "ASME B16.34"
+    applicable_bore_types:
+      - F  # Full bore
+      - R  # Reduced bore
+
+  PS:
+    name: "Plug Valve"
+    full_name: "Plug Valve Datasheet"
+    primary_standard: "API 6D"
+    secondary_standards:
+      - "API 599"
+      - "ASME B16.34"
+    applicable_bore_types:
+      - F  # Full bore
+      - R  # Reduced bore
+
+  # 3-character prefixes (new format)
+  BSF:
+    name: "Ball Valve, Full Bore"
+    full_name: "Ball Valve Datasheet - Full Bore"
+    primary_standard: "API 6D"
+    secondary_standards:
+      - "ISO 17292"
+      - "ASME B16.34"
+    default_bore: "F"
+
+  BSR:
+    name: "Ball Valve, Reduced Bore"
+    full_name: "Ball Valve Datasheet - Reduced Bore"
+    primary_standard: "API 6D"
+    secondary_standards:
+      - "ISO 17292"
+      - "ASME B16.34"
+    default_bore: "R"
+
+  GAW:
+    name: "Gate Valve"
+    full_name: "Gate Valve, Outside Screw and Yoke"
+    primary_standard: "API 600"
+    secondary_standards:
+      - "API 6D"
+      - "ASME B16.34"
+    default_bore: "F"
+
+  GLS:
+    name: "Globe Valve"
+    full_name: "Globe Valve, Outside Screw and Yoke"
+    primary_standard: "API 602"
+    secondary_standards:
+      - "BS 1873"
+      - "ASME B16.34"
+    default_bore: "F"
+
+  CHP:
+    name: "Check Valve, Piston Type"
+    full_name: "Check Valve - Piston Type"
+    primary_standard: "API 602"
+    secondary_standards:
+      - "BS 1868"
+      - "ASME B16.34"
+    default_bore: "F"
+
+  CSW:
+    name: "Check Valve, Swing Type"
+    full_name: "Check Valve - Swing Type"
+    primary_standard: "API 6D"
+    secondary_standards:
+      - "API 594"
+      - "ASME B16.34"
+    default_bore: "F"
+
+  CDP:
+    name: "Check Valve, Dual Plate"
+    full_name: "Check Valve - Dual Plate / Wafer"
+    primary_standard: "API 594"
+    secondary_standards:
+      - "ASME B16.34"
+    default_bore: "F"
+
+  BFD:
+    name: "Butterfly Valve"
+    full_name: "Butterfly Valve - Wafer Type"
+    primary_standard: "API 609"
+    secondary_standards:
+      - "MSS SP-68"
+      - "ASME B16.34"
+    default_bore: "F"
+
+  DSR:
+    name: "Double Block and Bleed Valve"
+    full_name: "Double Block and Bleed Valve - Reduced"
+    primary_standard: "API 6D"
+    secondary_standards:
+      - "ASME B16.34"
+    default_bore: "R"
+
+  DSF:
+    name: "Double Block and Bleed Valve"
+    full_name: "Double Block and Bleed Valve - Full"
+    primary_standard: "API 6D"
+    secondary_standards:
+      - "ASME B16.34"
+    default_bore: "F"
+
+  NEE:
+    name: "Needle Valve"
+    full_name: "Needle Valve for Instrumentation"
+    primary_standard: "ASME B16.34"
+    secondary_standards:
+      - "API 602"
+    default_bore: "F"
+
+# Bore Types (position after prefix)
+bore_types:
+  F:
+    name: "Full Bore"
+    description: "Full-opening valve per API 6D Table 1"
+    api_reference: "API 6D Section 3.1.16"
+
+  R:
+    name: "Reduced Bore"
+    description: "Reduced-opening valve"
+    api_reference: "API 6D Section 3.1.37"
+
+  M:
+    name: "Metal Seated"
+    description: "Metal-seated valve, typically full bore"
+    default_bore: "Full Bore"
+    construction_note: "TCC Coated 150μ to 250μ thick with minimum surface hardness 1050 Vickers"
+
+  T:
+    name: "Tube Connection"
+    description: "OD Tube connection or NPT threaded"
+    default_bore: "Full Bore"
+    note: "Used for instrumentation valves"
+
+# Piping Class Pattern
+piping_class:
+  pattern: "^[A-Z]\\d+$"  # Letter followed by digits (e.g., A1, G20)
+  examples:
+    - code: "A1"
+      pressure_rating: "150#"
+      material: "CS"
+    - code: "B1"
+      pressure_rating: "300#"
+      material: "CS"
+    - code: "D1"
+      pressure_rating: "600#"
+      material: "CS"
+    - code: "E1"
+      pressure_rating: "900#"
+      material: "CS"
+    - code: "F1"
+      pressure_rating: "1500#"
+      material: "CS"
+    - code: "G1"
+      pressure_rating: "2500#"
+      material: "CS"
+
+# Modifiers (optional, appear after piping class base)
+modifiers:
+  N:
+    name: "NACE Compliant"
+    description: "NACE MR0175/ISO 15156 compliance required"
+    requirements:
+      - "Materials shall comply with NACE MR0175/ISO 15156"
+      - "Maximum hardness requirements apply"
+    affected_fields:
+      - sour_service
+      - body_material
+      - bolts
+      - nuts
+
+  L:
+    name: "Low Temperature"
+    description: "Low temperature service (-45°C and below)"
+    requirements:
+      - "Impact testing required at design minimum temperature"
+      - "Low temperature material grades required"
+    affected_fields:
+      - design_temp_min
+      - body_material
+      - impact_test
+
+# End Connection Types (last character)
+end_connections:
+  R:
+    name: "RF"
+    full_name: "Raised Face"
+    standard: "ASME B16.5"
+    gasket_type: "Spiral Wound"
+    description: "Flanged ASME B16.5 RF"
+
+  J:
+    name: "RTJ"
+    full_name: "Ring Type Joint"
+    standard: "ASME B16.5"
+    gasket_type: "Ring Joint (R or RX type)"
+    description: "Flanged ASME B16.5 RTJ"
+
+  F:
+    name: "FF"
+    full_name: "Flat Face"
+    standard: "ASME B16.5"
+    gasket_type: "Full Face"
+    description: "Flanged ASME B16.5 FF"
+
+  W:
+    name: "BW"
+    full_name: "Butt Weld"
+    standard: "ASME B16.25"
+    description: "Butt Weld Ends per ASME B16.25"
+
+  S:
+    name: "SW"
+    full_name: "Socket Weld"
+    standard: "ASME B16.11"
+    description: "Socket Weld Ends per ASME B16.11"
+
+# Parsing Sequence
+# Defines the order and rules for parsing VDS numbers
+parsing_sequence:
+  - segment: "valve_prefix"
+    position: 0
+    length: 2
+    required: true
+    description: "Valve type prefix (BS, GS, CS, PS)"
+
+  - segment: "bore_type"
+    position: 2
+    length: 1
+    required: true
+    description: "Bore type (F, R)"
+
+  - segment: "metal_seated"
+    position: 3
+    length: 1
+    required: false
+    pattern: "M"
+    description: "Metal seated flag (optional)"
+
+  - segment: "piping_class"
+    position: "variable"  # After bore/metal-seated
+    pattern: "[A-Z]\\d+"
+    required: true
+    description: "Base piping class (A1, B1, G20)"
+
+  - segment: "modifiers"
+    position: "variable"
+    pattern: "[LN]+"
+    required: false
+    description: "Optional modifiers (L, N, LN)"
+
+  - segment: "end_connection"
+    position: -1  # Last character
+    length: 1
+    required: true
+    description: "End connection type (R, J, F, W, S)"
+
+# Validation Rules
+validation:
+  min_length: 5  # Minimum VDS length (e.g., BSFA1R = 6)
+  max_length: 12  # Maximum VDS length
+  required_segments:
+    - valve_prefix
+    - bore_type
+    - piping_class
+    - end_connection

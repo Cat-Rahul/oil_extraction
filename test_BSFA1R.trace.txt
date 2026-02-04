@@ -1,0 +1,257 @@
+======================================================================
+VALVE DATASHEET TRACEABILITY REPORT
+======================================================================
+
+VDS No: BSFA1R
+Generated: 2026-01-31 09:36:23 UTC
+Version: 1.0.0
+Status: VALID
+Completion: 100.0%
+
+----------------------------------------------------------------------
+SOURCE DISTRIBUTION
+----------------------------------------------------------------------
+  As per valve standard: 12 fields
+  As per PMS Base material and Valve Standard: 10 fields
+  Selected based on VDS No: 5 fields
+  Automated based on PMS class: 5 fields
+  Fixed value: 4 fields
+  From VDS Index lookup: 2 fields
+  Calculated: 2 fields
+
+----------------------------------------------------------------------
+FIELD TRACEABILITY
+----------------------------------------------------------------------
+
+[Header]
+
+  VDS No:
+    Value: BSFA1R
+    Source: Selected based on VDS No
+    Document: VDS No: BSFA1R
+
+  Piping Class:
+    Value: A1
+    Source: Selected based on VDS No
+    Document: VDS No: BSFA1R
+
+  Size Range:
+    Value: 1/2" - 24"
+    Source: Automated based on PMS class
+    Document: PMS Class A1 ()
+
+  Valve Type:
+    Value: Ball Valve, Full Bore
+    Source: Selected based on VDS No
+    Document: VDS No: BSFA1R
+
+  Service:
+    Value: -
+    Source: Automated based on PMS class
+    Document: PMS Class A1 ()
+
+
+[Design]
+
+  Valve Standard:
+    Value: API 6D / ISO 17292
+    Source: As per valve standard
+    Document: Default for Ball Valve
+
+  Pressure Class:
+    Value: ASME B16.34 Class 150
+    Source: Automated based on PMS class
+    Document: PMS Class A1 ()
+
+  Design Pressure:
+    Value: As per ASME B16.34
+    Source: Automated based on PMS class
+    Document: PMS Class A1 ()
+
+  Corrosion Allowance:
+    Value: 3 mm
+    Source: Automated based on PMS class
+    Document: PMS Class A1 ()
+
+  Sour Service Requirements:
+    Value: -
+    Source: Selected based on VDS No
+    Document: VDS No: BSFA1R
+
+
+[Configuration]
+
+  End Connections:
+    Value: Flanged ASME B16.5 RF
+    Source: Selected based on VDS No
+    Document: VDS No: BSFA1R
+
+  Face to Face Dimension:
+    Value: ASME B16.10 Long pattern, quarter turn
+    Source: As per valve standard
+    Document: Configuration
+
+  Operation:
+    Value: Lever (4" and below), Gear operated c/w Hand wheel (6" and above)
+    Source: As per valve standard
+    Document: Configuration
+
+
+[Construction]
+
+  Body:
+    Value: Forged, Two Piece (<=1.5"), Cast, Two/Three Piece (>1.5")
+    Source: As per valve standard
+    Document: Valve Standard (derived)
+
+  Ball:
+    Value: Floating (8" and below), Trunnion mounted (10" and above)
+    Source: As per valve standard
+    Document: Valve Standard (derived)
+
+  Stem:
+    Value: Anti-static, Anti blowout proof type
+    Source: As per valve standard
+    Document: Configuration
+
+  Seat:
+    Value: Soft seated, Renewable
+    Source: As per valve standard
+    Document: Valve Standard (derived)
+
+  Locks:
+    Value: Valve lockable using padlock - Full Open, Fully Closed
+    Source: As per valve standard
+    Document: Configuration
+
+
+[Material]
+
+  Body Material:
+    Value: Forged - ASTM A105N / Cast - ASTM A216 WCB
+    Source: As per PMS Base material and Valve Standard
+    Document: Material Mappings (CS)
+    Notes: Base material: CS, Material key: CS
+
+  Ball Material:
+    Value: Forged - ASTM A182-F316
+    Source: From VDS Index lookup
+    Document: VDS Index: BSFA1R
+
+  Seat Material:
+    Value: Reinforced PTFE
+    Source: From VDS Index lookup
+    Document: VDS Index: BSFA1R
+
+  Seal Material:
+    Value: PTFE
+    Source: As per PMS Base material and Valve Standard
+    Document: Material Mappings (CS)
+    Notes: Base material: CS, Material key: CS
+
+  Stem Material:
+    Value: ASTM A182 F316
+    Source: As per PMS Base material and Valve Standard
+    Document: Material Mappings (CS)
+    Notes: Base material: CS, Material key: CS
+
+  Gland Material:
+    Value: ASTM A182 F6A CL 2
+    Source: As per PMS Base material and Valve Standard
+    Document: Material Mappings (CS)
+    Notes: Base material: CS, Material key: CS
+
+  Gland Packing:
+    Value: Graphite / PTFE
+    Source: As per PMS Base material and Valve Standard
+    Document: Material Mappings (CS)
+    Notes: Base material: CS, Material key: CS
+
+  Lever / Handwheel:
+    Value: Carbon Steel, Painted
+    Source: As per PMS Base material and Valve Standard
+    Document: Material Mappings (CS)
+    Notes: Base material: CS, Material key: CS
+
+  Spring:
+    Value: Inconel 750
+    Source: As per PMS Base material and Valve Standard
+    Document: Material Mappings (CS)
+    Notes: Base material: CS, Material key: CS
+
+  Gaskets:
+    Value: SS316/SS316L Spiral Wound with F.G. filler
+    Source: As per PMS Base material and Valve Standard
+    Document: Material Mappings (CS)
+    Notes: Base material: CS, Material key: CS
+
+  Bolts:
+    Value: ASTM A193 Gr. B7
+    Source: As per PMS Base material and Valve Standard
+    Document: Material Mappings (CS)
+    Notes: Base material: CS, Material key: CS
+
+  Nuts:
+    Value: ASTM A194 Gr. 2H
+    Source: As per PMS Base material and Valve Standard
+    Document: Material Mappings (CS)
+    Notes: Base material: CS, Material key: CS
+
+
+[Testing]
+
+  Marking - Purchaser's Specification:
+    Value: Hard marked with Valve Type on SS label
+    Source: Fixed value
+    Document: Configuration
+
+  Marking - Manufacturer:
+    Value: MSS-SP-25
+    Source: Fixed value
+    Document: Configuration
+
+  Inspection - Testing:
+    Value: ASME B16.34, API 598
+    Source: As per valve standard
+    Document: Configuration
+
+  Leakage Rate:
+    Value: As per API 598
+    Source: As per valve standard
+    Document: Configuration
+
+  Hydrotest Shell Test Pressure:
+    Value: 29.4 barg
+    Source: Calculated
+    Document: ASME B16.34 Class 150 (default)
+    Rule: 1.5 x Max Design Pressure (API 598)
+
+  Hydrotest Closure Test Pressure:
+    Value: 21.6 barg
+    Source: Calculated
+    Document: ASME B16.34 Class 150 (default)
+    Rule: 1.1 x Max Design Pressure (API 598)
+
+  Pneumatic LP Test Pressure:
+    Value: 5.5 barg
+    Source: As per valve standard
+    Document: Configuration
+
+  Material Certification:
+    Value: Pressure Retaining Parts EN 10204 3.2, Other parts EN 10204 3.1
+    Source: Fixed value
+    Document: Configuration
+
+  Fire Rating:
+    Value: API 607 / ISO 10497
+    Source: As per valve standard
+    Document: Valve Standard
+
+  Finish/General Specification:
+    Value: As per General Specification for Paint and Protective Coating
+    Source: Fixed value
+    Document: Configuration
+
+======================================================================
+END OF REPORT
+======================================================================

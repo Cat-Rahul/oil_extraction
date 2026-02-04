@@ -1,0 +1,586 @@
+{
+  "metadata": {
+    "generated_at": "2026-01-31T09:36:23.712154",
+    "generation_version": "1.0.0",
+    "validation_status": "valid",
+    "completion": {
+      "populated": 40,
+      "total": 40,
+      "percentage": 100.0
+    }
+  },
+  "sections": {
+    "Header": [
+      {
+        "field_name": "vds_no",
+        "display_name": "VDS No",
+        "value": "BSFA1R",
+        "traceability": {
+          "source_type": "Selected based on VDS No",
+          "source_document": "VDS No: BSFA1R",
+          "source_value": "BSFA1R",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      },
+      {
+        "field_name": "piping_class",
+        "display_name": "Piping Class",
+        "value": "A1",
+        "traceability": {
+          "source_type": "Selected based on VDS No",
+          "source_document": "VDS No: BSFA1R",
+          "source_value": "A1",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      },
+      {
+        "field_name": "size_range",
+        "display_name": "Size Range",
+        "value": "1/2\" - 24\"",
+        "traceability": {
+          "source_type": "Automated based on PMS class",
+          "source_document": "PMS Class A1 ()",
+          "source_value": "1/2\" - 24\"",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      },
+      {
+        "field_name": "valve_type",
+        "display_name": "Valve Type",
+        "value": "Ball Valve, Full Bore",
+        "traceability": {
+          "source_type": "Selected based on VDS No",
+          "source_document": "VDS No: BSFA1R",
+          "source_value": "Ball Valve, Full Bore",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      },
+      {
+        "field_name": "service",
+        "display_name": "Service",
+        "value": "-",
+        "traceability": {
+          "source_type": "Automated based on PMS class",
+          "source_document": "PMS Class A1 ()",
+          "source_value": "-",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      }
+    ],
+    "Design": [
+      {
+        "field_name": "valve_standard",
+        "display_name": "Valve Standard",
+        "value": "API 6D / ISO 17292",
+        "traceability": {
+          "source_type": "As per valve standard",
+          "source_document": "Default for Ball Valve",
+          "source_value": "API 6D / ISO 17292",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      },
+      {
+        "field_name": "pressure_class",
+        "display_name": "Pressure Class",
+        "value": "ASME B16.34 Class 150",
+        "traceability": {
+          "source_type": "Automated based on PMS class",
+          "source_document": "PMS Class A1 ()",
+          "source_value": "ASME B16.34 Class 150",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      },
+      {
+        "field_name": "design_pressure",
+        "display_name": "Design Pressure",
+        "value": "As per ASME B16.34",
+        "traceability": {
+          "source_type": "Automated based on PMS class",
+          "source_document": "PMS Class A1 ()",
+          "source_value": "As per ASME B16.34",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      },
+      {
+        "field_name": "corrosion_allowance",
+        "display_name": "Corrosion Allowance",
+        "value": "3 mm",
+        "traceability": {
+          "source_type": "Automated based on PMS class",
+          "source_document": "PMS Class A1 ()",
+          "source_value": "3 mm",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      },
+      {
+        "field_name": "sour_service",
+        "display_name": "Sour Service Requirements",
+        "value": "-",
+        "traceability": {
+          "source_type": "Selected based on VDS No",
+          "source_document": "VDS No: BSFA1R",
+          "source_value": "-",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      }
+    ],
+    "Configuration": [
+      {
+        "field_name": "end_connections",
+        "display_name": "End Connections",
+        "value": "Flanged ASME B16.5 RF",
+        "traceability": {
+          "source_type": "Selected based on VDS No",
+          "source_document": "VDS No: BSFA1R",
+          "source_value": "Flanged ASME B16.5 RF",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      },
+      {
+        "field_name": "face_to_face",
+        "display_name": "Face to Face Dimension",
+        "value": "ASME B16.10 Long pattern, quarter turn",
+        "traceability": {
+          "source_type": "As per valve standard",
+          "source_document": "Configuration",
+          "source_value": "ASME B16.10 Long pattern, quarter turn",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      },
+      {
+        "field_name": "operation",
+        "display_name": "Operation",
+        "value": "Lever (4\" and below), Gear operated c/w Hand wheel (6\" and above)",
+        "traceability": {
+          "source_type": "As per valve standard",
+          "source_document": "Configuration",
+          "source_value": "Lever (4\" and below), Gear operated c/w Hand wheel (6\" and above)",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      }
+    ],
+    "Construction": [
+      {
+        "field_name": "body_construction",
+        "display_name": "Body",
+        "value": "Forged, Two Piece (<=1.5\"), Cast, Two/Three Piece (>1.5\")",
+        "traceability": {
+          "source_type": "As per valve standard",
+          "source_document": "Valve Standard (derived)",
+          "source_value": "Forged, Two Piece (<=1.5\"), Cast, Two/Three Piece (>1.5\")",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      },
+      {
+        "field_name": "ball_construction",
+        "display_name": "Ball",
+        "value": "Floating (8\" and below), Trunnion mounted (10\" and above)",
+        "traceability": {
+          "source_type": "As per valve standard",
+          "source_document": "Valve Standard (derived)",
+          "source_value": "Floating (8\" and below), Trunnion mounted (10\" and above)",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      },
+      {
+        "field_name": "stem_construction",
+        "display_name": "Stem",
+        "value": "Anti-static, Anti blowout proof type",
+        "traceability": {
+          "source_type": "As per valve standard",
+          "source_document": "Configuration",
+          "source_value": "Anti-static, Anti blowout proof type",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      },
+      {
+        "field_name": "seat_construction",
+        "display_name": "Seat",
+        "value": "Soft seated, Renewable",
+        "traceability": {
+          "source_type": "As per valve standard",
+          "source_document": "Valve Standard (derived)",
+          "source_value": "Soft seated, Renewable",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      },
+      {
+        "field_name": "locks",
+        "display_name": "Locks",
+        "value": "Valve lockable using padlock - Full Open, Fully Closed",
+        "traceability": {
+          "source_type": "As per valve standard",
+          "source_document": "Configuration",
+          "source_value": "Valve lockable using padlock - Full Open, Fully Closed",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      }
+    ],
+    "Material": [
+      {
+        "field_name": "body_material",
+        "display_name": "Body Material",
+        "value": "Forged - ASTM A105N / Cast - ASTM A216 WCB",
+        "traceability": {
+          "source_type": "As per PMS Base material and Valve Standard",
+          "source_document": "Material Mappings (CS)",
+          "source_value": "Forged - ASTM A105N / Cast - ASTM A216 WCB",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": "Base material: CS, Material key: CS"
+        }
+      },
+      {
+        "field_name": "ball_material",
+        "display_name": "Ball Material",
+        "value": "Forged - ASTM A182-F316",
+        "traceability": {
+          "source_type": "From VDS Index lookup",
+          "source_document": "VDS Index: BSFA1R",
+          "source_value": "Forged - ASTM A182-F316",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      },
+      {
+        "field_name": "seat_material",
+        "display_name": "Seat Material",
+        "value": "Reinforced PTFE",
+        "traceability": {
+          "source_type": "From VDS Index lookup",
+          "source_document": "VDS Index: BSFA1R",
+          "source_value": "Reinforced PTFE",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      },
+      {
+        "field_name": "seal_material",
+        "display_name": "Seal Material",
+        "value": "PTFE",
+        "traceability": {
+          "source_type": "As per PMS Base material and Valve Standard",
+          "source_document": "Material Mappings (CS)",
+          "source_value": "PTFE",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": "Base material: CS, Material key: CS"
+        }
+      },
+      {
+        "field_name": "stem_material",
+        "display_name": "Stem Material",
+        "value": "ASTM A182 F316",
+        "traceability": {
+          "source_type": "As per PMS Base material and Valve Standard",
+          "source_document": "Material Mappings (CS)",
+          "source_value": "ASTM A182 F316",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": "Base material: CS, Material key: CS"
+        }
+      },
+      {
+        "field_name": "gland_material",
+        "display_name": "Gland Material",
+        "value": "ASTM A182 F6A CL 2",
+        "traceability": {
+          "source_type": "As per PMS Base material and Valve Standard",
+          "source_document": "Material Mappings (CS)",
+          "source_value": "ASTM A182 F6A CL 2",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": "Base material: CS, Material key: CS"
+        }
+      },
+      {
+        "field_name": "gland_packing",
+        "display_name": "Gland Packing",
+        "value": "Graphite / PTFE",
+        "traceability": {
+          "source_type": "As per PMS Base material and Valve Standard",
+          "source_document": "Material Mappings (CS)",
+          "source_value": "Graphite / PTFE",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": "Base material: CS, Material key: CS"
+        }
+      },
+      {
+        "field_name": "lever_handwheel",
+        "display_name": "Lever / Handwheel",
+        "value": "Carbon Steel, Painted",
+        "traceability": {
+          "source_type": "As per PMS Base material and Valve Standard",
+          "source_document": "Material Mappings (CS)",
+          "source_value": "Carbon Steel, Painted",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": "Base material: CS, Material key: CS"
+        }
+      },
+      {
+        "field_name": "spring_material",
+        "display_name": "Spring",
+        "value": "Inconel 750",
+        "traceability": {
+          "source_type": "As per PMS Base material and Valve Standard",
+          "source_document": "Material Mappings (CS)",
+          "source_value": "Inconel 750",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": "Base material: CS, Material key: CS"
+        }
+      },
+      {
+        "field_name": "gaskets",
+        "display_name": "Gaskets",
+        "value": "SS316/SS316L Spiral Wound with F.G. filler",
+        "traceability": {
+          "source_type": "As per PMS Base material and Valve Standard",
+          "source_document": "Material Mappings (CS)",
+          "source_value": "SS316/SS316L Spiral Wound with F.G. filler",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": "Base material: CS, Material key: CS"
+        }
+      },
+      {
+        "field_name": "bolts",
+        "display_name": "Bolts",
+        "value": "ASTM A193 Gr. B7",
+        "traceability": {
+          "source_type": "As per PMS Base material and Valve Standard",
+          "source_document": "Material Mappings (CS)",
+          "source_value": "ASTM A193 Gr. B7",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": "Base material: CS, Material key: CS"
+        }
+      },
+      {
+        "field_name": "nuts",
+        "display_name": "Nuts",
+        "value": "ASTM A194 Gr. 2H",
+        "traceability": {
+          "source_type": "As per PMS Base material and Valve Standard",
+          "source_document": "Material Mappings (CS)",
+          "source_value": "ASTM A194 Gr. 2H",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": "Base material: CS, Material key: CS"
+        }
+      }
+    ],
+    "Testing": [
+      {
+        "field_name": "marking_purchaser",
+        "display_name": "Marking - Purchaser's Specification",
+        "value": "Hard marked with Valve Type on SS label",
+        "traceability": {
+          "source_type": "Fixed value",
+          "source_document": "Configuration",
+          "source_value": "Hard marked with Valve Type on SS label",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      },
+      {
+        "field_name": "marking_manufacturer",
+        "display_name": "Marking - Manufacturer",
+        "value": "MSS-SP-25",
+        "traceability": {
+          "source_type": "Fixed value",
+          "source_document": "Configuration",
+          "source_value": "MSS-SP-25",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      },
+      {
+        "field_name": "inspection_testing",
+        "display_name": "Inspection - Testing",
+        "value": "ASME B16.34, API 598",
+        "traceability": {
+          "source_type": "As per valve standard",
+          "source_document": "Configuration",
+          "source_value": "ASME B16.34, API 598",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      },
+      {
+        "field_name": "leakage_rate",
+        "display_name": "Leakage Rate",
+        "value": "As per API 598",
+        "traceability": {
+          "source_type": "As per valve standard",
+          "source_document": "Configuration",
+          "source_value": "As per API 598",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      },
+      {
+        "field_name": "hydrotest_shell",
+        "display_name": "Hydrotest Shell Test Pressure",
+        "value": "29.4 barg",
+        "traceability": {
+          "source_type": "Calculated",
+          "source_document": "ASME B16.34 Class 150 (default)",
+          "source_value": "19.6 barg",
+          "derivation_rule": "1.5 x Max Design Pressure (API 598)",
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      },
+      {
+        "field_name": "hydrotest_closure",
+        "display_name": "Hydrotest Closure Test Pressure",
+        "value": "21.6 barg",
+        "traceability": {
+          "source_type": "Calculated",
+          "source_document": "ASME B16.34 Class 150 (default)",
+          "source_value": "19.6 barg",
+          "derivation_rule": "1.1 x Max Design Pressure (API 598)",
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      },
+      {
+        "field_name": "pneumatic_test",
+        "display_name": "Pneumatic LP Test Pressure",
+        "value": "5.5 barg",
+        "traceability": {
+          "source_type": "As per valve standard",
+          "source_document": "Configuration",
+          "source_value": "5.5 barg",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      },
+      {
+        "field_name": "material_certification",
+        "display_name": "Material Certification",
+        "value": "Pressure Retaining Parts EN 10204 3.2, Other parts EN 10204 3.1",
+        "traceability": {
+          "source_type": "Fixed value",
+          "source_document": "Configuration",
+          "source_value": "Pressure Retaining Parts EN 10204 3.2, Other parts EN 10204 3.1",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      },
+      {
+        "field_name": "fire_rating",
+        "display_name": "Fire Rating",
+        "value": "API 607 / ISO 10497",
+        "traceability": {
+          "source_type": "As per valve standard",
+          "source_document": "Valve Standard",
+          "source_value": null,
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      },
+      {
+        "field_name": "finish",
+        "display_name": "Finish/General Specification",
+        "value": "As per General Specification for Paint and Protective Coating",
+        "traceability": {
+          "source_type": "Fixed value",
+          "source_document": "Configuration",
+          "source_value": "As per General Specification for Paint and Protective Coating",
+          "derivation_rule": null,
+          "clause_reference": null,
+          "confidence": 1.0,
+          "notes": null
+        }
+      }
+    ]
+  }
+}

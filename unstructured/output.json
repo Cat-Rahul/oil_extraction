@@ -1,0 +1,1455 @@
+{
+  "file": "Pipping specification.xlsx",
+  "sheets": [
+    {
+      "sheet_name": "A1",
+      "n_rows": 54,
+      "n_columns": 18,
+      "tables": [
+        {
+          "table_id": "table_1",
+          "range": {
+            "start_row": 1,
+            "end_row": 44,
+            "start_col": 1,
+            "end_col": 18,
+            "start_col_letter": "A",
+            "end_col_letter": "R"
+          },
+          "num_rows": 43,
+          "num_columns": 18,
+          "headers": [
+            "column_1",
+            "column_2",
+            "column_3",
+            "column_4",
+            "column_5",
+            "PIPING MATERIAL SPECIFICATION",
+            "column_7",
+            "column_8",
+            "column_9",
+            "column_10",
+            "column_11",
+            "column_12",
+            "column_13",
+            "column_14",
+            "column_15",
+            "column_16",
+            "Rev: C0",
+            "column_18"
+          ],
+          "rows": [
+            {
+              "PIPING MATERIAL SPECIFICATION": "Piping Class",
+              "column_10": "Material",
+              "column_13": "C.A",
+              "column_15": "Mill Tol",
+              "Rev: C0": "Sheet No."
+            },
+            {
+              "PIPING MATERIAL SPECIFICATION": "A1",
+              "column_8": "150#",
+              "column_10": "CS",
+              "column_13": "3 mm",
+              "column_15": 0.125,
+              "Rev: C0": 24
+            },
+            {
+              "PIPING MATERIAL SPECIFICATION": "Design Code:",
+              "column_9": "ASME B 31.3"
+            },
+            {
+              "PIPING MATERIAL SPECIFICATION": "Service:",
+              "column_8": "Cooling Water, Diesel, Steam, WI, HC with low CO2 and H2S, Fresh Water, Hydraulic, Nitrogen, Exhaust, Fuel Oil, Tank Air Vent"
+            },
+            {
+              "PIPING MATERIAL SPECIFICATION": "Branch Chart:",
+              "column_9": "Ref. APPENDIX-1, Chart 1"
+            },
+            {
+              "column_1": "Pressure-Temperature Rating"
+            },
+            {
+              "column_1": "Press., barg",
+              "column_2": 19.6,
+              "column_4": 19.2,
+              "PIPING MATERIAL SPECIFICATION": 17.7,
+              "column_8": 15.8,
+              "column_10": 13.8,
+              "column_16": "Hydrotest Pr. (barg)"
+            },
+            {
+              "column_1": "Temp., °C",
+              "column_2": "-29 to 38",
+              "column_4": 50,
+              "PIPING MATERIAL SPECIFICATION": 100,
+              "column_8": 150,
+              "column_10": 200,
+              "column_16": 29.400000000000002
+            },
+            {
+              "column_1": "Pipe Data"
+            },
+            {
+              "column_1": "Code",
+              "column_2": "ASME B 36.10M"
+            },
+            {
+              "column_1": "Size(in)",
+              "column_2": 0.5,
+              "column_3": 0.75,
+              "column_4": 1,
+              "column_5": 1.5,
+              "PIPING MATERIAL SPECIFICATION": 2,
+              "column_7": 3,
+              "column_8": 4,
+              "column_9": 6,
+              "column_10": 8,
+              "column_11": 10,
+              "column_12": 12,
+              "column_13": 14,
+              "column_14": 16,
+              "column_15": 18,
+              "column_16": 20,
+              "Rev: C0": 22,
+              "column_18": 24
+            },
+            {
+              "column_1": "O.D.mm",
+              "column_2": 21.3,
+              "column_3": 26.7,
+              "column_4": 33.4,
+              "column_5": 48.3,
+              "PIPING MATERIAL SPECIFICATION": 60.3,
+              "column_7": 88.9,
+              "column_8": 114.3,
+              "column_9": 168.3,
+              "column_10": 219.1,
+              "column_11": 273.1,
+              "column_12": 323.9,
+              "column_13": 355.6,
+              "column_14": 406.4,
+              "column_15": 457,
+              "column_16": 508,
+              "Rev: C0": 559,
+              "column_18": 610
+            },
+            {
+              "column_1": "Sch.",
+              "column_2": 160,
+              "column_3": 160,
+              "column_4": 160,
+              "column_5": 160,
+              "PIPING MATERIAL SPECIFICATION": 80,
+              "column_7": 80,
+              "column_8": 80,
+              "column_9": 80,
+              "column_10": 40,
+              "column_11": 40,
+              "column_12": 40,
+              "column_13": 40,
+              "column_14": 40,
+              "column_15": 40,
+              "column_16": 40,
+              "Rev: C0": "-",
+              "column_18": 40
+            },
+            {
+              "column_1": "WT. mm",
+              "column_2": 7.47,
+              "column_3": 5.56,
+              "column_4": 6.35,
+              "column_5": 7.14,
+              "PIPING MATERIAL SPECIFICATION": 5.54,
+              "column_7": 7.62,
+              "column_8": 8.56,
+              "column_9": 10.97,
+              "column_10": 8.18,
+              "column_11": 9.27,
+              "column_12": 10.31,
+              "column_13": 11.1,
+              "column_14": 12.7,
+              "column_15": 14.27,
+              "column_16": 15.1,
+              "Rev: C0": 15.88,
+              "column_18": 17.47
+            },
+            {
+              "column_1": "TYPE",
+              "column_2": "Seamless",
+              "column_15": "EFW, 100% RT"
+            },
+            {
+              "column_1": "MOC",
+              "column_2": "ASTM A 106 Gr. B",
+              "column_15": "ASTM A 671 - CC60 Class 22"
+            },
+            {
+              "column_1": "Ends",
+              "column_2": "BE"
+            },
+            {
+              "column_1": "Fittings Data"
+            },
+            {
+              "column_1": "TYPE",
+              "column_2": "Butt Weld (SCH to match pipe), Seamless",
+              "column_15": "Butt Weld (SCH to match pipe), Welded"
+            },
+            {
+              "column_1": "MOC",
+              "column_2": "ASTM A 234 Gr. WPB",
+              "column_15": "ASTM A 420 Gr. WPL6"
+            },
+            {
+              "column_1": "Elbow",
+              "column_2": "ASME B 16.9"
+            },
+            {
+              "column_1": "Tee",
+              "column_2": "ASME B 16.9"
+            },
+            {
+              "column_1": "Red.",
+              "column_2": "ASME B 16.9"
+            },
+            {
+              "column_1": "Cap",
+              "column_2": "ASME B 16.9"
+            },
+            {
+              "column_1": "Plug",
+              "column_2": "Hex Head Plug, ASME B 16.11"
+            },
+            {
+              "column_1": "Weldolet",
+              "column_2": "MSS SP 97, ASTM A 105N"
+            },
+            {
+              "column_1": "Flange"
+            },
+            {
+              "column_1": "MOC",
+              "column_2": "ASTM A 105N"
+            },
+            {
+              "column_1": "FACE",
+              "300# RF, Serrated Fin": "h"
+            },
+            {
+              "column_1": "TYPE",
+              "column_2": "Weld Neck, ASME B 16.5, Butt Welding ends as per ASME B 16.25"
+            },
+            {
+              "column_1": "Spectacle Blind/Spacer Blinds"
+            },
+            {
+              "column_1": "MOC",
+              "column_2": "ASTM A 105N"
+            },
+            {
+              "column_1": "Spectacle",
+              "column_2": "ASME B 16.48",
+              "column_13": "Spacer and blind as per ASME B 16.48"
+            },
+            {
+              "column_1": "Bolts/ Nuts/ Gaskets"
+            },
+            {
+              "column_1": "Stud Bolts",
+              "column_2": "ASTM A 193 Gr. B7M, XYLAR 2 + XYLAN 1070 coated with minimum combined thickness of 50μm"
+            },
+            {
+              "column_1": "Hex Nuts",
+              "column_2": "ASTM A 194 Gr. 2HM, XYLAR 2 + XYLAN 1070 coated with minimum combined thickness of 50μm"
+            },
+            {
+              "column_1": "Gasket",
+              "column_2": "ASME B 16.20, 4.5mm, SS316/SS316L Spiral Wound with Flexible Graphite (F.G.) filler"
+            },
+            {
+              "column_1": "Valves"
+            },
+            {
+              "column_1": "Rating",
+              "column_2": "150#, RF"
+            },
+            {
+              "column_1": "Ball",
+              "column_2": "BSRA1R, BSFA1R"
+            },
+            {
+              "column_1": "Gate",
+              "column_2": "GAWA1R"
+            },
+            {
+              "column_1": "Globe",
+              "column_2": "GLSA1R"
+            },
+            {
+              "column_1": "Check",
+              "column_2": "CHPA1R",
+              "PIPING MATERIAL SPECIFICATION": "CSWA1R, CDPA1R"
+            }
+          ]
+        },
+        {
+          "table_id": "table_2",
+          "range": {
+            "start_row": 47,
+            "end_row": 54,
+            "start_col": 1,
+            "end_col": 1,
+            "start_col_letter": "A",
+            "end_col_letter": "A"
+          },
+          "num_rows": 7,
+          "num_columns": 1,
+          "headers": [
+            "Notes"
+          ],
+          "rows": [
+            {
+              "1. PMS to be read in conjunction with Piping Design Bas": ", Doc No. 50502-SPE- 80000-PP-BD-0001 and Valve Material Specification, Doc. No. 50502-SPE- 80000-PP-SP-0002."
+            },
+            {
+              "Notes": "2. Weld Joint Factor for welded pipe shall be as per ASME B 31.3."
+            },
+            {
+              "Notes": "3. Welded fittings shall be 100% radiographed."
+            },
+            {
+              "Notes": "4. Two jackscrew, 180 degree apart shall be provided in one of the flanges for all orifice flange and specified spectacle blind assemblies."
+            },
+            {
+              "Notes": "5. Spectacle blinds and spacer sizes and rating that are not available in ASME B 16.48 shall be as per manuf. standard. Design shall be submitted to Company for review and approval."
+            },
+            {
+              "Notes": "6. Maximum temperature limit for all Soft Seat Ball Valve shall be 200°C."
+            },
+            {
+              "Notes": "7. Wafer check valve to be avoided, unless the available space constraint does not allow normal check valve."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sheet_name": "B1",
+      "n_rows": 54,
+      "n_columns": 18,
+      "tables": [
+        {
+          "table_id": "table_1",
+          "range": {
+            "start_row": 1,
+            "end_row": 44,
+            "start_col": 1,
+            "end_col": 18,
+            "start_col_letter": "A",
+            "end_col_letter": "R"
+          },
+          "num_rows": 43,
+          "num_columns": 18,
+          "headers": [
+            "column_1",
+            "column_2",
+            "column_3",
+            "column_4",
+            "column_5",
+            "PIPING MATERIAL SPECIFICATION",
+            "column_7",
+            "column_8",
+            "column_9",
+            "column_10",
+            "column_11",
+            "column_12",
+            "column_13",
+            "column_14",
+            "column_15",
+            "column_16",
+            "Rev: C0",
+            "column_18"
+          ],
+          "rows": [
+            {
+              "PIPING MATERIAL SPECIFICATION": "Piping Class",
+              "column_10": "Material",
+              "column_13": "C.A",
+              "column_15": "Mill Tol",
+              "Rev: C0": "Sheet No."
+            },
+            {
+              "PIPING MATERIAL SPECIFICATION": "B1",
+              "column_8": "300#",
+              "column_10": "CS",
+              "column_13": "3 mm",
+              "column_15": 0.125,
+              "Rev: C0": 25
+            },
+            {
+              "PIPING MATERIAL SPECIFICATION": "Design Code:",
+              "column_9": "ASME B 31.3"
+            },
+            {
+              "PIPING MATERIAL SPECIFICATION": "Service:",
+              "column_8": "Cooling Water, Diesel, WI, HC with low CO2 and H2S, Steam, Hydraulic"
+            },
+            {
+              "PIPING MATERIAL SPECIFICATION": "Branch Chart:",
+              "column_9": "Ref. APPENDIX-1, Chart 1"
+            },
+            {
+              "column_1": "Pressure-Temperature Rating"
+            },
+            {
+              "column_1": "Press., barg",
+              "column_2": 51.1,
+              "column_4": 50.1,
+              "PIPING MATERIAL SPECIFICATION": 46.6,
+              "column_8": 45.1,
+              "column_10": 43.8,
+              "column_16": "Hydrotest Pr. (barg)"
+            },
+            {
+              "column_1": "Temp., °C",
+              "column_2": "-29 to 38",
+              "column_4": "50",
+              "PIPING MATERIAL SPECIFICATION": 100,
+              "column_8": 150,
+              "column_10": 200,
+              "column_16": 76.65
+            },
+            {
+              "column_1": "Pipe Data"
+            },
+            {
+              "column_1": "Code",
+              "column_2": "ASME B 36.10M"
+            },
+            {
+              "column_1": "Size(in)",
+              "column_2": 0.5,
+              "column_3": 0.75,
+              "column_4": 1,
+              "column_5": 1.5,
+              "PIPING MATERIAL SPECIFICATION": 2,
+              "column_7": 3,
+              "column_8": 4,
+              "column_9": 6,
+              "column_10": 8,
+              "column_11": 10,
+              "column_12": 12,
+              "column_13": 14,
+              "column_14": 16,
+              "column_15": 18,
+              "column_16": 20,
+              "Rev: C0": 22,
+              "column_18": 24
+            },
+            {
+              "column_1": "O.D.mm",
+              "column_2": 21.3,
+              "column_3": 26.7,
+              "column_4": 33.4,
+              "column_5": 48.3,
+              "PIPING MATERIAL SPECIFICATION": 60.3,
+              "column_7": 88.9,
+              "column_8": 114.3,
+              "column_9": 168.3,
+              "column_10": 219.1,
+              "column_11": 273.1,
+              "column_12": 323.9,
+              "column_13": 355.6,
+              "column_14": 406.4,
+              "column_15": 457,
+              "column_16": 508,
+              "Rev: C0": 559,
+              "column_18": 610
+            },
+            {
+              "column_1": "Sch.",
+              "column_2": 160,
+              "column_3": 160,
+              "column_4": 160,
+              "column_5": 160,
+              "PIPING MATERIAL SPECIFICATION": 80,
+              "column_7": 80,
+              "column_8": 80,
+              "column_9": 80,
+              "column_10": 40,
+              "column_11": 40,
+              "column_12": 40,
+              "column_13": 40,
+              "column_14": 40,
+              "column_15": 40,
+              "column_16": 40,
+              "Rev: C0": "-",
+              "column_18": 40
+            },
+            {
+              "column_1": "WT. mm",
+              "column_2": 7.47,
+              "column_3": 5.56,
+              "column_4": 6.35,
+              "column_5": 7.14,
+              "PIPING MATERIAL SPECIFICATION": 5.54,
+              "column_7": 7.62,
+              "column_8": 8.56,
+              "column_9": 10.97,
+              "column_10": 8.18,
+              "column_11": 9.27,
+              "column_12": 10.31,
+              "column_13": 11.1,
+              "column_14": 12.7,
+              "column_15": 14.27,
+              "column_16": 15.1,
+              "Rev: C0": 15.88,
+              "column_18": 17.47
+            },
+            {
+              "column_1": "TYPE",
+              "column_2": "Seamless",
+              "column_15": "EFW, 100% RT"
+            },
+            {
+              "column_1": "MOC",
+              "column_2": "ASTM A 106 Gr. B",
+              "column_15": "ASTM A 671 - CC60 Class 22"
+            },
+            {
+              "column_1": "Ends",
+              "column_2": "BE"
+            },
+            {
+              "column_1": "Fittings Data"
+            },
+            {
+              "column_1": "TYPE",
+              "column_2": "Butt Weld (SCH to match pipe), Seamless",
+              "column_15": "Butt Weld (SCH to match pipe), Welded"
+            },
+            {
+              "column_1": "MOC",
+              "column_2": "ASTM A 234 Gr. WPB",
+              "column_15": "ASTM A 420 Gr. WPL6"
+            },
+            {
+              "column_1": "Elbow",
+              "column_2": "ASME B 16.9"
+            },
+            {
+              "column_1": "Tee",
+              "column_2": "ASME B 16.9"
+            },
+            {
+              "column_1": "Red.",
+              "column_2": "ASME B 16.9"
+            },
+            {
+              "column_1": "Cap",
+              "column_2": "ASME B 16.9"
+            },
+            {
+              "column_1": "Plug",
+              "column_2": "Hex Head Plug, ASME B 16.11"
+            },
+            {
+              "column_1": "Weldolet",
+              "column_2": "MSS SP 97, ASTM A 105N"
+            },
+            {
+              "column_1": "Flange"
+            },
+            {
+              "column_1": "MOC",
+              "column_2": "ASTM A 105N"
+            },
+            {
+              "column_1": "FACE",
+              "300# RF, Serrated Fin": "h"
+            },
+            {
+              "column_1": "TYPE",
+              "column_2": "Weld Neck, ASME B 16.5, Butt Welding ends as per ASME B 16.25"
+            },
+            {
+              "column_1": "Spectacle Blind/Spacer Blinds"
+            },
+            {
+              "column_1": "MOC",
+              "column_2": "ASTM A 105N"
+            },
+            {
+              "column_1": "Spectacle",
+              "column_2": "ASME B 16.48",
+              "column_13": "Spacer and blind as per ASME B 16.48"
+            },
+            {
+              "column_1": "Bolts/ Nuts/ Gaskets"
+            },
+            {
+              "column_1": "Stud Bolts",
+              "column_2": "ASTM A 193 Gr. B7M, XYLAR 2 + XYLAN 1070 coated with minimum combined thickness of 50μm"
+            },
+            {
+              "column_1": "Hex Nuts",
+              "column_2": "ASTM A 194 Gr. 2HM, XYLAR 2 + XYLAN 1070 coated with minimum combined thickness of 50μm"
+            },
+            {
+              "column_1": "Gasket",
+              "column_2": "ASME B 16.20, 4.5mm, SS316/SS316L Spiral Wound with Flexible Graphite (F.G.) filler"
+            },
+            {
+              "column_1": "Valves"
+            },
+            {
+              "column_1": "Rating",
+              "column_2": "300#, RF"
+            },
+            {
+              "column_1": "Ball",
+              "column_2": "BSRB1R, BSFB1R"
+            },
+            {
+              "column_1": "Gate",
+              "column_2": "GAWB1R"
+            },
+            {
+              "column_1": "Globe",
+              "column_2": "GLSB1R"
+            },
+            {
+              "column_1": "Check",
+              "column_2": "CHPB1R",
+              "PIPING MATERIAL SPECIFICATION": "CSWB1R, CDPB1R"
+            }
+          ]
+        },
+        {
+          "table_id": "table_2",
+          "range": {
+            "start_row": 47,
+            "end_row": 54,
+            "start_col": 1,
+            "end_col": 1,
+            "start_col_letter": "A",
+            "end_col_letter": "A"
+          },
+          "num_rows": 7,
+          "num_columns": 1,
+          "headers": [
+            "Notes"
+          ],
+          "rows": [
+            {
+              "1. PMS to be read in conjunction with Piping Design Bas": ", Doc No. 50502-SPE- 80000-PP-BD-0001 and Valve Material Specification, Doc. No. 50502-SPE- 80000-PP-SP-0002."
+            },
+            {
+              "Notes": "2. Weld Joint Factor for welded pipe shall be as per ASME B 31.3."
+            },
+            {
+              "Notes": "3. Welded fittings shall be 100% radiographed."
+            },
+            {
+              "Notes": "4. Two jackscrew, 180 degree apart shall be provided in one of the flanges for all orifice flange and specified spectacle blind assemblies."
+            },
+            {
+              "Notes": "5. Spectacle blinds and spacer sizes and rating that are not available in ASME B 16.48 shall be as per manuf. standard. Design shall be submitted to Company for review and approval."
+            },
+            {
+              "Notes": "6. Maximum temperature limit for all Soft Seat Ball Valve shall be 200°C."
+            },
+            {
+              "Notes": "7. Wafer check valve to be avoided, unless the available space constraint does not allow normal check valve."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sheet_name": "D1",
+      "n_rows": 44,
+      "n_columns": 18,
+      "tables": [
+        {
+          "table_id": "table_1",
+          "range": {
+            "start_row": 1,
+            "end_row": 44,
+            "start_col": 1,
+            "end_col": 18,
+            "start_col_letter": "A",
+            "end_col_letter": "R"
+          },
+          "num_rows": 43,
+          "num_columns": 18,
+          "headers": [
+            "column_1",
+            "column_2",
+            "column_3",
+            "column_4",
+            "column_5",
+            "PIPING MATERIAL SPECIFICATION",
+            "column_7",
+            "column_8",
+            "column_9",
+            "column_10",
+            "column_11",
+            "column_12",
+            "column_13",
+            "column_14",
+            "column_15",
+            "column_16",
+            "Rev: C0",
+            "column_18"
+          ],
+          "rows": [
+            {
+              "PIPING MATERIAL SPECIFICATION": "Piping Class",
+              "column_10": "Material",
+              "column_13": "C.A",
+              "column_15": "Mill Tol",
+              "Rev: C0": "Sheet NO"
+            },
+            {
+              "PIPING MATERIAL SPECIFICATION": "D1",
+              "column_8": "600#",
+              "column_10": "CS",
+              "column_13": "3 mm",
+              "column_15": 0.125,
+              "Rev: C0": 26
+            },
+            {
+              "PIPING MATERIAL SPECIFICATION": "Design Code:",
+              "column_9": "ASME B 31.3"
+            },
+            {
+              "PIPING MATERIAL SPECIFICATION": "Service:",
+              "column_8": "Cooling Water, Diesel, WI, HC with low CO2 and H2S, Steam, Hydraulic"
+            },
+            {
+              "PIPING MATERIAL SPECIFICATION": "Branch Chart:",
+              "column_9": "Ref. APPENDIX-1, Chart 1"
+            },
+            {
+              "column_1": "Pressure-Temperature Rating"
+            },
+            {
+              "column_1": "Press., barg",
+              "column_2": 102.1,
+              "column_4": 100.2,
+              "PIPING MATERIAL SPECIFICATION": 93.2,
+              "column_8": 90.2,
+              "column_10": 87.6,
+              "column_16": "Hydrotest Pr. (barg)"
+            },
+            {
+              "column_1": "Temp., °C",
+              "column_2": "-29 to 38",
+              "column_4": "50",
+              "PIPING MATERIAL SPECIFICATION": 100,
+              "column_8": 150,
+              "column_10": 200,
+              "column_16": 153.15
+            },
+            {
+              "column_1": "Pipe Data"
+            },
+            {
+              "column_1": "Code",
+              "column_2": "ASME B 36.10M"
+            },
+            {
+              "column_1": "Size(in)",
+              "column_2": 0.5,
+              "column_3": 0.75,
+              "column_4": 1,
+              "column_5": 1.5,
+              "PIPING MATERIAL SPECIFICATION": 2,
+              "column_7": 3,
+              "column_8": 4,
+              "column_9": 6,
+              "column_10": 8,
+              "column_11": 10,
+              "column_12": 12,
+              "column_13": 14,
+              "column_14": 16,
+              "column_15": 18,
+              "column_16": 20,
+              "Rev: C0": 22,
+              "column_18": 24
+            },
+            {
+              "column_1": "O.D.mm",
+              "column_2": 21.3,
+              "column_3": 26.7,
+              "column_4": 33.4,
+              "column_5": 48.3,
+              "PIPING MATERIAL SPECIFICATION": 60.3,
+              "column_7": 88.9,
+              "column_8": 114.3,
+              "column_9": 168.3,
+              "column_10": 219.1,
+              "column_11": 273.1,
+              "column_12": 323.9,
+              "column_13": 355.6,
+              "column_14": 406.4,
+              "column_15": 457,
+              "column_16": 508,
+              "Rev: C0": 559,
+              "column_18": 610
+            },
+            {
+              "column_1": "Sch.",
+              "column_2": 160,
+              "column_3": 160,
+              "column_4": 160,
+              "column_5": 160,
+              "PIPING MATERIAL SPECIFICATION": 160,
+              "column_7": 80,
+              "column_8": 80,
+              "column_9": 80,
+              "column_10": 80,
+              "column_11": 80,
+              "column_12": 80,
+              "column_13": 80,
+              "column_14": 80,
+              "column_15": 80,
+              "column_16": 80,
+              "Rev: C0": 80,
+              "column_18": 80
+            },
+            {
+              "column_1": "WT. mm",
+              "column_2": 7.47,
+              "column_3": 5.56,
+              "column_4": 6.35,
+              "column_5": 7.14,
+              "PIPING MATERIAL SPECIFICATION": 8.74,
+              "column_7": 7.62,
+              "column_8": 8.56,
+              "column_9": 10.97,
+              "column_10": 12.7,
+              "column_11": 15.08,
+              "column_12": 17.47,
+              "column_13": 19.05,
+              "column_14": 21.44,
+              "column_15": 23.82,
+              "column_16": 26.19,
+              "Rev: C0": 28.57,
+              "column_18": 30.96
+            },
+            {
+              "column_1": "TYPE",
+              "column_2": "Seamless",
+              "column_15": "EFW, 100% RT"
+            },
+            {
+              "column_1": "MOC",
+              "column_2": "ASTM A 106 Gr. B",
+              "column_12": "ASTM A 333 Gr.6",
+              "column_15": "ASTM A 671 - CC60 Class 22"
+            },
+            {
+              "column_1": "Ends",
+              "column_2": "BE"
+            },
+            {
+              "column_1": "Fittings Data"
+            },
+            {
+              "column_1": "TYPE",
+              "column_2": "Butt Weld (SCH to match pipe), Seamless",
+              "column_15": "Butt Weld (SCH to match pipe), Welded"
+            },
+            {
+              "column_1": "MOC",
+              "column_2": "ASTM A 234 Gr. WPB",
+              "column_12": "ASTM A 420 Gr. WPL6"
+            },
+            {
+              "column_1": "Elbow",
+              "column_2": "ASME B 16.9"
+            },
+            {
+              "column_1": "Tee",
+              "column_2": "ASME B 16.9"
+            },
+            {
+              "column_1": "Red.",
+              "column_2": "ASME B 16.9"
+            },
+            {
+              "column_1": "Cap",
+              "column_2": "ASME B 16.9"
+            },
+            {
+              "column_1": "Plug",
+              "column_2": "Hex Head Plug, ASME B 16.11"
+            },
+            {
+              "column_1": "Weldolet",
+              "column_2": "MSS SP 97, ASTM A 105N"
+            },
+            {
+              "column_1": "Flange"
+            },
+            {
+              "column_1": "MOC",
+              "column_2": "ASTM A 105N"
+            },
+            {
+              "column_1": "FACE",
+              "600# RF, Serrated Fin": "h"
+            },
+            {
+              "column_1": "TYPE",
+              "column_2": "Weld Neck, ASME B 16.5, Butt Welding ends as per ASME B 16.25"
+            },
+            {
+              "column_1": "Spectacle Blind/Spacer Blinds"
+            },
+            {
+              "column_1": "MOC",
+              "column_2": "ASTM A 105N"
+            },
+            {
+              "column_1": "Spectacle",
+              "column_2": "ASME B 16.48",
+              "column_13": "Spacer and blind as per ASME B 16.48"
+            },
+            {
+              "column_1": "Bolts/ Nuts/ Gaskets"
+            },
+            {
+              "column_1": "Stud Bolts",
+              "column_2": "ASTM A 193 Gr. B7M, XYLAR 2 + XYLAN 1070 coated with minimum combined thickness of 50μm"
+            },
+            {
+              "column_1": "Hex Nuts",
+              "column_2": "ASTM A 194 Gr. 2HM, XYLAR 2 + XYLAN 1070 coated with minimum combined thickness of 50μm"
+            },
+            {
+              "column_1": "Gasket",
+              "column_2": "ASME B 16.20, 4.5mm, SS316/SS316L Spiral Wound with Flexible Graphite (F.G.) filler"
+            },
+            {
+              "column_1": "Valves"
+            },
+            {
+              "column_1": "Rating",
+              "column_2": "600#, RF"
+            },
+            {
+              "column_1": "Ball",
+              "column_2": "BSRD1R, BSFD1R"
+            },
+            {
+              "column_1": "Gate",
+              "column_2": "GAWD1R"
+            },
+            {
+              "column_1": "Globe",
+              "column_2": "GLSD1R"
+            },
+            {
+              "column_1": "Check",
+              "column_2": "CHPD1R",
+              "PIPING MATERIAL SPECIFICATION": "CSWD1R, CDPD1R"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sheet_name": "E1",
+      "n_rows": 56,
+      "n_columns": 18,
+      "tables": [
+        {
+          "table_id": "table_1",
+          "range": {
+            "start_row": 1,
+            "end_row": 56,
+            "start_col": 1,
+            "end_col": 18,
+            "start_col_letter": "A",
+            "end_col_letter": "R"
+          },
+          "num_rows": 55,
+          "num_columns": 18,
+          "headers": [
+            "column_1",
+            "column_2",
+            "column_3",
+            "column_4",
+            "column_5",
+            "PIPING MATERIAL SPECIFICATION",
+            "column_7",
+            "column_8",
+            "column_9",
+            "column_10",
+            "column_11",
+            "column_12",
+            "column_13",
+            "column_14",
+            "column_15",
+            "column_16",
+            "Rev: C0",
+            "column_18"
+          ],
+          "rows": [
+            {
+              "PIPING MATERIAL SPECIFICATION": "Piping Class",
+              "column_10": "Material",
+              "column_13": "C.A",
+              "column_15": "Mill Tol",
+              "Rev: C0": "Sheet No."
+            },
+            {
+              "PIPING MATERIAL SPECIFICATION": "E1",
+              "column_8": "900#",
+              "column_10": "CS",
+              "column_13": "3 mm",
+              "column_15": 0.125,
+              "Rev: C0": 27
+            },
+            {
+              "PIPING MATERIAL SPECIFICATION": "Design Code:",
+              "column_9": "ASME B 31.3"
+            },
+            {
+              "PIPING MATERIAL SPECIFICATION": "Service:",
+              "column_8": "Diesel, WI, HC with low CO2 and H2S, Steam, Hydraulic"
+            },
+            {
+              "PIPING MATERIAL SPECIFICATION": "Branch Chart:",
+              "column_9": "Ref. APPENDIX-1, Chart 1"
+            },
+            {
+              "column_1": "Pressure-Temperature Rating"
+            },
+            {
+              "column_1": "Press., barg",
+              "column_2": 153.2,
+              "column_4": 150.4,
+              "PIPING MATERIAL SPECIFICATION": 139.8,
+              "column_8": 135.2,
+              "column_10": 131.4,
+              "column_16": "Hydrotest Pr. (barg)"
+            },
+            {
+              "column_1": "Temp., °C",
+              "column_2": "-29 to 38",
+              "column_4": 50,
+              "PIPING MATERIAL SPECIFICATION": 100,
+              "column_8": 150,
+              "column_10": 200,
+              "column_16": 229.79999999999998
+            },
+            {
+              "column_1": "Pipe Data"
+            },
+            {
+              "column_1": "Code",
+              "column_2": "ASME B 36.10M"
+            },
+            {
+              "column_1": "Size(in)",
+              "column_2": 0.5,
+              "column_3": 0.75,
+              "column_4": 1,
+              "column_5": 1.5,
+              "PIPING MATERIAL SPECIFICATION": 2,
+              "column_7": 3,
+              "column_8": 4,
+              "column_9": 6,
+              "column_10": 8,
+              "column_11": 10,
+              "column_12": 12,
+              "column_13": 14,
+              "column_14": 16,
+              "column_15": 18,
+              "column_16": 20,
+              "Rev: C0": 22,
+              "column_18": 24
+            },
+            {
+              "column_1": "O.D.mm",
+              "column_2": 21.3,
+              "column_3": 26.7,
+              "column_4": 33.4,
+              "column_5": 48.3,
+              "PIPING MATERIAL SPECIFICATION": 60.3,
+              "column_7": 88.9,
+              "column_8": 114,
+              "column_9": 168.3,
+              "column_10": 219,
+              "column_11": 273.1,
+              "column_12": 323.9,
+              "column_13": 355.6,
+              "column_14": 406.4,
+              "column_15": 457,
+              "column_16": 508,
+              "Rev: C0": 559,
+              "column_18": 610
+            },
+            {
+              "column_1": "Sch.",
+              "column_2": 160,
+              "column_3": 160,
+              "column_4": 160,
+              "column_5": 160,
+              "PIPING MATERIAL SPECIFICATION": 160,
+              "column_7": 160,
+              "column_8": 120,
+              "column_9": 120,
+              "column_10": 120,
+              "column_11": 120,
+              "column_12": 120,
+              "column_13": 120,
+              "column_14": 120,
+              "column_15": 120,
+              "column_16": 120,
+              "Rev: C0": 120,
+              "column_18": 120
+            },
+            {
+              "column_1": "WT. mm",
+              "column_2": 7.47,
+              "column_3": 5.56,
+              "column_4": 6.35,
+              "column_5": 7.14,
+              "PIPING MATERIAL SPECIFICATION": 8.7,
+              "column_7": 11.12,
+              "column_8": 11.1,
+              "column_9": 14.27,
+              "column_10": 18.3,
+              "column_11": 21.44,
+              "column_12": 25.4,
+              "column_13": 27.79,
+              "column_14": 30.96,
+              "column_15": 34.92,
+              "column_16": 38.1,
+              "Rev: C0": 41.27,
+              "column_18": 46.02
+            },
+            {
+              "column_1": "TYPE",
+              "column_2": "Seamless",
+              "column_15": "EFW, 100% RT"
+            },
+            {
+              "column_1": "MOC",
+              "column_2": "ASTM A 106 Gr. B",
+              "column_10": "ASTM A 333 Gr.6",
+              "column_15": "ASTM A 671 - CC60 Class 22"
+            },
+            {
+              "column_1": "Ends",
+              "column_2": "BE"
+            },
+            {
+              "column_1": "Fittings Data"
+            },
+            {
+              "column_1": "TYPE",
+              "column_2": "Butt Weld (SCH to match pipe), Seamless",
+              "column_15": "Butt Weld (SCH to match pipe), Welded"
+            },
+            {
+              "column_1": "MOC",
+              "column_2": "ASTM A 234 Gr. WPB",
+              "column_10": "ASTM A 420 Gr. WPL6"
+            },
+            {
+              "column_1": "Elbow",
+              "column_2": "ASME B 16.9"
+            },
+            {
+              "column_1": "Tee",
+              "column_2": "ASME B 16.9"
+            },
+            {
+              "column_1": "Red.",
+              "column_2": "ASME B 16.9"
+            },
+            {
+              "column_1": "Cap",
+              "column_2": "ASME B 16.9"
+            },
+            {
+              "column_1": "Plug",
+              "column_2": "Hex Head Plug, ASME B 16.11"
+            },
+            {
+              "column_1": "Weldolet",
+              "column_2": "MSS SP 97, ASTM A 105N"
+            },
+            {
+              "column_1": "Flange"
+            },
+            {
+              "column_1": "MOC",
+              "column_2": "ASTM A 105N"
+            },
+            {
+              "column_1": "FACE",
+              "column_2": "1500#, RTJ",
+              "PIPING MATERIAL SPECIFICATION": "900#, RTJ"
+            },
+            {
+              "column_1": "TYPE",
+              "column_2": "Weld Neck, ASME B16.5, Butt welding ends as per ASME 16.25, Note 8,9"
+            },
+            {
+              "column_1": "Spectacle Blind/Spacer Blinds"
+            },
+            {
+              "column_1": "MOC",
+              "column_2": "ASTM A 105N"
+            },
+            {
+              "column_1": "Spectacle",
+              "column_2": "ASME B 16.48",
+              "column_13": "Spacer and blind as per ASME B 16.48"
+            },
+            {
+              "column_1": "Bolts/ Nuts/ Gaskets"
+            },
+            {
+              "column_1": "Stud Bolts",
+              "column_2": "ASTM A 193 Gr. B7M, XYLAR 2 + XYLAN 1070 coated with minimum combined thickness of 50μm"
+            },
+            {
+              "column_1": "Hex Nuts",
+              "column_2": "ASTM A 194 Gr. 2HM, XYLAR 2 + XYLAN 1070 coated with minimum combined thickness of 50μm"
+            },
+            {
+              "column_1": "Gasket",
+              "column_2": "ASME B 16.20, OCT ring of Soft Iron with Max. Hardness of 90 BHN, HDG"
+            },
+            {
+              "column_1": "Valves"
+            },
+            {
+              "column_1": "Rating",
+              "column_2": "900#, RTJ"
+            },
+            {
+              "column_1": "Ball",
+              "column_2": "USE GATE VALVE",
+              "PIPING MATERIAL SPECIFICATION": "BSRE1J, BSFE1J"
+            },
+            {
+              "column_1": "Gate",
+              "column_2": "GAWE1J"
+            },
+            {
+              "column_1": "Globe",
+              "column_2": "GLSE1J"
+            },
+            {
+              "column_1": "Check",
+              "column_2": "CHPE1J",
+              "PIPING MATERIAL SPECIFICATION": "CSWE1J, CDPE1J"
+            },
+            {
+              "column_1": "DBB (Inst)",
+              "column_2": "DSRE1JT"
+            },
+            {
+              "column_1": "DBB",
+              "column_2": "DSRE1J, DSFE1J"
+            },
+            {
+              "column_1": "Notes"
+            },
+            {
+              "1. PMS to be read in conjunction with Piping Design Bas": ", Doc No. 50502-SPE- 80000-PP-BD-0001 and Valve Material Specification, Doc. No. 50502-SPE- 80000-PP-SP-0002."
+            },
+            {
+              "column_1": "2. Weld Joint Factor for welded pipe shall be as per ASME B 31.3."
+            },
+            {
+              "column_1": "3. Welded fittings shall be 100% radiographed."
+            },
+            {
+              "column_1": "4. Two jackscrew, 180 degree apart shall be provided in one of the flanges for all orifice flange and specified spectacle blind assemblies."
+            },
+            {
+              "column_1": "5. Spectacle blinds and spacer sizes and rating that are not available in ASME B 16.48 shall be as per manuf. standard. Design shall be submitted to Company for review and approval."
+            },
+            {
+              "column_1": "6. Maximum temperature limit for all Soft Seat Ball Valve shall be 200°C."
+            },
+            {
+              "column_1": "7. Wafer check valve to be avoided, unless the available space constraint does not allow normal check valve."
+            },
+            {
+              "column_1": "8. Gasket Contact Surface shall have maximum roughness of 63AARH."
+            },
+            {
+              "column_1": "9. Minimum RTJ groove hardness shall be 120 BHN."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "unstructured_elements": [
+    {
+      "type": "Table",
+      "text": "PIPING MATERIAL SPECIFICATION Rev: C0 Piping Class Material C.A Mill Tol Sheet No. A1 150# CS 3 mm 0.125 24 Design Code: ASME B 31.3 Service: Cooling Water, Diesel, Steam, WI, HC with low CO2 and H2S, Fresh Water, Hydraulic, Nitrogen, Exhaust, Fuel Oil, Tank Air Vent Branch Chart: Ref. APPENDIX-1, Chart 1"
+    },
+    {
+      "type": "Title",
+      "text": "Pressure-Temperature Rating"
+    },
+    {
+      "type": "Table",
+      "text": "Press., barg 19.6 19.20 17.7 15.8 13.8 Hydrotest Pr. (barg) Temp., °C -29 to 38 50.00 100 150 200 29.4 Pipe Data Code ASME B 36.10M Size(in) 0.5 0.75 1.00 1.50 2 3.00 4 6 8 10.00 12.00 14 16.0 18 20 22 24.00 O.D.mm 21.3 26.70 33.40 48.30 60.3 88.90 114.3 168.3 219.1 273.10 323.90 355.6 406.4 457 508 559 610.00 Sch. 160 160.00 160.00 160.00 80 80.00 80 80 40 40.00 40.00 40 40.0 40 40 - 40.00 WT. mm 7.47 5.56 6.35 7.14 5.54 7.62 8.56 10.97 8.18 9.27 10.31 11.1 12.7 14.27 15.1 15.88 17.47 TYPE Seamless EFW, 100% RT MOC ASTM A 106 Gr. B ASTM A 671 - CC60 Class 22 Ends BE Fittings Data TYPE Butt Weld (SCH to match pipe), Seamless Butt Weld (SCH to match pipe), Welded MOC ASTM A 234 Gr. WPB ASTM A 420 Gr. WPL6 Elbow ASME B 16.9 Tee ASME B 16.9 Red. ASME B 16.9 Cap ASME B 16.9 Plug Hex Head Plug, ASME B 16.11 Weldolet MSS SP 97, ASTM A 105N Flange MOC ASTM A 105N FACE 300# RF, Serrated Finish TYPE Weld Neck, ASME B 16.5, Butt Welding ends as per ASME B 16.25 Spectacle Blind/Spacer Blinds MOC ASTM A 105N Spectacle ASME B 16.48 Spacer and blind as per ASME B 16.48 Bolts/ Nuts/ Gaskets Stud Bolts ASTM A 193 Gr. B7M, XYLAR 2 + XYLAN 1070 coated with minimum combined thickness of 50μm Hex Nuts ASTM A 194 Gr. 2HM, XYLAR 2 + XYLAN 1070 coated with minimum combined thickness of 50μm Gasket ASME B 16.20, 4.5mm, SS316/SS316L Spiral Wound with Flexible Graphite (F.G.) filler Valves Rating 150#, RF Ball BSRA1R, BSFA1R Gate GAWA1R Globe GLSA1R Check CHPA1R CSWA1R, CDPA1R"
+    },
+    {
+      "type": "Title",
+      "text": "Notes"
+    },
+    {
+      "type": "ListItem",
+      "text": "1. PMS to be read in conjunction with Piping Design Basis, Doc No. 50502-SPE- 80000-PP-BD-0001 and Valve Material Specification, Doc. No. 50502-SPE- 80000-PP-SP-0002."
+    },
+    {
+      "type": "ListItem",
+      "text": "2. Weld Joint Factor for welded pipe shall be as per ASME B 31.3."
+    },
+    {
+      "type": "ListItem",
+      "text": "3. Welded fittings shall be 100% radiographed."
+    },
+    {
+      "type": "ListItem",
+      "text": "4. Two jackscrew, 180 degree apart shall be provided in one of the flanges for all orifice flange and specified spectacle blind assemblies."
+    },
+    {
+      "type": "ListItem",
+      "text": "5. Spectacle blinds and spacer sizes and rating that are not available in ASME B 16.48 shall be as per manuf. standard. Design shall be submitted to Company for review and approval."
+    },
+    {
+      "type": "ListItem",
+      "text": "6. Maximum temperature limit for all Soft Seat Ball Valve shall be 200°C."
+    },
+    {
+      "type": "ListItem",
+      "text": "7. Wafer check valve to be avoided, unless the available space constraint does not allow normal check valve."
+    },
+    {
+      "type": "Table",
+      "text": "PIPING MATERIAL SPECIFICATION Rev: C0 Piping Class Material C.A Mill Tol Sheet No. B1 300# CS 3 mm 0.125 25 Design Code: ASME B 31.3 Service: Cooling Water, Diesel, WI, HC with low CO2 and H2S, Steam, Hydraulic Branch Chart: Ref. APPENDIX-1, Chart 1"
+    },
+    {
+      "type": "Title",
+      "text": "Pressure-Temperature Rating"
+    },
+    {
+      "type": "Table",
+      "text": "Press., barg 51.1 50.10 46.6 45.1 43.8 Hydrotest Pr. (barg) Temp., °C -29 to 38 50.00 100 150 200 76.65 Pipe Data Code ASME B 36.10M Size(in) 0.5 0.75 1.00 1.50 2 3.00 4 6 8 10.00 12.00 14 16.0 18 20 22 24.00 O.D.mm 21.3 26.70 33.40 48.30 60.3 88.90 114.3 168.3 219.1 273.10 323.90 355.6 406.4 457 508 559 610.00 Sch. 160 160.00 160.00 160.00 80 80.00 80 80 40 40.00 40.00 40 40.0 40 40 - 40.00 WT. mm 7.47 5.56 6.35 7.14 5.54 7.62 8.56 10.97 8.18 9.27 10.31 11.1 12.7 14.27 15.1 15.88 17.47 TYPE Seamless EFW, 100% RT MOC ASTM A 106 Gr. B ASTM A 671 - CC60 Class 22 Ends BE Fittings Data TYPE Butt Weld (SCH to match pipe), Seamless Butt Weld (SCH to match pipe), Welded MOC ASTM A 234 Gr. WPB ASTM A 420 Gr. WPL6 Elbow ASME B 16.9 Tee ASME B 16.9 Red. ASME B 16.9 Cap ASME B 16.9 Plug Hex Head Plug, ASME B 16.11 Weldolet MSS SP 97, ASTM A 105N Flange MOC ASTM A 105N FACE 300# RF, Serrated Finish TYPE Weld Neck, ASME B 16.5, Butt Welding ends as per ASME B 16.25 Spectacle Blind/Spacer Blinds MOC ASTM A 105N Spectacle ASME B 16.48 Spacer and blind as per ASME B 16.48 Bolts/ Nuts/ Gaskets Stud Bolts ASTM A 193 Gr. B7M, XYLAR 2 + XYLAN 1070 coated with minimum combined thickness of 50μm Hex Nuts ASTM A 194 Gr. 2HM, XYLAR 2 + XYLAN 1070 coated with minimum combined thickness of 50μm Gasket ASME B 16.20, 4.5mm, SS316/SS316L Spiral Wound with Flexible Graphite (F.G.) filler Valves Rating 300#, RF Ball BSRB1R, BSFB1R Gate GAWB1R Globe GLSB1R Check CHPB1R CSWB1R, CDPB1R"
+    },
+    {
+      "type": "Title",
+      "text": "Notes"
+    },
+    {
+      "type": "ListItem",
+      "text": "1. PMS to be read in conjunction with Piping Design Basis, Doc No. 50502-SPE- 80000-PP-BD-0001 and Valve Material Specification, Doc. No. 50502-SPE- 80000-PP-SP-0002."
+    },
+    {
+      "type": "ListItem",
+      "text": "2. Weld Joint Factor for welded pipe shall be as per ASME B 31.3."
+    },
+    {
+      "type": "ListItem",
+      "text": "3. Welded fittings shall be 100% radiographed."
+    },
+    {
+      "type": "ListItem",
+      "text": "4. Two jackscrew, 180 degree apart shall be provided in one of the flanges for all orifice flange and specified spectacle blind assemblies."
+    },
+    {
+      "type": "ListItem",
+      "text": "5. Spectacle blinds and spacer sizes and rating that are not available in ASME B 16.48 shall be as per manuf. standard. Design shall be submitted to Company for review and approval."
+    },
+    {
+      "type": "ListItem",
+      "text": "6. Maximum temperature limit for all Soft Seat Ball Valve shall be 200°C."
+    },
+    {
+      "type": "ListItem",
+      "text": "7. Wafer check valve to be avoided, unless the available space constraint does not allow normal check valve."
+    },
+    {
+      "type": "Table",
+      "text": "PIPING MATERIAL SPECIFICATION Rev: C0 Piping Class Material C.A Mill Tol Sheet NO D1 600# CS 3 mm 0.125 26 Design Code: ASME B 31.3 Service: Cooling Water, Diesel, WI, HC with low CO2 and H2S, Steam, Hydraulic Branch Chart: Ref. APPENDIX-1, Chart 1"
+    },
+    {
+      "type": "Title",
+      "text": "Pressure-Temperature Rating"
+    },
+    {
+      "type": "Table",
+      "text": "Press., barg 102.1 100.20 93.2 90.2 87.6 Hydrotest Pr. (barg) Temp., °C -29 to 38 50.00 100 150 200 153.15 Pipe Data Code ASME B 36.10M Size(in) 0.5 0.75 1.00 1.50 2 3.00 4 6 8 10.00 12 14 16.00 18 20 22 24.00 O.D.mm 21.3 26.70 33.40 48.30 60.3 88.90 114.3 168.3 219.1 273.10 323.9 355.6 406.40 457 508 559 610.00 Sch. 160 160.00 160.00 160.00 160 80.00 80 80 80 80.00 80 80 80.00 80 80 80 80.00 WT. mm 7.47 5.56 6.35 7.14 8.74 7.62 8.56 10.97 12.7 15.08 17.47 19.05 21.44 23.82 26.19 28.57 30.96 TYPE Seamless EFW, 100% RT MOC ASTM A 106 Gr. B ASTM A 333 Gr.6 ASTM A 671 - CC60 Class 22 Ends BE Fittings Data TYPE Butt Weld (SCH to match pipe), Seamless Butt Weld (SCH to match pipe), Welded MOC ASTM A 234 Gr. WPB ASTM A 420 Gr. WPL6 Elbow ASME B 16.9 Tee ASME B 16.9 Red. ASME B 16.9 Cap ASME B 16.9 Plug Hex Head Plug, ASME B 16.11 Weldolet MSS SP 97, ASTM A 105N Flange MOC ASTM A 105N FACE 600# RF, Serrated Finish TYPE Weld Neck, ASME B 16.5, Butt Welding ends as per ASME B 16.25 Spectacle Blind/Spacer Blinds MOC ASTM A 105N Spectacle ASME B 16.48 Spacer and blind as per ASME B 16.48 Bolts/ Nuts/ Gaskets Stud Bolts ASTM A 193 Gr. B7M, XYLAR 2 + XYLAN 1070 coated with minimum combined thickness of 50μm Hex Nuts ASTM A 194 Gr. 2HM, XYLAR 2 + XYLAN 1070 coated with minimum combined thickness of 50μm Gasket ASME B 16.20, 4.5mm, SS316/SS316L Spiral Wound with Flexible Graphite (F.G.) filler Valves Rating 600#, RF Ball BSRD1R, BSFD1R Gate GAWD1R Globe GLSD1R Check CHPD1R CSWD1R, CDPD1R"
+    },
+    {
+      "type": "Table",
+      "text": "PIPING MATERIAL SPECIFICATION Rev: C0 Piping Class Material C.A Mill Tol Sheet No. E1 900# CS 3 mm 0.125 27 Design Code: ASME B 31.3 Service: Diesel, WI, HC with low CO2 and H2S, Steam, Hydraulic Branch Chart: Ref. APPENDIX-1, Chart 1"
+    },
+    {
+      "type": "Title",
+      "text": "Pressure-Temperature Rating"
+    },
+    {
+      "type": "Table",
+      "text": "Press., barg 153.2 150.40 139.8 135.2 131.4 Hydrotest Pr. (barg) Temp., °C -29 to 38 50.00 100 150 200 229.8 Pipe Data Code ASME B 36.10M Size(in) 0.5 0.75 1.00 1.50 2 3.00 4 6 8 10.00 12.0 14 16.00 18 20 22 24.00 O.D.mm 21.3 26.70 33.40 48.30 60.3 88.90 114 168.3 219 273.10 323.9 355.6 406.40 457 508 559 610.00 Sch. 160 160.00 160.00 160.00 160 160.00 120 120 120 120.00 120.0 120 120.00 120 120 120 120.00 WT. mm 7.47 5.56 6.35 7.14 8.7 11.12 11.1 14.27 18.3 21.44 25.4 27.79 30.96 34.92 38.1 41.27 46.02 TYPE Seamless EFW, 100% RT MOC ASTM A 106 Gr. B ASTM A 333 Gr.6 ASTM A 671 - CC60 Class 22 Ends BE Fittings Data TYPE Butt Weld (SCH to match pipe), Seamless Butt Weld (SCH to match pipe), Welded MOC ASTM A 234 Gr. WPB ASTM A 420 Gr. WPL6 Elbow ASME B 16.9 Tee ASME B 16.9 Red. ASME B 16.9 Cap ASME B 16.9 Plug Hex Head Plug, ASME B 16.11 Weldolet MSS SP 97, ASTM A 105N Flange MOC ASTM A 105N FACE 1500#, RTJ 900#, RTJ TYPE Weld Neck, ASME B16.5, Butt welding ends as per ASME 16.25, Note 8,9 Spectacle Blind/Spacer Blinds MOC ASTM A 105N Spectacle ASME B 16.48 Spacer and blind as per ASME B 16.48 Bolts/ Nuts/ Gaskets Stud Bolts ASTM A 193 Gr. B7M, XYLAR 2 + XYLAN 1070 coated with minimum combined thickness of 50μm Hex Nuts ASTM A 194 Gr. 2HM, XYLAR 2 + XYLAN 1070 coated with minimum combined thickness of 50μm Gasket ASME B 16.20, OCT ring of Soft Iron with Max. Hardness of 90 BHN, HDG Valves Rating 900#, RTJ Ball USE GATE VALVE BSRE1J, BSFE1J Gate GAWE1J Globe GLSE1J Check CHPE1J CSWE1J, CDPE1J DBB (Inst) DSRE1JT DBB DSRE1J, DSFE1J"
+    },
+    {
+      "type": "Title",
+      "text": "Notes"
+    },
+    {
+      "type": "ListItem",
+      "text": "1. PMS to be read in conjunction with Piping Design Basis, Doc No. 50502-SPE- 80000-PP-BD-0001 and Valve Material Specification, Doc. No. 50502-SPE- 80000-PP-SP-0002."
+    },
+    {
+      "type": "ListItem",
+      "text": "2. Weld Joint Factor for welded pipe shall be as per ASME B 31.3."
+    },
+    {
+      "type": "ListItem",
+      "text": "3. Welded fittings shall be 100% radiographed."
+    },
+    {
+      "type": "ListItem",
+      "text": "4. Two jackscrew, 180 degree apart shall be provided in one of the flanges for all orifice flange and specified spectacle blind assemblies."
+    },
+    {
+      "type": "ListItem",
+      "text": "5. Spectacle blinds and spacer sizes and rating that are not available in ASME B 16.48 shall be as per manuf. standard. Design shall be submitted to Company for review and approval."
+    },
+    {
+      "type": "ListItem",
+      "text": "6. Maximum temperature limit for all Soft Seat Ball Valve shall be 200°C."
+    },
+    {
+      "type": "ListItem",
+      "text": "7. Wafer check valve to be avoided, unless the available space constraint does not allow normal check valve."
+    },
+    {
+      "type": "ListItem",
+      "text": "8. Gasket Contact Surface shall have maximum roughness of 63AARH."
+    },
+    {
+      "type": "ListItem",
+      "text": "9. Minimum RTJ groove hardness shall be 120 BHN."
+    }
+  ]
+}

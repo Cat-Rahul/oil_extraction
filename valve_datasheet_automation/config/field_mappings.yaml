@@ -1,0 +1,378 @@
+# Field Mappings Configuration
+# =============================
+# Maps each datasheet field to its data source and resolution rules.
+#
+# Source Types:
+#   - VDS: Derived from VDS number parsing
+#   - PMS: Fetched from PMS data based on piping class
+#   - VALVE_STANDARD: From valve standards (API 6D, etc.)
+#   - PMS_AND_STANDARD: Combined from PMS and standards
+#   - VDS_INDEX: Direct lookup from VDS index
+#   - CALCULATED: Computed from other values
+#   - FIXED: Fixed/constant value
+
+version: "1.0"
+
+# Section definitions with their fields
+sections:
+  # ====================
+  # HEADER SECTION
+  # ====================
+  Header:
+    fields:
+      vds_no:
+        display_name: "VDS No"
+        source: VDS
+        is_required: true
+        description: "Valve Data Sheet number from user input"
+
+      piping_class:
+        display_name: "Piping Class"
+        source: VDS
+        is_required: true
+        description: "Extracted from VDS number"
+
+      size_range:
+        display_name: "Size Range"
+        source: VDS_INDEX
+        is_required: true
+        default: '1/2" - 24"'
+        description: "Size range from VDS Index"
+
+      valve_type:
+        display_name: "Valve Type"
+        source: VDS_INDEX
+        is_required: true
+        default: "Ball Valve, Full Bore"
+        description: "Valve type from VDS Index"
+
+      service:
+        display_name: "Service"
+        source: VDS_INDEX
+        is_required: false
+        description: "Service description from VDS datasheet"
+        default: "-"
+
+  # ====================
+  # DESIGN SECTION
+  # ====================
+  Design:
+    fields:
+      valve_standard:
+        display_name: "Valve Standard"
+        source: VDS_INDEX
+        is_required: true
+        default: "API 6D / ISO 17292"
+        valve_type_defaults:
+          # Legacy 2-char prefix valve types
+          Ball Valve: "API 6D / ISO 17292"
+          Gate Valve: "API 6D / API 600"
+          Check Valve: "API 6D / API 594"
+          Plug Valve: "API 6D / API 599"
+          # 3-char prefix valve types (new format)
+          Ball Valve, Full Bore: "API 6D / ISO 17292"
+          Ball Valve, Reduced Bore: "API 6D / ISO 17292"
+          Gate Valve, Outside Screw and Yoke: "API 600 / API 6D"
+          Globe Valve, Outside Screw and Yoke: "API 602 / BS 1873"
+          Check Valve, Piston Type: "API 602 / BS 1868"
+          Check Valve, Swing Type: "API 6D / API 594"
+          Check Valve, Dual Plate: "API 594"
+          Butterfly Valve: "API 609 / MSS SP-68"
+          Double Block and Bleed Valve: "API 6D"
+          Needle Valve: "ASME B16.34"
+
+      pressure_class:
+        display_name: "Pressure Class"
+        source: VDS_INDEX
+        is_required: true
+        default: "ASME B16.34 Class 150"
+        description: "Pressure rating from VDS Index"
+
+      design_pressure:
+        display_name: "Design Pressure"
+        source: VDS_INDEX
+        is_required: true
+        default: "As per ASME B16.34"
+        description: "Min and max design pressure from VDS Index"
+
+      corrosion_allowance:
+        display_name: "Corrosion Allowance"
+        source: VDS_INDEX
+        is_required: false
+        default: "3 mm"
+        description: "Corrosion allowance from VDS Index"
+
+      sour_service:
+        display_name: "Sour Service Requirements"
+        source: VDS_INDEX
+        is_required: false
+        default: "-"
+        description: "Sour service requirements from VDS Index"
+
+  # ====================
+  # CONFIGURATION SECTION
+  # ====================
+  Configuration:
+    fields:
+      end_connections:
+        display_name: "End Connections"
+        source: VDS_INDEX
+        is_required: true
+        default: "Flanged ASME B16.5 RF"
+        description: "End connections from VDS Index"
+
+      face_to_face:
+        display_name: "Face to Face Dimension"
+        source: VDS_INDEX
+        is_required: true
+        default: "ASME B16.10 Long pattern, quarter turn"
+        description: "Face to face dimension from VDS Index"
+
+      operation:
+        display_name: "Operation"
+        source: VDS_INDEX
+        is_required: true
+        default: 'Lever (4" and below), Gear operated c/w Hand wheel (6" and above)'
+        description: "Operation from VDS Index"
+
+  # ====================
+  # CONSTRUCTION SECTION
+  # ====================
+  Construction:
+    fields:
+      body_construction:
+        display_name: "Body"
+        source: VDS_INDEX
+        is_required: true
+        default: 'Forged, Two Piece (<=1.5"), Cast, Two/Three Piece (>1.5")'
+        description: "Body construction from VDS Index"
+
+      ball_construction:
+        display_name: "Ball"
+        source: VDS_INDEX
+        is_required: false
+        description: "Ball construction from VDS Index (Ball valves only)"
+
+      disc_construction:
+        display_name: "Disc"
+        source: VDS_INDEX
+        is_required: false
+        description: "Disc construction from VDS Index (Butterfly/Check/Globe valves)"
+
+      wedge_construction:
+        display_name: "Wedge"
+        source: VDS_INDEX
+        is_required: false
+        description: "Wedge construction from VDS Index (Gate valves only)"
+
+      stem_construction:
+        display_name: "Stem"
+        source: VDS_INDEX
+        is_required: false
+        description: "Stem construction from VDS Index"
+
+      shaft_construction:
+        display_name: "Shaft"
+        source: VDS_INDEX
+        is_required: false
+        description: "Shaft construction from VDS Index (Butterfly valves only)"
+
+      seat_construction:
+        display_name: "Seat"
+        source: VDS_INDEX
+        is_required: true
+        default: "Soft seated, Renewable"
+        description: "Seat construction from VDS Index"
+
+      locks:
+        display_name: "Locks"
+        source: VDS_INDEX
+        is_required: false
+        default: "Valve lockable using padlock - Full Open, Fully Closed"
+        description: "Locks from VDS Index"
+
+  # ====================
+  # MATERIAL SECTION
+  # ====================
+  Material:
+    fields:
+      body_material:
+        display_name: "Body Material"
+        source: VDS_INDEX
+        is_required: true
+        default: "ASTM A105N / ASTM A216 WCB"
+        description: "Body material from VDS Index"
+
+      ball_material:
+        display_name: "Ball Material"
+        source: VDS_INDEX
+        is_required: false
+        description: "Ball material from VDS Index (Ball valves only)"
+
+      disc_material:
+        display_name: "Disc Material"
+        source: VDS_INDEX
+        is_required: false
+        description: "Disc material from VDS Index (Butterfly/Check/Globe valves)"
+
+      wedge_material:
+        display_name: "Wedge Material"
+        source: VDS_INDEX
+        is_required: false
+        description: "Wedge material from VDS Index (Gate valves only)"
+
+      trim_material:
+        display_name: "Trim Material"
+        source: VDS_INDEX
+        is_required: false
+        description: "Trim material from VDS Index"
+
+      seat_material:
+        display_name: "Seat Material"
+        source: VDS_INDEX
+        is_required: true
+        default: "Reinforced PTFE"
+        description: "Seat material from VDS Index"
+
+      seal_material:
+        display_name: "Seal Material"
+        source: VDS_INDEX
+        is_required: false
+        default: "PTFE"
+        description: "Seal material from VDS Index"
+
+      stem_material:
+        display_name: "Stem Material"
+        source: VDS_INDEX
+        is_required: false
+        description: "Stem material from VDS Index"
+
+      shaft_material:
+        display_name: "Shaft Material"
+        source: VDS_INDEX
+        is_required: false
+        description: "Shaft material from VDS Index (Butterfly valves only)"
+
+      gland_material:
+        display_name: "Gland Material"
+        source: VDS_INDEX
+        is_required: false
+        default: "ASTM A182 F6A CL 2"
+        description: "Gland material from VDS Index"
+
+      gland_packing:
+        display_name: "Gland Packing"
+        source: VDS_INDEX
+        is_required: false
+        default: "Graphite / PTFE"
+        description: "Gland packing from VDS Index"
+
+      lever_handwheel:
+        display_name: "Lever / Handwheel"
+        source: VDS_INDEX
+        is_required: false
+        default: "Carbon Steel, Painted"
+        description: "Lever/Handwheel from VDS Index"
+
+      spring_material:
+        display_name: "Spring"
+        source: VDS_INDEX
+        is_required: false
+        default: "Inconel 750"
+        description: "Spring material from VDS Index"
+
+      gaskets:
+        display_name: "Gaskets"
+        source: VDS_INDEX
+        is_required: true
+        default: "SS316/SS316L Spiral Wound with F.G. filler"
+        description: "Gaskets from VDS Index"
+
+      bolts:
+        display_name: "Bolts"
+        source: VDS_INDEX
+        is_required: true
+        default: "ASTM A193 Gr. B7M, PTFE/Xylan Coated"
+        description: "Bolts from VDS Index"
+
+      nuts:
+        display_name: "Nuts"
+        source: VDS_INDEX
+        is_required: true
+        default: "ASTM A194 Gr. 2HM, PTFE/Xylan Coated"
+        description: "Nuts from VDS Index"
+
+  # ====================
+  # TESTING SECTION
+  # ====================
+  Testing:
+    fields:
+      marking_purchaser:
+        display_name: "Marking - Purchaser's Specification"
+        source: VDS_INDEX
+        is_required: false
+        default: "Hard marked with Valve Type on SS label"
+        description: "Marking purchaser spec from VDS Index"
+
+      marking_manufacturer:
+        display_name: "Marking - Manufacturer"
+        source: VDS_INDEX
+        is_required: false
+        default: "MSS-SP-25"
+        description: "Marking manufacturer from VDS Index"
+
+      inspection_testing:
+        display_name: "Inspection - Testing"
+        source: VDS_INDEX
+        is_required: true
+        default: "ASME B16.34, API 598"
+        description: "Inspection testing from VDS Index"
+
+      leakage_rate:
+        display_name: "Leakage Rate"
+        source: VDS_INDEX
+        is_required: true
+        default: "As per API 598"
+        description: "Leakage rate from VDS Index"
+
+      hydrotest_shell:
+        display_name: "Hydrotest Shell Test Pressure"
+        source: VDS_INDEX
+        is_required: true
+        default: "As per API 598"
+        description: "Hydrotest shell pressure from VDS Index"
+
+      hydrotest_closure:
+        display_name: "Hydrotest Closure Test Pressure"
+        source: VDS_INDEX
+        is_required: true
+        default: "As per API 598"
+        description: "Hydrotest closure pressure from VDS Index"
+
+      pneumatic_test:
+        display_name: "Pneumatic LP Test Pressure"
+        source: VDS_INDEX
+        is_required: false
+        default: "5.5 barg"
+        description: "Pneumatic test pressure from VDS Index"
+
+      material_certification:
+        display_name: "Material Certification"
+        source: VDS_INDEX
+        is_required: true
+        default: "Pressure Retaining Parts EN 10204 3.2, Other parts EN 10204 3.1"
+        description: "Material certification from VDS Index"
+
+      fire_rating:
+        display_name: "Fire Rating"
+        source: VDS_INDEX
+        is_required: true
+        default: "API 607 / ISO 10497"
+        description: "Fire rating from VDS Index"
+
+      finish:
+        display_name: "Finish/General Specification"
+        source: VDS_INDEX
+        is_required: false
+        default: "As per General Specification for Paint and Protective Coating"
+        description: "Finish specification from VDS Index"

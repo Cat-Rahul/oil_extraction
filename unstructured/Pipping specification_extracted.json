@@ -1,0 +1,886 @@
+{
+  "file": "Pipping specification.xlsx",
+  "file_type": "excel",
+  "total_sheets": 1,
+  "sheets": [
+    {
+      "sheet_name": "Sheet1",
+      "tables": [
+        {
+          "headers": [
+            "Piping Class",
+            "Material",
+            "C.A",
+            "Mill Tol",
+            "Sheet No."
+          ],
+          "rows": [
+            {
+              "Piping Class": "A1",
+              "Material": "CS",
+              "C.A": "3 mm",
+              "Mill Tol": "0.125",
+              "Sheet No.": "24"
+            },
+            {
+              "Piping Class": "Design Code:",
+              "Material": "",
+              "C.A": "",
+              "Mill Tol": "",
+              "Sheet No.": ""
+            },
+            {
+              "Piping Class": "Service:",
+              "Material": "",
+              "C.A": "",
+              "Mill Tol": "",
+              "Sheet No.": ""
+            },
+            {
+              "Piping Class": "Branch Chart:",
+              "Material": "",
+              "C.A": "",
+              "Mill Tol": "",
+              "Sheet No.": ""
+            }
+          ],
+          "row_count": 4,
+          "column_count": 5,
+          "raw_headers": [
+            "Piping Class",
+            "",
+            "",
+            "",
+            "Material",
+            "",
+            "",
+            "C.A",
+            "",
+            "Mill Tol",
+            "",
+            "Sheet No."
+          ]
+        },
+        {
+          "headers": [
+            "Pipe Data"
+          ],
+          "rows": [
+            {
+              "Pipe Data": "Code"
+            },
+            {
+              "Pipe Data": "Size(in)"
+            },
+            {
+              "Pipe Data": "O.D.mm"
+            },
+            {
+              "Pipe Data": "Sch."
+            },
+            {
+              "Pipe Data": "WT. mm"
+            },
+            {
+              "Pipe Data": "TYPE"
+            },
+            {
+              "Pipe Data": "MOC"
+            },
+            {
+              "Pipe Data": "Ends"
+            },
+            {
+              "Pipe Data": "Fittings Data"
+            },
+            {
+              "Pipe Data": "TYPE"
+            },
+            {
+              "Pipe Data": "MOC"
+            },
+            {
+              "Pipe Data": "Elbow"
+            },
+            {
+              "Pipe Data": "Tee"
+            },
+            {
+              "Pipe Data": "Red."
+            },
+            {
+              "Pipe Data": "Cap"
+            },
+            {
+              "Pipe Data": "Plug"
+            },
+            {
+              "Pipe Data": "Weldolet"
+            },
+            {
+              "Pipe Data": "Flange"
+            },
+            {
+              "Pipe Data": "MOC"
+            },
+            {
+              "Pipe Data": "FACE"
+            },
+            {
+              "Pipe Data": "TYPE"
+            },
+            {
+              "Pipe Data": "Spectacle Blind/Spacer Blinds"
+            },
+            {
+              "Pipe Data": "MOC"
+            },
+            {
+              "Pipe Data": "Spectacle"
+            },
+            {
+              "Pipe Data": "Bolts/ Nuts/ Gaskets"
+            },
+            {
+              "Pipe Data": "Stud Bolts"
+            },
+            {
+              "Pipe Data": "Hex Nuts"
+            },
+            {
+              "Pipe Data": "Gasket"
+            },
+            {
+              "Pipe Data": "Valves"
+            },
+            {
+              "Pipe Data": "Rating"
+            },
+            {
+              "Pipe Data": "Ball"
+            },
+            {
+              "Pipe Data": "Gate"
+            },
+            {
+              "Pipe Data": "Globe"
+            },
+            {
+              "Pipe Data": "Check"
+            }
+          ],
+          "row_count": 34,
+          "column_count": 1,
+          "raw_headers": [
+            "Pipe Data",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "headers": [
+            "Piping Class",
+            "Material",
+            "C.A",
+            "Mill Tol",
+            "Sheet No."
+          ],
+          "rows": [
+            {
+              "Piping Class": "B1",
+              "Material": "CS",
+              "C.A": "3 mm",
+              "Mill Tol": "0.125",
+              "Sheet No.": "25"
+            },
+            {
+              "Piping Class": "Design Code:",
+              "Material": "",
+              "C.A": "",
+              "Mill Tol": "",
+              "Sheet No.": ""
+            },
+            {
+              "Piping Class": "Service:",
+              "Material": "",
+              "C.A": "",
+              "Mill Tol": "",
+              "Sheet No.": ""
+            },
+            {
+              "Piping Class": "Branch Chart:",
+              "Material": "",
+              "C.A": "",
+              "Mill Tol": "",
+              "Sheet No.": ""
+            }
+          ],
+          "row_count": 4,
+          "column_count": 5,
+          "raw_headers": [
+            "Piping Class",
+            "",
+            "",
+            "",
+            "Material",
+            "",
+            "",
+            "C.A",
+            "",
+            "Mill Tol",
+            "",
+            "Sheet No."
+          ]
+        },
+        {
+          "headers": [
+            "Pipe Data"
+          ],
+          "rows": [
+            {
+              "Pipe Data": "Code"
+            },
+            {
+              "Pipe Data": "Size(in)"
+            },
+            {
+              "Pipe Data": "O.D.mm"
+            },
+            {
+              "Pipe Data": "Sch."
+            },
+            {
+              "Pipe Data": "WT. mm"
+            },
+            {
+              "Pipe Data": "TYPE"
+            },
+            {
+              "Pipe Data": "MOC"
+            },
+            {
+              "Pipe Data": "Ends"
+            },
+            {
+              "Pipe Data": "Fittings Data"
+            },
+            {
+              "Pipe Data": "TYPE"
+            },
+            {
+              "Pipe Data": "MOC"
+            },
+            {
+              "Pipe Data": "Elbow"
+            },
+            {
+              "Pipe Data": "Tee"
+            },
+            {
+              "Pipe Data": "Red."
+            },
+            {
+              "Pipe Data": "Cap"
+            },
+            {
+              "Pipe Data": "Plug"
+            },
+            {
+              "Pipe Data": "Weldolet"
+            },
+            {
+              "Pipe Data": "Flange"
+            },
+            {
+              "Pipe Data": "MOC"
+            },
+            {
+              "Pipe Data": "FACE"
+            },
+            {
+              "Pipe Data": "TYPE"
+            },
+            {
+              "Pipe Data": "Spectacle Blind/Spacer Blinds"
+            },
+            {
+              "Pipe Data": "MOC"
+            },
+            {
+              "Pipe Data": "Spectacle"
+            },
+            {
+              "Pipe Data": "Bolts/ Nuts/ Gaskets"
+            },
+            {
+              "Pipe Data": "Stud Bolts"
+            },
+            {
+              "Pipe Data": "Hex Nuts"
+            },
+            {
+              "Pipe Data": "Gasket"
+            },
+            {
+              "Pipe Data": "Valves"
+            },
+            {
+              "Pipe Data": "Rating"
+            },
+            {
+              "Pipe Data": "Ball"
+            },
+            {
+              "Pipe Data": "Gate"
+            },
+            {
+              "Pipe Data": "Globe"
+            },
+            {
+              "Pipe Data": "Check"
+            }
+          ],
+          "row_count": 34,
+          "column_count": 1,
+          "raw_headers": [
+            "Pipe Data",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "headers": [
+            "Piping Class",
+            "Material",
+            "C.A",
+            "Mill Tol",
+            "Sheet NO"
+          ],
+          "rows": [
+            {
+              "Piping Class": "D1",
+              "Material": "CS",
+              "C.A": "3 mm",
+              "Mill Tol": "0.125",
+              "Sheet NO": "26"
+            },
+            {
+              "Piping Class": "Design Code:",
+              "Material": "",
+              "C.A": "",
+              "Mill Tol": "",
+              "Sheet NO": ""
+            },
+            {
+              "Piping Class": "Service:",
+              "Material": "",
+              "C.A": "",
+              "Mill Tol": "",
+              "Sheet NO": ""
+            },
+            {
+              "Piping Class": "Branch Chart:",
+              "Material": "",
+              "C.A": "",
+              "Mill Tol": "",
+              "Sheet NO": ""
+            }
+          ],
+          "row_count": 4,
+          "column_count": 5,
+          "raw_headers": [
+            "Piping Class",
+            "",
+            "",
+            "",
+            "Material",
+            "",
+            "",
+            "C.A",
+            "",
+            "Mill Tol",
+            "",
+            "Sheet NO"
+          ]
+        },
+        {
+          "headers": [
+            "Pipe Data"
+          ],
+          "rows": [
+            {
+              "Pipe Data": "Code"
+            },
+            {
+              "Pipe Data": "Size(in)"
+            },
+            {
+              "Pipe Data": "O.D.mm"
+            },
+            {
+              "Pipe Data": "Sch."
+            },
+            {
+              "Pipe Data": "WT. mm"
+            },
+            {
+              "Pipe Data": "TYPE"
+            },
+            {
+              "Pipe Data": "MOC"
+            },
+            {
+              "Pipe Data": "Ends"
+            },
+            {
+              "Pipe Data": "Fittings Data"
+            },
+            {
+              "Pipe Data": "TYPE"
+            },
+            {
+              "Pipe Data": "MOC"
+            },
+            {
+              "Pipe Data": "Elbow"
+            },
+            {
+              "Pipe Data": "Tee"
+            },
+            {
+              "Pipe Data": "Red."
+            },
+            {
+              "Pipe Data": "Cap"
+            },
+            {
+              "Pipe Data": "Plug"
+            },
+            {
+              "Pipe Data": "Weldolet"
+            },
+            {
+              "Pipe Data": "Flange"
+            },
+            {
+              "Pipe Data": "MOC"
+            },
+            {
+              "Pipe Data": "FACE"
+            },
+            {
+              "Pipe Data": "TYPE"
+            },
+            {
+              "Pipe Data": "Spectacle Blind/Spacer Blinds"
+            },
+            {
+              "Pipe Data": "MOC"
+            },
+            {
+              "Pipe Data": "Spectacle"
+            },
+            {
+              "Pipe Data": "Bolts/ Nuts/ Gaskets"
+            },
+            {
+              "Pipe Data": "Stud Bolts"
+            },
+            {
+              "Pipe Data": "Hex Nuts"
+            },
+            {
+              "Pipe Data": "Gasket"
+            },
+            {
+              "Pipe Data": "Valves"
+            },
+            {
+              "Pipe Data": "Rating"
+            },
+            {
+              "Pipe Data": "Ball"
+            },
+            {
+              "Pipe Data": "Gate"
+            },
+            {
+              "Pipe Data": "Globe"
+            },
+            {
+              "Pipe Data": "Check"
+            }
+          ],
+          "row_count": 34,
+          "column_count": 1,
+          "raw_headers": [
+            "Pipe Data",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "headers": [
+            "Piping Class",
+            "Material",
+            "C.A",
+            "Mill Tol",
+            "Sheet No."
+          ],
+          "rows": [
+            {
+              "Piping Class": "E1",
+              "Material": "CS",
+              "C.A": "3 mm",
+              "Mill Tol": "0.125",
+              "Sheet No.": "27"
+            },
+            {
+              "Piping Class": "Design Code:",
+              "Material": "",
+              "C.A": "",
+              "Mill Tol": "",
+              "Sheet No.": ""
+            },
+            {
+              "Piping Class": "Service:",
+              "Material": "",
+              "C.A": "",
+              "Mill Tol": "",
+              "Sheet No.": ""
+            },
+            {
+              "Piping Class": "Branch Chart:",
+              "Material": "",
+              "C.A": "",
+              "Mill Tol": "",
+              "Sheet No.": ""
+            }
+          ],
+          "row_count": 4,
+          "column_count": 5,
+          "raw_headers": [
+            "Piping Class",
+            "",
+            "",
+            "",
+            "Material",
+            "",
+            "",
+            "C.A",
+            "",
+            "Mill Tol",
+            "",
+            "Sheet No."
+          ]
+        },
+        {
+          "headers": [
+            "Pipe Data"
+          ],
+          "rows": [
+            {
+              "Pipe Data": "Code"
+            },
+            {
+              "Pipe Data": "Size(in)"
+            },
+            {
+              "Pipe Data": "O.D.mm"
+            },
+            {
+              "Pipe Data": "Sch."
+            },
+            {
+              "Pipe Data": "WT. mm"
+            },
+            {
+              "Pipe Data": "TYPE"
+            },
+            {
+              "Pipe Data": "MOC"
+            },
+            {
+              "Pipe Data": "Ends"
+            },
+            {
+              "Pipe Data": "Fittings Data"
+            },
+            {
+              "Pipe Data": "TYPE"
+            },
+            {
+              "Pipe Data": "MOC"
+            },
+            {
+              "Pipe Data": "Elbow"
+            },
+            {
+              "Pipe Data": "Tee"
+            },
+            {
+              "Pipe Data": "Red."
+            },
+            {
+              "Pipe Data": "Cap"
+            },
+            {
+              "Pipe Data": "Plug"
+            },
+            {
+              "Pipe Data": "Weldolet"
+            },
+            {
+              "Pipe Data": "Flange"
+            },
+            {
+              "Pipe Data": "MOC"
+            },
+            {
+              "Pipe Data": "FACE"
+            },
+            {
+              "Pipe Data": "TYPE"
+            },
+            {
+              "Pipe Data": "Spectacle Blind/Spacer Blinds"
+            },
+            {
+              "Pipe Data": "MOC"
+            },
+            {
+              "Pipe Data": "Spectacle"
+            },
+            {
+              "Pipe Data": "Bolts/ Nuts/ Gaskets"
+            },
+            {
+              "Pipe Data": "Stud Bolts"
+            },
+            {
+              "Pipe Data": "Hex Nuts"
+            },
+            {
+              "Pipe Data": "Gasket"
+            },
+            {
+              "Pipe Data": "Valves"
+            },
+            {
+              "Pipe Data": "Rating"
+            },
+            {
+              "Pipe Data": "Ball"
+            },
+            {
+              "Pipe Data": "Gate"
+            },
+            {
+              "Pipe Data": "Globe"
+            },
+            {
+              "Pipe Data": "Check"
+            },
+            {
+              "Pipe Data": "DBB (Inst)"
+            },
+            {
+              "Pipe Data": "DBB"
+            }
+          ],
+          "row_count": 36,
+          "column_count": 1,
+          "raw_headers": [
+            "Pipe Data",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      ],
+      "table_count": 8,
+      "text_blocks": [
+        {
+          "type": "Title",
+          "text": "Pressure-Temperature Rating"
+        },
+        {
+          "type": "Title",
+          "text": "Notes"
+        },
+        {
+          "type": "ListItem",
+          "text": "1. PMS to be read in conjunction with Piping Design Basis, Doc No. 50502-SPE- 80000-PP-BD-0001 and Valve Material Specification, Doc. No. 50502-SPE- 80000-PP-SP-0002."
+        },
+        {
+          "type": "ListItem",
+          "text": "2. Weld Joint Factor for welded pipe shall be as per ASME B 31.3."
+        },
+        {
+          "type": "ListItem",
+          "text": "3. Welded fittings shall be 100% radiographed."
+        },
+        {
+          "type": "ListItem",
+          "text": "4. Two jackscrew, 180 degree apart shall be provided in one of the flanges for all orifice flange and specified spectacle blind assemblies."
+        },
+        {
+          "type": "ListItem",
+          "text": "5. Spectacle blinds and spacer sizes and rating that are not available in ASME B 16.48 shall be as per manuf. standard. Design shall be submitted to Company for review and approval."
+        },
+        {
+          "type": "ListItem",
+          "text": "6. Maximum temperature limit for all Soft Seat Ball Valve shall be 200°C."
+        },
+        {
+          "type": "ListItem",
+          "text": "7. Wafer check valve to be avoided, unless the available space constraint does not allow normal check valve."
+        },
+        {
+          "type": "Title",
+          "text": "Pressure-Temperature Rating"
+        },
+        {
+          "type": "Title",
+          "text": "Notes"
+        },
+        {
+          "type": "ListItem",
+          "text": "1. PMS to be read in conjunction with Piping Design Basis, Doc No. 50502-SPE- 80000-PP-BD-0001 and Valve Material Specification, Doc. No. 50502-SPE- 80000-PP-SP-0002."
+        },
+        {
+          "type": "ListItem",
+          "text": "2. Weld Joint Factor for welded pipe shall be as per ASME B 31.3."
+        },
+        {
+          "type": "ListItem",
+          "text": "3. Welded fittings shall be 100% radiographed."
+        },
+        {
+          "type": "ListItem",
+          "text": "4. Two jackscrew, 180 degree apart shall be provided in one of the flanges for all orifice flange and specified spectacle blind assemblies."
+        },
+        {
+          "type": "ListItem",
+          "text": "5. Spectacle blinds and spacer sizes and rating that are not available in ASME B 16.48 shall be as per manuf. standard. Design shall be submitted to Company for review and approval."
+        },
+        {
+          "type": "ListItem",
+          "text": "6. Maximum temperature limit for all Soft Seat Ball Valve shall be 200°C."
+        },
+        {
+          "type": "ListItem",
+          "text": "7. Wafer check valve to be avoided, unless the available space constraint does not allow normal check valve."
+        },
+        {
+          "type": "Title",
+          "text": "Pressure-Temperature Rating"
+        },
+        {
+          "type": "Title",
+          "text": "Pressure-Temperature Rating"
+        },
+        {
+          "type": "Title",
+          "text": "Notes"
+        },
+        {
+          "type": "ListItem",
+          "text": "1. PMS to be read in conjunction with Piping Design Basis, Doc No. 50502-SPE- 80000-PP-BD-0001 and Valve Material Specification, Doc. No. 50502-SPE- 80000-PP-SP-0002."
+        },
+        {
+          "type": "ListItem",
+          "text": "2. Weld Joint Factor for welded pipe shall be as per ASME B 31.3."
+        },
+        {
+          "type": "ListItem",
+          "text": "3. Welded fittings shall be 100% radiographed."
+        },
+        {
+          "type": "ListItem",
+          "text": "4. Two jackscrew, 180 degree apart shall be provided in one of the flanges for all orifice flange and specified spectacle blind assemblies."
+        },
+        {
+          "type": "ListItem",
+          "text": "5. Spectacle blinds and spacer sizes and rating that are not available in ASME B 16.48 shall be as per manuf. standard. Design shall be submitted to Company for review and approval."
+        },
+        {
+          "type": "ListItem",
+          "text": "6. Maximum temperature limit for all Soft Seat Ball Valve shall be 200°C."
+        },
+        {
+          "type": "ListItem",
+          "text": "7. Wafer check valve to be avoided, unless the available space constraint does not allow normal check valve."
+        },
+        {
+          "type": "ListItem",
+          "text": "8. Gasket Contact Surface shall have maximum roughness of 63AARH."
+        },
+        {
+          "type": "ListItem",
+          "text": "9. Minimum RTJ groove hardness shall be 120 BHN."
+        }
+      ],
+      "text_block_count": 30
+    }
+  ]
+}

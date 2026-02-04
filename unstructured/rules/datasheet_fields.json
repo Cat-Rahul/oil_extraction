@@ -1,0 +1,32 @@
+[
+  {
+    "field": "Fire Safe Design",
+    "include": ["fire", "fire safe", "api 607", "api 6fa"],
+    "exclude": []
+  },
+  {
+    "field": "Pressure Rating",
+    "include": ["pressure–temperature", "pressure temperature", "class"],
+    "exclude": ["test", "hydrostatic"]
+  },
+  {
+    "field": "Hydrostatic Test Pressure",
+    "include": ["hydrostatic", "pressure test", "shell test"],
+    "exclude": []
+  },
+  {
+    "field": "Seat Leakage",
+    "include": ["seat", "leakage"],
+    "exclude": []
+  },
+  {
+    "field": "Body Material",
+    "include": ["material", "body", "trim"],
+    "exclude": []
+  },
+  {
+    "field": "Design Standard",
+    "include": ["design", "design code"],
+    "exclude": []
+  }
+]

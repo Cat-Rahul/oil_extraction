@@ -1,0 +1,1633 @@
+[
+  {
+    "standard": "API 6D",
+    "section": "1",
+    "clause": "1.1",
+    "title": "General",
+    "text": " This specification defines the requirements for the design, manufacturing, assembly, testing, and documentation of ball, check, gate, and plug valves for application in pipeline and piping systems for the petroleum and natural gas industries. This specification is not applicable to subsea pipeline valves, as they are covered by a separate specification, API 6DSS. This specification is not applicable to valves for pressure ratings exceeding Class 2500. If product is supplied bearing the API Monogram and manufactured at a facility licensed by API, the requirements of Annex A applies. Annexes B, C, D, E, F, G, H, I, J, K, L, M, N, and O are annexes that are used in order listed.",
+    "page": 15,
+    "rule_type": "informational",
+    "normative_references": [
+      "API 6DSS",
+      "API MONOGRAM"
+    ],
+    "applies_to": [
+      "Ball Valve",
+      "Check Valve",
+      "Gate Valve",
+      "Plug Valve"
+    ],
+    "datasheet_field": "Design Standard"
+  },
+  {
+    "standard": "API 6D",
+    "section": "1",
+    "clause": "1.2.1",
+    "title": "Units of Measurement",
+    "text": " In this specification, data are expressed in both U.S. customary (USC) and metric (SI) units.",
+    "page": 15,
+    "rule_type": "informational",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "1",
+    "clause": "1.2.2",
+    "title": "Rounding",
+    "text": " Except as otherwise required by this specification, to determine conformance with the specified requirements, observed or calculated values shall be rounded to the nearest unit in the last right-hand place of figures used in expressing the limiting value, in accordance with the rounding method of ASTM E29 or ISO 80000-1, Annex B, Rule A.",
+    "page": 15,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "ASTM E29",
+      "ISO 80000"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "1",
+    "clause": "1.3",
+    "title": "Conformance with Specification",
+    "text": " A quality management system shall be applied to assist conformance with the requirements of this specification. The manufacturer shall be responsible for conforming with all of the applicable requirements of this specification. It shall be permissible for the purchaser to make any investigation necessary in order to be assured of conformance by the manufacturer and to reject any material that does not conform.",
+    "page": 15,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Body Material"
+  },
+  {
+    "standard": "API 6D",
+    "section": "1",
+    "clause": "1.4",
+    "title": "Processes Requiring Validation",
+    "text": " The following operations performed during manufacturing shall be validated, by the manufacturer, in accordance with their quality system as applicable: — nondestructive examination (NDE)—reference 8.1; 2 API SPECIFICATION 6D 2 Normative References",
+    "page": 15,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "API SPECIFICATION"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "NR",
+    "clause": "NR",
+    "title": "Normative References",
+    "text": " API Standard 6DX, Standard for Actuator Sizing and Mounting Kits for Pipeline Valves API Specification 6FA, Specification for Fire Test for Valves API Specification 6FD, Specification for Fire Test for Check Valves API Standard 607, Fire Test for Quarter-turn Valves and Valves Equipped with Nonmetallic Seats ASME B1.20.1 1, Pipe Threads, General Purpose, Inch ASME B16.5, Pipe Flanges and Flanged Fitting: NPS 1/2 through 24 ASME B16.10, Face-to-Face and End-to-End Dimensions of Valves ASME B16.25, Buttwelding Ends ASME B16.34, Valves, Flanged, Threaded, and Welding End ASME B16.47, Large Diameter Steel Flanges: NPS 26 through NPS 60 Metric/Inch Standard ASME B31.3, Process Piping ASME B31.4, Pipeline Transportation Systems for Liquid Hydrocarbons and Other Liquids, 2012 ASME B31.8, Gas Transmission and Distribution Piping Systems ASME Boiler and Pressure Vessel Code (BPVC), Section II: Materials, Part D: Properties, 2013 ASME Boiler and Pressure Vessel Code (BPVC), Section V: Nondestructive Examination, 2013 ASME Boiler and Pressure Vessel Code (BPVC), Section VIII: Rules for Construction of Pressure Vessels; Division 1: Rules for Construction of Pressure Vessels, 2013 ASME Boiler and Pressure Vessel Code (BPVC), Section VIII: Rules for Construction of Pressure Vessels; Division 2: Alternative Rules, 2013 ASME Boiler and Pressure Vessel Code (BPVC), Section IX: Welding and Brazing Qualifications, 2013 ASNT SNT-TC-1A 2, Recommended Practice No. SNT-TC-1A—Personnel Qualification and Certification in Non- Destructive Testing ASTM A320 3, Standard Specification for Alloy-Steel and Stainless Steel Bolting Materials for Low-Temperature Service ASTM A370, Standard Test Methods and Definitions for Mechanical Testing of Steel Products ASTM A578A/A578M, Standard Specification for Straight-Beam Ultrasonic Examination of Rolled Steel Plates for Special Applications SPECIFICATION FOR PIPELINE AND PIPING VALVES ASTM A609/A609M, Standard Practice for Castings, Carbon, Low-Alloy, and Martensitic Stainless Steel, Ultrasonic Examination Thereof ASTM E8, Standard Test Methods for Tension Testing of Metallic Materials AWS QC1 4, Standard for AWS Certification of Welding Inspectors EN 287-1 5, Qualification test of welders—Fusion welding—Part 1: Steels EN 10204, Metallic products—Type of inspection documents ISO 148-1 6, Metallic materials—Charpy pendulum impact test—Part 1: Test method ISO 228-1, Pipe threads where pressure-tight joints are not made on the threads—Part 1: Dimensions, tolerances and designation ISO 5208:2015, Industrial valves—Pressure testing of valves ISO 6892-1, Metallic materials—Tensile testing—Part 1: Method of test at room temperature ISO 9606-1, Approval testing of welders—Fusion welding—Part 1: Steels ISO 9712, Non-destructive testing—Qualification and certification of personnel ISO 10474, Steel and steel products—Inspection documents ISO 10497, Testing of valves—Fire type-testing requirements ISO 15156 (all parts), Petroleum and natural gas industries—Materials for use in H2S-containing environments in oil and gas production ISO 15607, Specification and qualification of welding procedures for metallic materials—General rules ISO TR 15608:2013, Welding—Guidelines for a Metallic Materials Grouping System ISO 15609 (all parts), Specification and qualification of welding procedures for metallic materials—Welding procedure specification ISO 15614-1, Specification and qualification of welding procedures for metallic materials—Welding procedure test— Part 1: Arc and gas welding of steels and arc welding of nickel and nickel alloys ISO 15614-7, Specification and qualification of welding procedures for metallic materials—Welding procedure test— Part 7: Overlay welding ISO 80000-1:2009, Quantities and units—General principles MSS SP-44 7, Steel Pipeline Flanges MSS SP-55, Quality Standard for Steel Castings for Valves, Flanges and Fittings and Other Piping Components— Visual Method for Evaluation of Surface Irregularities 4 American Welding Society, 8669 NW 36 Street, #130, Miami, Florida 33166-6672, www.aws.org. 5 European Committee for Standardization, Avenue Marnix 17, B-1000 Brussels, Belgium, www.cen.eu. 6 International Organization for Standardization, 1, ch. de la Voie-Creuse, Case postale 56, CH-1211 Geneva 20, Switzerland, www.iso.org. 7 Manufacturers Standardization Society of the Valve and Fittings Industry, Inc., 127 Park Street, NE, Vienna, Virginia 22180- 4602, www.mss-hq.com. 3 4 API SPECIFICATION 6D NACE MR0103 8, Materials Resistant to Sulfide Stress Cracking in Corrosive Petroleum Refining Environments NACE MR0175 (all parts), Petroleum and natural gas industries—Materials for use in H2S-containing environments in oil and gas production SAE AMS 2750, Pyrometry 3 Terms, Definitions, Acronyms, Abbreviations, Symbols, and Units",
+    "page": 16,
+    "rule_type": "informational",
+    "normative_references": [
+      "API SPECIFICATION",
+      "API STANDARD",
+      "ASME B1.20.1",
+      "ASME B16.10",
+      "ASME B16.25",
+      "ASME B16.34",
+      "ASME B16.47",
+      "ASME B16.5",
+      "ASME B31.3",
+      "ASME B31.4",
+      "ASME B31.8",
+      "ASME BOILER",
+      "ASTM A320",
+      "ASTM A370",
+      "ASTM A578A",
+      "ASTM A609",
+      "ASTM E8",
+      "EN 10204",
+      "EN 287",
+      "ISO 10474",
+      "ISO 10497",
+      "ISO 148",
+      "ISO 15156",
+      "ISO 15607",
+      "ISO 15609",
+      "ISO 15614",
+      "ISO 228",
+      "ISO 5208",
+      "ISO 6892",
+      "ISO 80000",
+      "ISO 9606",
+      "ISO 9712",
+      "MSS SP-44",
+      "MSS SP-55",
+      "MSS-HQ",
+      "NACE MR0103",
+      "NACE MR0175"
+    ],
+    "applies_to": [
+      "Check Valve"
+    ],
+    "datasheet_field": "Fire Safe Design"
+  },
+  {
+    "standard": "API 6D",
+    "section": "3",
+    "clause": "3.1",
+    "title": "Terms and Definitions",
+    "text": " For the purposes of this document, the following definitions apply. 3.1.1 assembler/manufacturer An organization that performs assembly as defined in 3.1.2 and conforms to the requirements of Section 14. NOTE The terms assembler and manufacturer are used interchangeably throughout this document and are considered to be equivalent. 3.1.2 assembly The association of multiple parts/components into a finished product, including as a minimum, installation of all pressure-containing parts and pressure-controlling parts needed to ensure conformance to applicable pressure testing requirements. 3.1.3 bidirectional seat Valve seat designed to seal against pressure source in either direction. 3.1.4 bidirectional valve Valve designed for blocking the fluid in both downstream and upstream directions. 3.1.5 bleed Drain or vent. 3.1.6 block valve Gate, plug, or ball valve that blocks flow into the downstream conduit when in the closed position. NOTE Valves are either single seated or double seated and either bidirectional or unidirectional. 3.1.7 3.1.7 block and bleed valve BB Single valve with at least one seating surface that, in the closed position, provides a seal against pressure from one end of the valve with the body vented. 3.1.8 breakaway thrust breakaway torque Maximum thrust or torque required to operate a valve at maximum pressure differential. SPECIFICATION FOR PIPELINE AND PIPING VALVES 3.1.9 by agreement Agreed between manufacturer and purchaser. 3.1.10 double block and bleed valve DBB Single valve with two seating surfaces that, in the closed position, provides a seal against pressure from both ends of the valve with a means of venting/bleeding the cavity between the seating surfaces. NOTE This valve does not provide positive double isolation when only one side is under pressure. See double isolation and bleed valve (3.1.11). 3.1.11 double isolation and bleed valve DIB Single valve with two seating surfaces, each of which, in the closed position, provides a seal against pressure from a single source, with a means of venting/bleeding the cavity between the seating surfaces. NOTE This feature can be provided in one direction or in both directions. 3.1.12 downstream The side of the valve where there would be no pressure or a lower pressure. NOTE 1 Where the valve is bidirectional, this reference may change sides. NOTE 2 The term does not refer to flow direction. 3.1.13 drive train All parts of a valve drive between the operator and the obturator, including the obturator but excluding the operator. 3.1.14 ductile material Material that fractures after achieving more than 0.5 % extension of the gauge length when loaded in tension. 3.1.15 flow coefficient Kv Volumetric flow rate of water at a temperature between 5 °C (40 °F) and 40 °C (104 °F) passing through a valve and resulting in a pressure loss of 0.1 MPa (1 bar; 14.5 psi). NOTE 1 Kv is expressed in SI units of cubic meters per hour. NOTE 2 Kv is related to the flow coefficient Cv, expressed in USC units of U.S. gallons per minute at 15.6 °C (60 °F) resulting in a 1 psi pressure drop as given by Equation (1): Kv = Cv --------------- 1.156 3.1.16 full-opening valve Valve with an unobstructed opening, not smaller than the internal bore of the end connections. 5 (1) 6 API SPECIFICATION 6D 3.1.18 locking device Part or an arrangement of parts for securing a valve in the open and/or closed position. 3.1.19 maximum pressure differential MPD Maximum difference between the upstream and downstream pressure across the obturator at which the obturator may be operated. 3.1.20 nominal pipe size NPS Numerical designation of size in inches that is common to components in piping systems. NOTE Nominal pipe size is designated by the abbreviation “NPS” followed by a number. 3.1.21 nominal size DN Numerical designation of size in millimeters that is common to components in piping systems. NOTE Nominal size is designated by the abbreviation “DN” followed by a number. 3.1.22 non-ductile material Material that fractures at or below 0.5 % extension of the gauge length when loaded in tension. 3.1.23 obturator closure member Part of a valve, such as a ball, clapper, disc, gate, or plug, that is positioned in the flow stream to permit or prevent flow. 3.1.24 off-site Related facility location other than the assembler’s/manufacturer’s where a required process activity is performed, with the activities conforming to an API Q1 or ISO 9001 quality management system (QMS). 3.1.25 on-site Assembler’s/manufacturer’s facility. 3.1.26 operator actuator A mechanical device (or assembly) for opening or closing a valve. NOTE 1 Manual wrench (lever) or handwheel with or without a gearbox. SPECIFICATION FOR PIPELINE AND PIPING VALVES 3.1.27 outsource outsourced activity Function or process that is performed by an external supplier conforming to a quality management system for the activities performed on behalf of the assembler/manufacturer. 3.1.28 packing gland Components used to compress/retain the stem packing. 3.1.29 piggability Capability of a valve to permit the unrestricted passage of a pig. 3.1.30 position indicator Device to show the position of the valve obturator. 3.1.31 preparation for shipment Preparation of the valve in accordance with this specification. 3.1.32 pressure class Numerical pressure design class pressure–temperature (P-T) ratings are designated by class numbers defined in ASME B16.34 and used for reference purposes. NOTE The ASME rating class is designated by the word “Class” followed by a number. Pressure rating designation is the word “Class,” followed by a dimensionless number, (the designation for pressure–temperature ratings) as follows: Class 150, Class 300, Class 400, Class 600, Class 900, Class 1500, or Class 2500. 3.1.33 pressure-containing parts A part whose failure to function as intended results in a release of contained fluid into the environment and as a minimum includes bodies, end connections, bonnets/covers, and stems. 3.1.34 pressure-controlling parts A part intended to prevent or permit the flow of fluids and as a minimum includes ball, disc, plug, gate, and seat. 3.1.35 process-wetted parts Parts exposed directly to the pipeline or piping fluid. 3.1.36 receiving verification Verify that the inward goods are received at the assembler/manufacturer and are in conformance with purchase order requirements. 3.1.37 reduced-opening valve Valve with the opening through the obturator smaller than at the end connection(s). 7 8 API SPECIFICATION 6D 3.1.38 seating surfaces Contact surfaces of the obturator and seat that ensure valve sealing. 3.1.39 self-relieving seat Valve seat designed to relieve pressure in the valve cavity. Depending upon valve type, the pressure may be relieved to the pressure source or the low pressure side. 3.1.40 shaft Part that supports the obturator on a check valve and may or may not pass through the pressure boundary. 3.1.41 shell test Test of the assembled pressure-containing parts. 3.1.42 stem Part that drives the obturator and passes through the pressure boundary. 3.1.43 stem extension assembly Assembly consisting of the stem extension and the stem extension housing. 3.1.44 support ribs or legs Metal structure that provides a stable footing when the valve is set on a fixed base. 3.1.45 through-conduit valve Valve with an unobstructed and continuous cylindrical opening. 3.1.46 unidirectional seat Valve seat designed to seal the pressure source in one direction only. 3.1.47 3.1.47 unidirectional valve Valve designed for blocking the flow in one direction only. 3.1.48 3.1.48 unless otherwise agreed Modification of the requirements of this specification unless the manufacturer and purchaser agree on a deviation. 3.1.49 upstream The side of the valve where the pressure is retained. SPECIFICATION FOR PIPELINE AND PIPING VALVES 3.1.50 Venturi plug valve Valve with a substantially reduced opening through the plug and a smooth transition from each full-opening end to the reduced opening. 3.1.51 verification testing Testing (FAT) required by this specification. 3.1.52 welding Fusion of materials, with or without the addition of filler materials on parts or final assemblies.",
+    "page": 18,
+    "rule_type": "informational",
+    "normative_references": [
+      "API Q1",
+      "API SPECIFICATION",
+      "ASME B16.34",
+      "ASME RATING",
+      "ISO 9001"
+    ],
+    "applies_to": [
+      "Ball Valve",
+      "Check Valve",
+      "Gate Valve",
+      "Plug Valve"
+    ],
+    "datasheet_field": "Hydrostatic Test Pressure"
+  },
+  {
+    "standard": "API 6D",
+    "section": "3",
+    "clause": "3.2",
+    "title": "Acronyms and Abbreviations",
+    "text": " For the purposes of this document, the following acronyms and abbreviations apply. BB block and bleed BM base metal CE carbon equivalent DBB double block and bleed DIB double isolation and bleed DN nominal size HAZ heat-affected zone HBW Brinell hardness, tungsten ball indenter HRC Rockwell C hardness MPD maximum pressure differential MT magnetic-particle testing NDE nondestructive examination NPS nominal pipe size PQR (weld) procedure qualification record PT penetrant testing PWHT postweld heat treatment QSL quality specification level RT radiographic testing SMYS specified minimum yield strength TC test coupon ultrasonic testing UT VT visual testing WM weld metal WPS weld procedure specification 9 10 API SPECIFICATION 6D Cv flow coefficient in USC units Kv flow coefficient in metric units Sm design stress intensity value t thickness 4 Valve Types and Configurations",
+    "page": 23,
+    "rule_type": "informational",
+    "normative_references": [
+      "API SPECIFICATION"
+    ],
+    "applies_to": [
+      "Ball Valve"
+    ],
+    "datasheet_field": "Design Standard"
+  },
+  {
+    "standard": "API 6D",
+    "section": "4",
+    "clause": "4.1.1",
+    "title": "Gate Valves",
+    "text": " Typical configurations for gate valves with flanged and welding ends are shown, for illustration purposes only, in Figure B.1 and Figure B.2. Gate valves shall have an obturator that moves in a plane perpendicular to the direction of flow. The gate can be constructed of one piece for slab-gate valves or of two or more pieces for expanding-gate valves. Gate valves shall be provided with a back seat or secondary stem sealing feature in addition to the primary stem seal.",
+    "page": 24,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "Gate Valve"
+    ],
+    "datasheet_field": "Seat Leakage"
+  },
+  {
+    "standard": "API 6D",
+    "section": "4",
+    "clause": "4.1.2",
+    "title": "Lubricated and Nonlubricated Plug Valves",
+    "text": " Typical configurations for plug valves with flanged and welding ends are shown, for illustration purposes only, in Figure B.3. Plug valves shall have a cylindrical or conical obturator that rotates about an axis perpendicular to the direction of flow.",
+    "page": 24,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "Plug Valve"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "4",
+    "clause": "4.1.3",
+    "title": "Ball Valves",
+    "text": " Typical configurations for ball valves with flanged or welding ends are shown, for illustration purposes only, in Figure B.4, Figure B.5, Figure B.6, and Figure B.14. Ball valves shall have a spherical obturator that rotates on an axis perpendicular to the direction of flow.",
+    "page": 24,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "Ball Valve"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "4",
+    "clause": "4.1.4",
+    "title": "Check Valves",
+    "text": " Typical configurations for check valves are shown, for illustration purposes only, in Figure B.7 to Figure B.13. Check valves can also be of the wafer, axial flow, and lift type. Check valves shall have an obturator that responds automatically to block fluid in one direction.",
+    "page": 24,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "Check Valve"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "4",
+    "clause": "4.2.1",
+    "title": "Full-opening Valves",
+    "text": " Full-opening valves shall be unobstructed in the fully opened position and shall have an internal minimum cylindrical opening for categorizing bore size as specified in Table 1. When pipe is used in the construction of the valves, the pipe shall meet the tolerances of the applicable pipe specification. Obturator and seat dimensions shall meet Table 1. SPECIFICATION FOR PIPELINE AND PIPING VALVES Welding-end valves can require a smaller bore at the welding end to mate with the pipe. Valves with a noncircular opening through the obturator shall not be considered full opening. Table 1—Minimum Bore for Full-opening Valves 30 750",
+    "page": 24,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Seat Leakage"
+  },
+  {
+    "standard": "API 6D",
+    "section": "27",
+    "clause": "27.00",
+    "title": "(686)",
+    "text": " — 11 12 API SPECIFICATION 6D Table 1—Minimum Bore for Full-opening Valves",
+    "page": 25,
+    "rule_type": "informational",
+    "normative_references": [
+      "API SPECIFICATION"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "4",
+    "clause": "4.2.2",
+    "title": "Reduced-opening Valves",
+    "text": " Reduced-opening valves with a circular opening through the obturator shall be supplied with a minimum bore as follows, unless otherwise agreed: — valves NPS 4 (DN 100) to NPS 12 (DN 300): one size below nominal size of valve with bore according to Table 1, — valves NPS 14 (DN 350) to NPS 24 (DN 600): two sizes below nominal size of valve with bore according to Table 1. EXAMPLE A NPS 16 (DN 400) Class 1500 reduced-opening ball valve has a minimum bore of 11.31 in. (287 mm). Reduced-opening valves with a noncircular opening through the obturator shall be supplied with a minimum opening by agreement. 5 Design",
+    "page": 26,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "Ball Valve"
+    ],
+    "datasheet_field": "Pressure Rating"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.1",
+    "title": "Design Standards and Calculations",
+    "text": " Pressure-containing parts, including bolting, shall be designed with materials specified in Section 6. Design and calculations for pressure-containing elements shall be in accordance with an internationally recognized design code or standard with consideration for pipe loads, operating forces, etc. NOTE Examples of internationally recognized design codes or standards are ASME BPVC, Section VIII, Division 1 or Division 2; ASME B16.34; EN 12516-1 or EN 12516-2; and EN 13445-3. The allowable stress values shall be consistent with the selected design code or standard. If the selected design code or standard specifies a test pressure less than 1.5 times the design pressure, then the design pressure for the body calculation shall be increased such that the hydrostatic test pressure in 9.3 can be applied. SPECIFICATION FOR PIPELINE AND PIPING VALVES",
+    "page": 26,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "ASME B16.34",
+      "ASME BPVC",
+      "EN 12516",
+      "EN 13445"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Hydrostatic Test Pressure"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.2",
+    "title": "Pressure and Temperature Rating",
+    "text": " Valves covered by this specification shall be furnished in one of the following pressure classes: — Class 150, Class 300, Class 400, Class 600, Class 900, Class 1500, or Class 2500. Pressure–temperature ratings for class-rated valves shall be in accordance with the applicable rating table for the appropriate material group in ASME B16.34. Pressure–temperature ratings for Class 400 valves shall be in accordance with the applicable rating table for the appropriate material group in ASME B16.5. NOTE It is not required that identical material or material form be used for body and bonnet or cover parts. The pressure–temperature rating applied shall be based on the material group of the valve end connection. Where the valve ends are made from material in two different groups, the material with the lower pressure–temperature rating shall govern. All metallic pressure-containing and pressure-controlling parts shall be designed to meet the applicable valve pressure–temperature rating. If intermediate design pressures and temperatures are specified by the purchaser, the pressure–temperature rating shall be determined by linear interpolation in accordance with ASME B16.34. Valves with flanged end(s) shall not be designed to an intermediate rating due to the risk of the valve being transferred to a different application, which may utilize the full flange rating. When an intermediate rated class is specified by the purchaser, the valve shall be marked with the agreed intermediate rated class on the body and nameplate (see Table 7, item 2b and Annex M). Pressure–temperature ratings for valves made from materials not covered by ASME B16.34 shall be determined from the material properties in accordance with the applicable design standard. Manufacturer shall advise any limits on the design pressures and the minimum and maximum design temperatures due to nonmetallic parts. The maximum operating pressure at the minimum and maximum operating temperatures shall be marked on the nameplate.",
+    "page": 27,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "ASME B16.34",
+      "ASME B16.5"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Pressure Rating"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.3",
+    "title": "Sizes",
+    "text": " Valves constructed to this specification shall be furnished in nominal sizes as listed in Table 1. NOTE In this specification, NPS sizes are stated first followed by the equivalent DN size between brackets. Except for reduced-opening valves, valve sizes shall be specified by the nominal pipe size (NPS) or nominal diameter (DN). Reduced-opening valves with a circular opening shall be specified by the nominal size of the end connections and the nominal size of the reduced opening in accordance with Table 1. 13 14 API SPECIFICATION 6D EXAMPLE 2 Reduced-bore valve with NPS 16 (DN 400) end connections and a 15 × 12 (381 mm × 305 mm) rectangular opening shall be specified as 16R.",
+    "page": 27,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "API SPECIFICATION"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.4",
+    "title": "Face-to-face and End-to-end Dimensions",
+    "text": " Unless otherwise agreed, face-to-face (A) and end-to-end (B and C) dimensions of valves shall be in accordance with Table C.1 to Table C.5; see Figure B.1 to Figure B.14 for diagrams of dimensions A, B, and C where shown. Face-to-face and end-to-end dimensions for valve sizes not specified in Table C.1 to Table C.5 shall be in accordance with ASME B16.10. Face-to-face and end-to-end dimensions not shown in Table C.1 to Table C.5 or in ASME B16.10 shall be established by agreement. The length of valves having one welding end and one flanged end shall be determined by adding half the length of a flanged-end valve to half the length of a welding-end valve. Tolerances on the face-to-face and end-to-end dimensions shall be ±0.06 in. (±1.5 mm) for valve sizes NPS 10 (DN 250) and smaller, and ±0.12 (±3.0 mm) for valve sizes NPS 12 (DN 300) and larger. The nominal size and face-to-face or end-to-end dimensions shall be stated on the nameplate if not specified in, or not in accordance with, Table C.1 to Table C.5. In some cases the support legs on some valve designs may have to be extended beyond the end-to-end dimensions to assure that the valve can be safely supported. These extensions shall be able to be removed if required after installation.",
+    "page": 28,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "ASME B16.10"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Design Standard"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.5",
+    "title": "Valve Operation",
+    "text": " The purchaser should specify the method of operation and the maximum pressure differential (MPD) at which the valve is required to be opened by the lever, gearbox, or actuator. If not specified, the pressure as determined in accordance with 5.2 for material at 100 °F (38 °C) shall be the MPD. The manufacturer shall provide the following data to the purchaser, if requested: — flow coefficient Cv or Kv; — breakaway thrust or torque for new valve and the breakaway travel or angle; — valve run thrust or torque; — maximum allowable stem thrust or torque on the valve and, if applicable, the maximum allowable input torque to the gearbox; — number of turns for manually operated valves.",
+    "page": 28,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Body Material"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.6",
+    "title": "Pigging",
+    "text": " The purchaser shall specify the requirements for piggability of the valves. NOTE Guidance can be found in O.4. SPECIFICATION FOR PIPELINE AND PIPING VALVES",
+    "page": 28,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.7.1.1",
+    "title": "General",
+    "text": " Flanges shall be furnished with a raised face or ring joint face (raised face or full face). Specified dimensions, tolerances, and finishes, including drilling templates, flange facing, nut-bearing surfaces (i.e. spot facing and back facing), outside diameters, and thickness (see Figure 1) shall be in accordance with: — ASME B16.5 for sizes up to and including NPS 24 (DN 600) except NPS 22 (DN 550); — MSS SP-44 for NPS 22 (DN 550); and — ASME B16.47, Series A for NPS 26 (DN 650) and larger sizes. If none of the above standards applies, the selection of another design code or standard shall be made by agreement. For valves with heavy wall sections, flanges with nut stops in accordance with Mandatory Appendix 2, Figure 2-4 (Sketch 12 or 12a) of ASME BPVC, Section VIII, Division 1 may be required. The manufacturing method shall ensure flange alignment in accordance with 5.7.1.2, 5.7.1.3, and 5.7.1.4. C Optional flat face C Nut-bearing surface Nut-bearing surface O O R X min. K X min. Raised Face Ring Type Joint Key C flange thickness O outside diameter of flange R raised-face diameter K minimum diameter of raised portion of ring type joint flange Xmin hub diameter Figure 1—Typical Flange Dimensions",
+    "page": 29,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "ASME B16.47",
+      "ASME B16.5",
+      "ASME BPVC",
+      "MSS SP-44"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Design Standard"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.7.1.2",
+    "title": "Offset of Aligned Flange Centerlines—Lateral Alignment",
+    "text": " For valves up to and including NPS 4 (DN 100), the maximum flange misalignment shall be 0.079 in. (2 mm) For valves larger than NPS 4 (DN 100), the maximum flange misalignment shall be 0.118 in. (3 mm). 15 16 API SPECIFICATION 6D",
+    "page": 29,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "API SPECIFICATION"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.7.1.4",
+    "title": "Total Allowable Misalignment of Bolt Holes",
+    "text": " For valves up to and including NPS 4 (DN 100), the maximum total allowable misalignment shall be no greater than 0.079 in. (2 mm) at the bolt holes (see Figure 2). For valves larger than NPS 4 (DN 100), the maximum total allowable misalignment shall be equivalent to 0.118 in. (3 mm) at the bolt holes. The surface of the nut bearing area at the back face of flanged valves shall be parallel to within 1° of the flange face. 2 1 3 A Key 1 flange 2 hole in first flange 3 hole in opposite flange for alignment A bolt-hole misalignment (see 5.7.1.4) Figure 2—Bolt-hole Misalignment",
+    "page": 30,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.7.2",
+    "title": "Welding Ends",
+    "text": " Welding ends shall conform to ASME B31.3, ASME B31.4, or ASME B31.8, unless otherwise agreed. In the case of a heavy-wall valve body, the outside profile may be tapered at 30° and then to 45° as illustrated in ASME B16.25. The purchaser shall specify the outside diameter, wall thickness, material grade, specified minimum yield strength (SMYS) and any special chemistry of the mating pipe, and whether cladding has been applied.",
+    "page": 30,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "ASME B16.25",
+      "ASME B31.3",
+      "ASME B31.4",
+      "ASME B31.8"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Body Material"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.7.3",
+    "title": "Alternate Valve End Connections",
+    "text": " Other end connections may be specified by the purchaser.",
+    "page": 30,
+    "rule_type": "informational",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.8",
+    "title": "Valve Cavity Pressure Relief",
+    "text": " The manufacturer shall determine whether fluid can become trapped in the body cavity in the open- and/or closed- valve position. If fluid trapping is possible, the valve shall be provided with automatic cavity-pressure relief, unless otherwise agreed. SPECIFICATION FOR PIPELINE AND PIPING VALVES To achieve a higher cavity relief pressure, the valve shell shall be designed and tested to withstand a higher hydrostatic shell test pressure. The shell test shall be conducted in accordance with 9.3. If a relief valve fitted to the cavity is required, purchaser may specify provisions to facilitate in service testing. External cavity relief valves shall be NPS 1/2 (DN 15) or larger. Cavity relief testing and functionality may be demonstrated by tests in H.8.2 for trunnion mounted ball valves and gate valves. Floating ball valve functionality may be demonstrated by agreement.",
+    "page": 30,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "Ball Valve",
+      "Gate Valve"
+    ],
+    "datasheet_field": "Hydrostatic Test Pressure"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.9",
+    "title": "Drains",
+    "text": " Drain connections shall be drilled and threaded. The purchaser may specify other types of drain connections, such as welded or flanged. Caution—Threaded connections can be susceptible to crevice corrosion. Tapered threads shall be capable of providing a seal and comply with ASME B1.20.1. If parallel threads are used, the connection shall have a head section for trapping and retaining a sealing member suitable for the specified valve service. Parallel threads shall comply with ASME B1.20.1 or ISO 228-1. Sizes shall be in accordance with Table 2. Table 2—Thread/Pipe Sizes for Drains",
+    "page": 31,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "ASME B1.20.1",
+      "ISO 228"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.10",
+    "title": "Injection Points",
+    "text": " Injection points for sealant, lubrication, or flushing may be provided for seats and/or stem. When provided, the injection points shall incorporate a check valve and a secondary means of isolation for each injection point. Sealant fittings shall have a design pressure not less than the greater of the pipeline or piping valve rated pressure and the injection pressure. NOTE An example is a button head fitting with integral check valve and sealing cap.",
+    "page": 31,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "Check Valve"
+    ],
+    "datasheet_field": "Seat Leakage"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.11",
+    "title": "Drain, Vent, and Sealant Lines",
+    "text": " Drain, vent, and sealant lines may be provided. When drain, vent, and sealant lines are provided, the lines shall be composed of rigid pipework. The lines shall be fastened to the valve and/ or extensions and terminate close to the stem extension top works. 17 18 API SPECIFICATION 6D When provided, drain and vent lines shall — have a design pressure not less than the rated pressure of the valve on which they are installed; — be capable of withstanding the hydrostatic shell test pressure of the valve; — be designed in accordance with a recognized design code; — be suitable for blow-down operation, where applicable. When provided, sealant lines shall be rated to the same criteria as sealant fittings in 5.10. The manufacturer shall advise the maximum injection pressure for the system. The size of the sealant lines shall be by agreement. Prior to assembly, the internal bores of sealant lines shall be clean and free from rust and any foreign particles.",
+    "page": 31,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "API SPECIFICATION"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Hydrostatic Test Pressure"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.12",
+    "title": "Drain, Vent, and Sealant Valves",
+    "text": " Drain and vent block valves may be provided. When provided, the drain and block valves shall have a rated pressure not less than the valve on which they are installed and be suitable for blow-down operation. Block and check valves fitted to sealant injection lines shall be rated for the greater of the piping valve rated pressure and the injection pressure defined in 5.10.",
+    "page": 32,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "Check Valve"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.13",
+    "title": "Handwheels and Wrenches—Levers",
+    "text": " Wrenches for valves shall either be of an integral design or consist of a head that fits on the stem and is designed to take an extended handle. The head design shall allow permanent attachment of the extended section if specified by the purchaser. The maximum force required at the handwheel or wrench to apply the breakaway torque or thrust shall not exceed 80 lbf (360 N). Wrenches that are of integral design (not loose) shall not be longer than twice the face-to-face or end-to-end dimension. Handwheel diameter(s) shall not exceed the 40 in. (1016 mm). Spokes shall not extend beyond the perimeter of the handwheel. Direction of closing shall be clockwise.",
+    "page": 32,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Design Standard"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.14",
+    "title": "Locking Provision",
+    "text": " Valves may be supplied with a provision for locking. When specified, the locking feature for check valves shall be designed to lock the valve in the open position only. Locking feature for other types of valves shall be designed to lock the valve in the open and/or closed position.",
+    "page": 32,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "Check Valve"
+    ],
+    "datasheet_field": "Design Standard"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.15",
+    "title": "Position of the Obturator",
+    "text": " SPECIFICATION FOR PIPELINE AND PIPING VALVES",
+    "page": 32,
+    "rule_type": "informational",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.16",
+    "title": "Position Indicators",
+    "text": " Valves fitted with manual or powered actuators shall be furnished with a visible indicator to show the open and the closed position of the obturator. For plug and ball valves, the wrench and/or the position indicator shall be in line with the pipe when the valve is open and transverse when the valve is closed. The design shall be such that the component(s) of the indicator and/or wrench cannot be assembled to falsely indicate the valve position. Valves without position stops shall have provision for the verification of open and closed alignment with the operator/ actuator removed.",
+    "page": 33,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "Ball Valve",
+      "Plug Valve"
+    ],
+    "datasheet_field": "Design Standard"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.17",
+    "title": "Travel Stops",
+    "text": " Valves that do not require mechanical force to affect a seal shall be provided with travel stops on the valve and/or operator and they shall locate the position of the obturator in the open and closed position. The travel stops shall not affect the sealing capability of the valve. See Annex D for guidance for travel stops by valve type.",
+    "page": 33,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.18.1",
+    "title": "General",
+    "text": " The output of an actuator shall not exceed the stress limits of the valve drive train permitted by 5.20.2. Actuator sizing and mounting kits shall be in accordance with API 6DX.",
+    "page": 33,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "API 6DX"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.18.2",
+    "title": "Misalignment",
+    "text": " Misalignment or improper assembly of components shall be prevented by suitable means, such as a dowel pin or fitting bolt, which ensures the correct location of manual or powered operators and stem extension assemblies.",
+    "page": 33,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.18.3",
+    "title": "Sealing",
+    "text": " Operators, stem extensions, and their interfaces shall be sealed to prevent ingress of external contaminants and moisture.",
+    "page": 33,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.18.4",
+    "title": "Overpressure Protection",
+    "text": " Operators and stem extension assemblies shall be provided with a means of preventing pressure buildup in the mechanism resulting from stem or bonnet seal leakage.",
+    "page": 33,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Seat Leakage"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.18.5",
+    "title": "Protection of Extended Stems and Shafts in Belowground Service",
+    "text": " Extended stems and shafts in belowground service shall be protected by an extension casing (housing).",
+    "page": 33,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.19",
+    "title": "Lifting",
+    "text": " The manufacturer shall determine the need for and verify suitability of lifting points of the valve. The purchaser shall specify when lifting points on the valve are not required. 19 20 API SPECIFICATION 6D",
+    "page": 33,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "API SPECIFICATION"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.20.1",
+    "title": "Design Thrust or Torque",
+    "text": " The design thrust or torque for all drive train calculations shall be at least two times the breakaway thrust or torque.",
+    "page": 34,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Design Standard"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.20.2",
+    "title": "Allowable Stresses",
+    "text": " Design stresses for tensile stress, shear stress (including torsional shear stress) and bearing stress shall comply with ASME BPVC, Section VIII except that the design stress intensity value, Sm, shall be taken as 67 % of SMYS. In addition the average primary shear stress across a section loaded under design conditions in pure shear, e.g. keys, shear rings, screw threads, etc., shall be limited to 0.6 Sm. The maximum primary shear under design conditions, exclusive of stress concentration at the periphery of a solid circular section in torsion, shall be limited to 0.8 Sm. Allowable values of bearing stress can be found in the general notes section of ASME BPVC, Section II, Part D. These stress limits do not apply to the components of rolling-element or other proprietary bearings or high bearing strength capable materials that are included in the drive train where manufacturer's recommendations or limits derived from tests and service experience apply. These limits shall be justified in design documents. The drive train shall be designed such that the weakest component is outside the pressure boundary. A strength efficiency factor of 0.75 shall be used for fillet welds.",
+    "page": 34,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "ASME BPVC"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Body Material"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.20.3",
+    "title": "Allowable Deflections",
+    "text": " Deflections of the extended drive train shall not prevent the obturator from reaching the fully closed or fully open position. For all valves, attention shall be paid to deflection and strain. Adherence to the allowable stress limits of design codes alone might not result in a functionally acceptable design. The manufacturer shall demonstrate, by calculation or test, that under loads resulting from design pressure and any defined pipe or external loads, distortion of the obturator or seat does not impair functionality or sealing.",
+    "page": 34,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Seat Leakage"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.21",
+    "title": "Stem Retention",
+    "text": " Valves shall be designed to ensure that the stem does not eject under any internal pressure condition or if the packing gland components and/or valve operator mounting components are removed.",
+    "page": 34,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Design Standard"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.22",
+    "title": "Fire Type-testing",
+    "text": " Fire type-testing certification of the design may be provided. When required, the fire type-testing shall be performed in accordance with O.5.",
+    "page": 34,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Fire Safe Design"
+  },
+  {
+    "standard": "API 6D",
+    "section": "5",
+    "clause": "5.23",
+    "title": "Antistatic Device",
+    "text": " Soft-seated ball, plug, and gate valves shall have an antistatic device. Testing of this device shall be in accordance with H.5 if specified by the purchaser. SPECIFICATION FOR PIPELINE AND PIPING VALVES 6 Materials",
+    "page": 34,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "Ball Valve",
+      "Gate Valve",
+      "Plug Valve"
+    ],
+    "datasheet_field": "Seat Leakage"
+  },
+  {
+    "standard": "API 6D",
+    "section": "6",
+    "clause": "6.1",
+    "title": "Material Specification",
+    "text": " Specifications for metallic pressure-containing and pressure-controlling parts shall be issued by the manufacturer and shall address the following: — material grade; — chemical analysis; — heat treatment; — mechanical properties (tensile); — certification to report all items listed in 6.1. Other requirements of the material specifications shall be as follows, if applicable: — carbon equivalent (CE); — Charpy impacts; — hardness; — testing. Metallic pressure-containing parts shall be made of materials consistent with the pressure–temperature rating as determined in accordance with 5.2. Use of other materials shall be by agreement. See informative Annex E for guidance on selection of material suppliers.",
+    "page": 35,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Body Material"
+  },
+  {
+    "standard": "API 6D",
+    "section": "6",
+    "clause": "6.2",
+    "title": "Tensile Test Requirements",
+    "text": " Tensile test specimens shall be removed from a test coupon (TC) after the final heat-treatment cycle. Pressure-containing and pressure-controlling parts made from ductile materials shall have a minimum of one tensile test performed at room temperature in accordance with ASTM A370, ASTM E8, or ISO 6892-1. For metallic materials, the yield strength shall be determined using the relevant industry material standards. The minimum elongation at break shall be in accordance with the industry material standard, but not less than 15 % minimum. Pressure-controlling parts made from non-ductile metallic materials shall have a minimum of one tensile test performed using the ASTM method for that material. Where no test method exists, the testing shall be in accordance with ASTM A370, ASTM E8, or ISO 6892-1. For wear resistant alloys as defined per NACE MR0175/ISO 15156, a tensile test shall not be required. Non-ductile materials shall not be used for pressure-containing parts. 21 22 API SPECIFICATION 6D",
+    "page": 35,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "API SPECIFICATION",
+      "ASTM A370",
+      "ASTM E8",
+      "ASTM METHOD",
+      "ISO 15156",
+      "ISO 6892",
+      "NACE MR0175"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Body Material"
+  },
+  {
+    "standard": "API 6D",
+    "section": "6",
+    "clause": "6.3",
+    "title": "Service Compatibility",
+    "text": " All process-wetted parts, metallic and nonmetallic, and lubricants shall be suitable for the commissioning fluids and service when specified by the purchaser. Metallic materials shall be selected so as to avoid corrosion and galling, which would impair function and/or pressure containing capability. Selection of elastomeric materials for valves intended for rapid gas decompression service at pressures of Class 600 and above shall address the effect of explosive decompression.",
+    "page": 36,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Pressure Rating"
+  },
+  {
+    "standard": "API 6D",
+    "section": "6",
+    "clause": "6.4",
+    "title": "Forged Parts",
+    "text": " All forged material(s) shall be formed using a hot-working practice and heat treatment that produces a forged structure throughout the material.",
+    "page": 36,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Body Material"
+  },
+  {
+    "standard": "API 6D",
+    "section": "6",
+    "clause": "6.5",
+    "title": "Composition Limits",
+    "text": " The chemical composition of carbon steel pressure-containing and pressure-controlling parts shall be in accordance with the applicable material standards. The chemical composition of carbon steel welding ends shall meet the following requirements. — The carbon content shall not exceed 0.23 % by mass. — The sulfur content shall not exceed 0.020 % by mass. — The phosphorus content shall not exceed 0.025 % by mass. — The carbon equivalent (CE) shall not exceed 0.43 %. The CE shall be calculated in accordance with the equation below: CE = % C + % Mn/6 + (% Cr + % Mo + % V)/5 + (% Ni + % Cu)/15 The chemical composition of other carbon steel parts shall be in accordance with the applicable material standards. The carbon content of austenitic stainless steel welding ends shall not exceed 0.03 % by mass, except for stabilized material in which case a carbon content of up to 0.08 % by mass is permissible. The chemical composition of other materials shall be established by agreement.",
+    "page": 36,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Body Material"
+  },
+  {
+    "standard": "API 6D",
+    "section": "6",
+    "clause": "6.6",
+    "title": "Toughness Test Requirements",
+    "text": " Carbon, alloy and stainless steel (except austenitic grades) for pressure-containing parts in valves with a specified design temperature below –20 °F (–29 °C) shall be impact-tested. The test method shall be the V-notch technique in accordance with ASTM A370 or ISO 148-1. When using ISO 148-1, a striker with a radius of 8 mm shall be used. Refer to ISO 148-1 for further details. NOTE Design standards or local requirements can require impact testing for minimum design temperatures higher than –20 °F (–29 °C). A minimum of one impact test, comprised of a set of three specimens, shall be performed on a representative test bar of each heat of the material in the final heat-treated condition. SPECIFICATION FOR PIPELINE AND PIPING VALVES tempering temperature. The impact test shall be performed at the lowest temperature as defined in the applicable material specifications. Except for material for bolting, impact test results for full-size specimens shall meet the requirements of Table 3. Where the material specification for the pipeline and/or piping design standard requires impact values to be higher than those shown in Table 3, the higher values shall apply. Impact test results for bolting material shall meet the requirements of ASTM A320. Impact values for full-size specimens of duplex or super duplex stainless steels shall be as follows: a) average of three specimens: 33 ft lb (45 J) minimum; b) no single specimen less than 26 ft lb (35 J); c) Impact test temperature shall be –50 °F (–46 °C). If a test fails, then a retest of three additional specimens removed from the same TC, with no additional heat treatment, may be made, each of which shall exhibit an impact value equal to or exceeding the required average value. Table 3—Minimum V-notch Impact Requirements (Full-size Specimen)",
+    "page": 36,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "ASTM A320",
+      "ASTM A370",
+      "ISO 148"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Body Material"
+  },
+  {
+    "standard": "API 6D",
+    "section": "6",
+    "clause": "6.7",
+    "title": "Bolting",
+    "text": " Bolting material shall be suitable for the specified valve service and pressure rating. Carbon and low-alloy steel bolting material with a hardness exceeding HRC 35 (HBW 321) shall not be used for valve applications where hydrogen embrittlement can occur. Hardness limits for other bolting materials shall be by agreement.",
+    "page": 37,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Body Material"
+  },
+  {
+    "standard": "API 6D",
+    "section": "6",
+    "clause": "6.8",
+    "title": "Sour Service",
+    "text": " Materials for pressure-containing and pressure-controlling parts and bolting for sour service shall meet the requirements of NACE MR0175 or ISO 15156 (all parts) or NACE MR0103. Purchaser shall specify which standard is to be used.",
+    "page": 37,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "ISO 15156",
+      "NACE MR0103",
+      "NACE MR0175"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Body Material"
+  },
+  {
+    "standard": "API 6D",
+    "section": "6",
+    "clause": "6.9",
+    "title": "Drain Connections",
+    "text": " Threaded plugs shall be compatible with the valve body material or made from a corrosion-resistant material. 23 24 API SPECIFICATION 6D",
+    "page": 37,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "API SPECIFICATION"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Body Material"
+  },
+  {
+    "standard": "API 6D",
+    "section": "6",
+    "clause": "6.10",
+    "title": "Heat-treating Equipment Qualification",
+    "text": " Heat treating of pressure-containing and pressure-controlling parts and associated TCs shall be performed with “production-type” equipment conforming to requirements specified by the manufacturer. \"Production-type\" heat- treating equipment shall be recognized as equipment that is routinely used to process production parts. All heat treatment for mechanical properties shall be performed using furnaces that are calibrated in conformance with Annex F. Post-weld heat treatment (PWHT) shall be performed with heat-treat equipment conforming to requirements specified by the manufacturer. Furnaces shall be calibrated and surveyed per 8.2.5. Records of furnace calibration and surveys shall be maintained for a period not less than five years. 7 Welding",
+    "page": 38,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "7",
+    "clause": "7.1",
+    "title": "Welding Consumables",
+    "text": " Welding consumables shall conform to the American Welding Society's or manufacturer's specifications. The manufacturer shall have a written procedure for storage and control of welding consumables. Materials of low- hydrogen type (including electrodes, wires, and fluxes) shall be stored and used as recommended by the manufacturer of the welding consumable to retain their original low-hydrogen properties.",
+    "page": 38,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Body Material"
+  },
+  {
+    "standard": "API 6D",
+    "section": "7",
+    "clause": "7.2",
+    "title": "Welding Procedure and Welder/Welding Operator Qualifications",
+    "text": " Welding, including repair welding, of pressure-containing and pressure-controlling parts shall be performed in accordance with procedures qualified to ASME BPVC, Section IX and 7.2 and 7.3 of this specification, or ISO 15607, ISO 15609, and ISO 15614-1. Welders and welding operators shall be qualified in accordance with ASME BPVC, Section IX or ISO 9606-1, or EN 287-1. NOTE The purchaser, pipeline or piping design standards, material specifications, and/or local requirements may specify additional requirements. The results of all qualification tests shall be documented in a PQR. PWHT shall be performed in accordance with the applicable material specification or design code. For weld overlay, qualification shall be in accordance with ASME BPVC, Section IX, Articles II and III or ISO 15614-7. Chemical analysis of the weld metal shall be performed in accordance with the requirements of ASME BPVC, Section IX at the minimum overlay thickness as specified by the manufacturer for the finished component. NOTE To assure minimum thickness of 0.12 in. (3.0 mm), the weld overlay typically requires two passes to achieve the required dilution. For weld overlay or clad welding with nickel-based alloy UNS N06625, the weld overlay or clad thickness chemical composition shall meet one of the classes listed below: SPECIFICATION FOR PIPELINE AND PIPING VALVES For all other composition, the chemical analysis of the weld overlay or clad welding shall conform to the manufacturer’s written specification. NOTE Some pipeline welding standards have more stringent requirements for the essential variables of welding. It may be necessary to provide full weld test rings, in the same heat-treatment condition as the finished valve, for weld procedure qualification.",
+    "page": 38,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "ASME BPVC",
+      "EN 287",
+      "ISO 15607",
+      "ISO 15609",
+      "ISO 15614",
+      "ISO 9606"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Body Material"
+  },
+  {
+    "standard": "API 6D",
+    "section": "7",
+    "clause": "7.3",
+    "title": "Impact Testing",
+    "text": " Qualifications of procedures for welding, including repair welding, of, pressure-containing and pressure-controlling parts shall meet the following toughness test requirements. Impact testing shall be performed on carbon, alloy, and stainless steel (except austenitic grades) for the qualification of procedures for welding on valves with a design temperature below –20 °F (–29 °C). NOTE Design standards and/or local requirements might require impact testing at minimum design temperatures above –20 °F (–29 °C). As a minimum, one set of three weld metal (WM) impact specimens shall be taken from the WM at the location shown in Figure 3. The specimens shall be oriented with the notch perpendicular to the surface of the material. Multiple sets of weld metal impact specimens shall be required when more than one welding process is used. Weld metal impact testing must be performed to represent each welding process being qualified. A set of three impact specimens shall be taken from the heat-affected zone (HAZ) at the location shown in Figure 4. The notch shall be placed perpendicularly to the material surface at a location resulting in a maximum amount of HAZ material located in the resulting fracture. HAZ tests shall be conducted for each of the materials being joined when the base materials being joined are of a different P-number and/or group number in accordance with ASME BPVC, Section IX or ISO 9606-1, ISO 15607, ISO 15609, ISO 15614-1, and ISO 15608 or when one or both of the base materials being joined are not listed in the P- number and/or group number. Impact testing shall be performed in accordance with ASTM A370 or ISO 148-1 using the Charpy V-notch technique. Specimens shall be etched to determine the location of the weld and HAZ. t 5 2 . 0 t 1 2 3 Key 1 weld metal (WM) 2 heat-affected zone (HAZ) 3 base metal (BM) 25 26 API SPECIFICATION 6D t 5 2 . 0 1 2 3 t Key 1 weld metal (WM) 2 heat-affected zone (HAZ) 3 base metal (BM) Figure 4—Charpy V-notch Heat-affected Zone Specimen Location The impact test temperature for welds and HAZs shall be at or below the minimum design temperature specified for the valve. Impact test results for full-size specimens shall meet the requirements of 6.6. If the material specification requires higher impact values than those shown in 6.6, the higher values shall apply.",
+    "page": 39,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "API SPECIFICATION",
+      "ASME BPVC",
+      "ASTM A370",
+      "ISO 148",
+      "ISO 15607",
+      "ISO 15608",
+      "ISO 15609",
+      "ISO 15614",
+      "ISO 9606"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Body Material"
+  },
+  {
+    "standard": "API 6D",
+    "section": "7",
+    "clause": "7.4",
+    "title": "Hardness Testing",
+    "text": " Hardness testing shall be carried out as part of the welding procedure qualification on pressure-containing and pressure-controlling parts in valves required to meet NACE MR0175, ISO 15156 (all parts), or NACE MR0103, as applicable. Hardness surveys shall be performed on base metal (BM), WM, and HAZ in accordance with the requirements of NACE MR0175, ISO 15156 (all parts), or NACE MR0103, as applicable.",
+    "page": 40,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "ISO 15156",
+      "NACE MR0103",
+      "NACE MR0175"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "7",
+    "clause": "7.5",
+    "title": "Repair",
+    "text": " Minor defects may be removed by grinding provided there is a smooth transition between the ground area and the original contour and the minimum wall thickness requirements are not affected. Repair of defects shall be performed in accordance with a documented procedure specifying requirements for defect removal, welding, heat treatment, NDE, and reporting as applicable. Weld repair of forgings and plates shall not be performed to correct material defects, unless otherwise agreed. However, weld repair can be used to correct machining errors. The weld repair shall be in accordance with the applicable material standard, including any PWHT, if applicable. Weld repair of castings shall be in accordance with the applicable material standard, including any PWHT, if applicable.",
+    "page": 40,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Body Material"
+  },
+  {
+    "standard": "API 6D",
+    "section": "7",
+    "clause": "7.6",
+    "title": "Repair of welds",
+    "text": " SPECIFICATION FOR PIPELINE AND PIPING VALVES 8 Quality Control",
+    "page": 40,
+    "rule_type": "informational",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "8",
+    "clause": "8.1",
+    "title": "NDE Requirements",
+    "text": " NDE requirements shall conform to Annex G when specified by the purchaser. Additionally, final surface (MT and PT) and ultrasonic (UT) NDE activities shall be conducted after final heat treatment or post-weld heat treatment. Final radiography (RT) NDE activities shall be conducted after final heat treatment, unless otherwise agreed.",
+    "page": 41,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "8",
+    "clause": "8.2.1",
+    "title": "General",
+    "text": " Equipment used to inspect, test, or examine material or other equipment used for acceptance shall be identified, controlled, calibrated, and adjusted at specified intervals in accordance with documented manufacturer instructions, and consistent with nationally or internationally recognized standards specified by the manufacturer, to maintain the accuracy required by this specification.",
+    "page": 41,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Body Material"
+  },
+  {
+    "standard": "API 6D",
+    "section": "8",
+    "clause": "8.2.2",
+    "title": "Dimension-measuring Equipment",
+    "text": " Dimension-measuring equipment shall be controlled and calibrated in accordance with methods specified in documented procedures.",
+    "page": 41,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "8",
+    "clause": "8.2.3.1",
+    "title": "Type and Accuracy",
+    "text": " Test pressure-measuring devices shall be accurate to at least ± 2.0 % of full scale. If pressure gauges are used in lieu of pressure transducers, they shall be selected such that the test pressure is indicated within 20 % and 80 % of the full-scale value. Pressure recording devices are outside the scope of 8.2.3.1.",
+    "page": 41,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "8",
+    "clause": "8.2.3.2",
+    "title": "Calibration Procedure",
+    "text": " Pressure-measuring devices shall be calibrated with a master pressure-measuring device or deadweight tester to at least three equidistant points of full scale (excluding zero and full scale as required points of calibration).",
+    "page": 41,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "8",
+    "clause": "8.2.3.3",
+    "title": "Calibration Intervals",
+    "text": " Calibration intervals shall be established for calibrations based on repeatability and degree of usage. Calibration intervals shall be a maximum of three months until recorded calibration history can be established by the manufacturer. Intervals shall be shortened and may be lengthened based on review of the calibration history and determination of interval adjustments as defined in the manufacturer’s written procedure. Increments to establish longer intervals shall be limited to three months maximum. The maximum calibration period shall not exceed one calendar year. 27 28 API SPECIFICATION 6D",
+    "page": 41,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "API SPECIFICATION"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "8",
+    "clause": "8.2.5",
+    "title": "Heat-treatment Equipment Calibration",
+    "text": " Heat-treatment equipment calibration shall be performed prior to putting the equipment in service and shall be recalibrated at a frequency not longer than 12 months from the last calibration.",
+    "page": 42,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "8",
+    "clause": "8.3.1",
+    "title": "NDE Personnel",
+    "text": " NDE personnel shall be qualified in accordance with the manufacturer’s documented training program that is based on the requirements specified in ASNT SNT-TC-1A or ISO 9712. NOTE Alternative standards are acceptable provided they meet the minimum requirements of ASNT SNT-TC-1A.",
+    "page": 42,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "ISO 9712"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "8",
+    "clause": "8.3.2",
+    "title": "Visual Examination Personnel",
+    "text": " Personnel performing visual inspection for acceptance shall take and pass an annual vision examination in accordance with the manufacturer’s documented procedures that meet the applicable requirements of ASNT SNT- TC-1A or ISO 9712. NOTE Alternative standards are acceptable provided they meet the minimum requirements of ASNT SNT-TC-1A.",
+    "page": 42,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "ISO 9712"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "8",
+    "clause": "8.3.3",
+    "title": "Other Personnel",
+    "text": " All personnel performing other quality control activities directly affecting material and product quality shall be qualified in accordance with manufacturer’s documented requirements.",
+    "page": 42,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Body Material"
+  },
+  {
+    "standard": "API 6D",
+    "section": "8",
+    "clause": "8.3.4",
+    "title": "Welding Inspectors",
+    "text": " Personnel performing visual inspections of welding operations and completed welds shall be qualified and certified by one of the following: — AWS QC1 or equivalent certified welding inspector, or — AWS QC1 or equivalent senior certified welding inspector, or — AWS QC1 or equivalent certified associated welding inspector, or — welding inspector certified by the manufacturer’s documented training program.",
+    "page": 42,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "8",
+    "clause": "8.4",
+    "title": "NDE of Repairs",
+    "text": " After defect removal, the excavated area shall be examined by magnetic-particle (MT) or liquid-penetrant (PT) methods in accordance with Annex G. Repair welds on pressure-containing parts shall be examined using the same NDE method that was used to identify the defect with a minimum of MT or PT. Acceptance criteria shall be as specified in Annex G for the appropriate product form. The final NDE activities shall be conducted after postweld heat treatment, unless otherwise agreed. SPECIFICATION FOR PIPELINE AND PIPING VALVES",
+    "page": 42,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "8",
+    "clause": "8.5",
+    "title": "Weld End NDE",
+    "text": " If the purchaser specifies that weld ends be subjected to volumetric and/or surface NDE, the examination and acceptance criteria shall be in accordance with G.24, G.26, or G.27, as specified.",
+    "page": 43,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "8",
+    "clause": "8.6",
+    "title": "Visual Inspection of Castings",
+    "text": " All castings as a minimum shall be visually inspected in accordance with MSS SP-55 with the following acceptance criteria: — Type 1: none acceptable; — Type 2 to 12: A and B only.",
+    "page": 43,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "MSS SP-55"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "8",
+    "clause": "8.7",
+    "title": "Quality Specification Levels (QSLs)",
+    "text": " Annex J describes the QSLs including specific requirements for NDE, pressure testing, and documentation of the manufacturing process if specified by the purchaser. 9 Pressure Testing",
+    "page": 43,
+    "rule_type": "informational",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Hydrostatic Test Pressure"
+  },
+  {
+    "standard": "API 6D",
+    "section": "9",
+    "clause": "9.1",
+    "title": "General",
+    "text": " Each valve shall be tested in the final assembled condition prior to shipment. Testing shall be performed in the sequence detailed in 9.3 to 9.4. Backseat test that is only applicable to valves per 9.2 shall be performed before or after the hydrostatic shell test in 9.3. Pressure testing shall be carried out before external coating of the valve. If the valve(s) has been previously tested in accordance with this specification, subsequent repeat hydrostatic and gas testing may be performed without removal of the valve external coating. Test fluid shall be fresh water and shall contain a corrosion inhibitor. Based on the end location of the valve, the test fluid shall have, antifreeze (glycol) added unless otherwise agreed. The water temperature shall not be greater than 100 °F (38 °C) during the testing period. The chloride content of test water in contact with austenitic and duplex stainless steel wetted components of valves shall not exceed 30 µg/g (30 ppm by mass). The chloride content in the test water shall be tested at least annually. Valves shall be tested with the seating and sealing surfaces free from sealant except where the sealant is the primary means of sealing. A secondary seat and/or stem packing sealant system, if provided, shall not be used before or during tests. All hydrostatic and gas shell tests specified shall be performed with the valve unseated and partially open and may also be performed with the valve fully open, provided the body cavity is simultaneously filled and pressurized through a cavity connection. If the valve-body connections are not available for direct monitoring, methods for monitoring pressures and/or leakage shall be determined by other methods. 29 30 API SPECIFICATION 6D All pressure testing shall be performed in accordance with manufacturer’s documented procedures. Supplementary pressure tests are found in Annex H, Annex I, or Annex J, as required, if specified by the purchaser at time of order placement.",
+    "page": 43,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "API SPECIFICATION"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Hydrostatic Test Pressure"
+  },
+  {
+    "standard": "API 6D",
+    "section": "9",
+    "clause": "9.2",
+    "title": "Stem Backseat Test",
+    "text": " Testing of the backseat on valves that have this feature shall commence with the packing gland loose unless a test port is provided. Self-energized packing or seals shall be removed unless a test port is provided for this test. The valves shall be filled with the ends closed off and the obturator in the partially open position until leakage of the test fluid around the stem is observed. The backseat shall then be closed and a minimum pressure of 1.1 times the pressure rating determined in accordance with 5.2 for material at 100 °F (38 °C) applied for the duration specified in Table 4. Monitoring for leakage shall be through a test access port or by monitoring leakage around the loosened packing. Acceptance criteria: no visually detectable leakage during the test duration at test pressure on any external surface of the shell. Warning—Appropriate safety precautions must be taken. Table 4—Minimum Duration of Stem Backseat Tests",
+    "page": 44,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Seat Leakage"
+  },
+  {
+    "standard": "API 6D",
+    "section": "9",
+    "clause": "9.3",
+    "title": "Hydrostatic Shell Test",
+    "text": " Valve ends shall be closed off and the obturator placed in the partially open position during the test. If specified by the purchaser, the method of closing the ends shall permit the transmission of the full-pressure force acting on the end blanks to the valve body. If present, external relief valves shall be removed and their connections plugged. The test pressure shall be 1.5 or more times the pressure rating determined in accordance with 5.2 for material at 100 °F (38 °C) based on the valve end connection material. The duration shall not be less than that specified in Table 5. When the valve has been designed to withstand a higher hydrostatic shell test pressure per 5.8, the shell test pressure shall be 1.5 or more times the higher design pressure at 100 °F (38 °C). When performing a higher hydrostatic shell test and the valve is flanged, the hydrostatic shell test shall be performed with bore sealing plugs to ensure the flanges are not subjected to test pressures greater than 1.5 times the valve flange rating. The duration shall not be less than that specified in Table 5. SPECIFICATION FOR PIPELINE AND PIPING VALVES Table 5—Minimum Duration of Hydrostatic Shell Tests After hydrostatic shell testing, external relief valves shall be fitted to valves that have this feature. The connection to the valve body shall be tested at 95 % of the set pressure of the relief valve for 2 min for valve sizes up to and including NPS 4 (DN 100) and 5 min for valve sizes NPS 6 (DN 150) and larger. The relief-valve connection shall be free of visible leakage during this period. The external relief valves shall be set to relieve at the specified pressure and tested in accordance with 9.4.4.4. If pipe pups are to be welded to the valve as part of the final assembly, the pressure rating of the pipe pups may be insufficient for the hydrostatic-shell test pressure, then the pups shall be welded to the valve following the valve-shell test and the valve and pup(s) tested at a pressure lower than the hydrostatic shell test not to exceed the test pressure of the pipe pups.",
+    "page": 44,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Hydrostatic Test Pressure"
+  },
+  {
+    "standard": "API 6D",
+    "section": "9",
+    "clause": "9.4.1",
+    "title": "Preparation",
+    "text": " Lubricants or sealants shall be removed from seats and obturator sealing surfaces except where the lubricant or sealant is the primary means of sealing. Assembly lubricants for metal-to-metal contact surfaces may be used by agreement.",
+    "page": 45,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Seat Leakage"
+  },
+  {
+    "standard": "API 6D",
+    "section": "9",
+    "clause": "9.4.2",
+    "title": "Test Pressure and Duration",
+    "text": " The test pressure for all seat tests shall not be less than 1.1 times the pressure rating determined in accordance with 5.2 for material at 100 °F (38 °C) based on the valve end connection material. The test duration shall be in accordance with Table 6. Table 6—Minimum Duration of Seat Tests",
+    "page": 45,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Seat Leakage"
+  },
+  {
+    "standard": "API 6D",
+    "section": "9",
+    "clause": "9.4.3",
+    "title": "Acceptance Criteria",
+    "text": " Leakage for soft-seated valves and lubricated plug valves shall not exceed ISO 5208, Rate A (no visible detectable leakage for the duration of the test at test pressure). 31 32 API SPECIFICATION 6D For metal-seated check valves the liquid leakage rate shall not exceed ISO 5208, Rate G. Seat leakage shall be monitored from each seat via the valve body cavity vent or drain connection. Leakage detected as originating from behind seat rings or around resilient closure materials shall be cause for rejection. NOTE Special application may require that the leakage rate be less than ISO 5208, Rate D.",
+    "page": 45,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "API SPECIFICATION",
+      "ISO 5208"
+    ],
+    "applies_to": [
+      "Check Valve",
+      "Plug Valve"
+    ],
+    "datasheet_field": "Seat Leakage"
+  },
+  {
+    "standard": "API 6D",
+    "section": "9",
+    "clause": "9.4.4.1",
+    "title": "Unidirectional",
+    "text": " With the valve half-open, the valve and its cavity shall be completely filled with test fluid. The valve shall then be closed and the test pressure applied to the appropriate end of the valve. Leakage from the upstream seat shall be monitored via the valve body cavity vent or drain connection, where provided. For valves without body cavity or drain connection, or downstream seated valves, seat leakage shall be monitored at the respective downstream end of the valve (the valve end downstream of the pressurized test fluid).",
+    "page": 46,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Seat Leakage"
+  },
+  {
+    "standard": "API 6D",
+    "section": "9",
+    "clause": "9.4.4.2",
+    "title": "Bidirectional",
+    "text": " With the valve half-open, the valve and its cavity shall be completely filled with test fluid. The valve shall then be closed and the test pressure applied successively to both ends of the valve. Seat leakage shall be monitored from each seat via the valve body cavity vent or drain connection, where provided. For valves without a body-cavity vent or drain connection, seat leakage shall be monitored from the respective downstream end of the valve.",
+    "page": 46,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Seat Leakage"
+  },
+  {
+    "standard": "API 6D",
+    "section": "9",
+    "clause": "9.4.4.3",
+    "title": "Additional Seat Testing",
+    "text": " If the purchaser specifies the functionality for the valve to be that of double block and bleed (DBB) valves, the test described in H.9 shall be performed. If the purchaser specifies the functionality for the valve to be that of double isolation and bleed (DIB-1), both seats bidirectional, the test described in H.10 shall be performed. If the purchaser specifies the functionality for the valve to be that of DIB-2, one seat unidirectional and one seat bidirectional, the test described in H.11 shall be performed. See Annex K for additional information on isolation features.",
+    "page": 46,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Seat Leakage"
+  },
+  {
+    "standard": "API 6D",
+    "section": "9",
+    "clause": "9.4.4.4",
+    "title": "Test of Cavity Relief Valve",
+    "text": " If provided, the external relief valve shall be set and certified to relieve to atmospheric pressure at the specified pressure either by the relief-valve supplier or the valve manufacturer. The set pressure of relief valves shall be between 1.1 and 1.33 times, and the reseat pressure shall not be less than 1.05 times the valve pressure rating determined in accordance with 5.2 for material at 100 °F (38 °C).",
+    "page": 46,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Seat Leakage"
+  },
+  {
+    "standard": "API 6D",
+    "section": "9",
+    "clause": "9.4.4.5",
+    "title": "Installation of Body Connections After Testing",
+    "text": " SPECIFICATION FOR PIPELINE AND PIPING VALVES",
+    "page": 46,
+    "rule_type": "informational",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Body Material"
+  },
+  {
+    "standard": "API 6D",
+    "section": "9",
+    "clause": "9.4.4.6",
+    "title": "Alternative Seat Test",
+    "text": " High-pressure gas seat testing in accordance with H.4.3 may be performed in lieu of the hydrostatic seat test by agreement.",
+    "page": 47,
+    "rule_type": "informational",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Hydrostatic Test Pressure"
+  },
+  {
+    "standard": "API 6D",
+    "section": "9",
+    "clause": "9.5",
+    "title": "Check Valves",
+    "text": " The seat test pressure for check valves shall be applied in the direction of the required flow blockage.",
+    "page": 47,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "Check Valve"
+    ],
+    "datasheet_field": "Seat Leakage"
+  },
+  {
+    "standard": "API 6D",
+    "section": "9",
+    "clause": "9.6",
+    "title": "Testing of Drain, Vent, and Sealant Injection Lines",
+    "text": " If provided as part of the final assembly, drain, vent, and sealant injection lines shall be subject to a hydrostatic test with the valve in accordance with 9.3. If testing with the fully assembled valve is not practical, these lines shall be tested separately at the test pressure in 9.3. The final assembly connection is subjected to the hydrostatic test in 9.3 unless otherwise agreed. The test pressure for sealant injection lines shall be by agreement.",
+    "page": 47,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Hydrostatic Test Pressure"
+  },
+  {
+    "standard": "API 6D",
+    "section": "9",
+    "clause": "9.7",
+    "title": "Draining",
+    "text": " Upon completion of tests, valves shall be drained of test fluids, dried, and where applicable, lubricated before shipment. 10 Coating/Painting All non-corrosion-resistant valves shall be coated or painted externally in accordance with the manufacturer’s standards, unless otherwise agreed. If external coating or painting operations are performed by the manufacturer or their coating or painting contractor, preventative measures shall be taken to assure that no foreign material enters the internal cavity of the valve that may impact the valve function. Corrosion-resistant valves shall not be coated or painted, unless otherwise agreed. Flange face and actuator mounting flange sealing surfaces, weld bevel ends, and exposed stems shall not be coated. See Annex L for details on where coatings/paintings are not allowed. Corrosion protection shall be provided using the manufacturer’s documented requirements for flange faces, weld bevel ends, exposed stems, and internal surfaces of the valve. 11 Marking Valves shall be marked in accordance with the requirements of Table 7 to be in compliance with this product specification. Body, closure/end connector, and cover/bonnet marking shall be performed using a low-stress die-stamp (rounded “V” or dot face type) or cast. Each valve shall be provided with an austenitic stainless steel nameplate securely affixed and so located that it is easily accessible. The nameplate shall be attached to the valve body; however, based on valve design the nameplate may be attached to the bonnet/cover or end connector at the option of the manufacturer. For valves smaller than NPS 2 (DN 50), the nameplate shall not be omitted, but may be attached to the valve with stainless steel wire. 33 34 API SPECIFICATION 6D Table 7—Valve Marking No. SPECIFICATION FOR PIPELINE AND PIPING VALVES Table 7—Valve Marking No. a When the body is manufactured from more than one type of material, both the body and end-connection material shall be identified. b MSS SP-25 gives guidance on marking. c Where the grade and class does not uniquely identify the material specification, the material specification, grade, and class shall be marked. Example: A516-70. The marking on the body, end connector, bonnet/cover and nameplate shall be visually legible. Marking on the body closure/end connector and bonnet/cover shall be not less than 0.25 in. (6 mm). On valves whose size or shape limits the body markings, they may be omitted in the following order: 1) size, 2) rating, 3) material, 4) manufacturer name or trademark. For valves with one unidirectional seat and one bidirectional seat, the directions of both seats shall be specified on a separate identification plate as illustrated in Figure 5. In Figure 5, one symbol indicates the bidirectional seat and the other symbol indicates the unidirectional seat. An example of valve marking is given in Annex M. 12 Preparation for Shipment Flanged and welding ends shall be blanked off to protect the gasket surfaces, welding ends, and valve internals during shipment. Protective covers shall be made of wood, wood fiber, plastic, or metal and shall be securely attached to the valve ends by using bolting/nuts, plastic straps, steel clips, or friction-locking devices. 35 36 API SPECIFICATION 6D 10) [e) Figure 5—Typical Identification Plate for a Valve with One Seat Unidirectional and One Seat Bidirectional The design of the covers shall prevent the valves from being installed unless the covers have been removed. Plug, ball, and reverse-acting through-conduit gate valves shall be shipped in the fully open position, unless fitted with a fail-to-close actuator. Other gate valve types shall be shipped with the gate in the fully closed position. Check valves NPS 4 (DN 100) and larger shall be shipped with the disc secured or supported during transport. A warning label shall be attached to the protective cover with instructions to remove, prior to installation, material from inside the valve that secures or supports the disc. Valves shipped with stem extensions and without an operating mechanism shall have the annular space closed and the stem extension secured to the outer housing. 13 Documentation",
+    "page": 47,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "API SPECIFICATION",
+      "MSS SP-25"
+    ],
+    "applies_to": [
+      "Ball Valve",
+      "Check Valve",
+      "Gate Valve",
+      "Plug Valve"
+    ],
+    "datasheet_field": "Seat Leakage"
+  },
+  {
+    "standard": "API 6D",
+    "section": "13",
+    "clause": "13.1",
+    "title": "Minimum Documentation and Retention",
+    "text": " The documentation listed below shall be retained by the manufacturer for a minimum of 10 years following the date of manufacture: a) design documentation; b) weld procedure specification (WPS); c) weld procedure qualification record (PQR); d) welder performance qualification (WPQ); e) qualification records of NDE personnel; f) records of test equipment calibration; g) NDE records [for radiographic testing (RT), minimum NDE records are reader sheets and technique sheet]; SPECIFICATION FOR PIPELINE AND PIPING VALVES h) for valves NPS 2 (DN 50) and larger: 1) material test report for body, bonnet/cover(s), and end connector(s)/closure(s) traceable to the unique valve serial number; 2) material test report for stems; 3) serial number; 4) pressure test results (including hydrostatic and or gas); 5) for sour service valves, certificate of conformance to NACE MR0175, ISO 15156 (all parts), or NACE MR0103 for sour service valves, if applicable. NOTE Purchaser or regulatory requirements can specify a longer record retention period. The documentation shall be provided by the manufacturer in legible, retrievable, and reproducible form and free of damage. The purchaser can specify supplementary documentation in accordance with Annex N.",
+    "page": 50,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "ISO 15156",
+      "NACE MR0103",
+      "NACE MR0175"
+    ],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Hydrostatic Test Pressure"
+  },
+  {
+    "standard": "API 6D",
+    "section": "13",
+    "clause": "13.2",
+    "title": "Documentation Provided with the Valve(s)",
+    "text": " As a minimum, a certificate of conformance to this specification shall be supplied by the manufacturer. The certificate(s) shall identify the valve type, size, class, end connection, serial number(s), any additional requirement specified by the manufacturer or purchaser, and a statement that valve(s) is/are in full conformance with this product specification edition and all addenda. 14 Facility Requirements",
+    "page": 51,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "Pressure Rating"
+  },
+  {
+    "standard": "API 6D",
+    "section": "14",
+    "clause": "14.1",
+    "title": "Minimum Facility Requirements for the Assembler Category of Manufacturing",
+    "text": " The assembler (see 3.1.1) shall have on-site equipment and personnel to perform the required processes needed to produce the products under the scope of this specification as identified in Table 8.",
+    "page": 51,
+    "rule_type": "mandatory",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "14",
+    "clause": "14.2",
+    "title": "Activities Applicable to an Assembler Facility",
+    "text": " The activities for an assembler are listed in Table 8 and shall be performed at the applicable facility. 37 38 API SPECIFICATION 6D Table 8—Minimum Facility Requirements Annex A (informative) API Monogram Program Use of the API Monogram by Licensees A.1 Scope A.1.1 Applicability This annex is only normative for product supplied bearing the API Monogram and manufactured at a facility licensed by API; for all other instances it is not applicable. A.1.2 General The API Monogram® is a registered certification mark owned by the American Petroleum Institute (API) and authorized for licensing by the API Board of Directors. Through the API Monogram Program, API licenses product manufacturers to apply the API Monogram to products which comply with product specifications and have been manufactured under a quality management system that meets the requirements of API Q1. API maintains a complete, searchable list of all Monogram licensees on the API Composite List website (www.api.org/compositelist). The application of the API Monogram and license number on products constitutes a representation and warranty by the licensee to API and to purchasers of the products that, as of the date indicated, the products were manufactured under a quality management system conforming to the requirements of API Q1 and that the product conforms in every detail with the applicable standard(s) or product specification(s). API Monogram program licenses are issued only after an on-site audit has verified that an organization has implemented and continually maintained a quality management system that meets the requirements of API Q1 and that the resulting products satisfy the requirements of the applicable API product specification(s) and/or standard(s). Although any manufacturer may claim that its products meet API product requirements without monogramming them, only manufacturers with a license from API can apply the API Monogram to their products. Together with the requirements of the API Monogram license agreement, this annex establishes the requirements for those organizations who wish to voluntarily obtain an API license to provide API monogrammed products that satisfy the requirements of the applicable API product specification(s) and/or standard(s) and API Monogram Program requirements. For information on becoming an API Monogram Licensee, please contact API, Certification Programs, 1220 L Street, NW, Washington, DC 20005 or call 202-682-8145 or by email at certification@api.org. A.2 Normative References In addition to the referenced standards listed earlier in this document, this annex references the following standard: API Specification Q1, Specification for Quality Management System Requirements for Manufacturing Organizations for the Petroleum and Natural Gas Industry For Licensees under the Monogram Program, the latest version of this document shall be used. The requirements identified therein are mandatory. 40 API SPECIFICATION 6D A.3 API Monogram Program: Licensee Responsibilities A.3.1 Monogram Program Requirements For all organizations desiring to acquire and maintain a license to use the API Monogram, conformance with the following shall be required at all times: a) the quality management system requirements of API Q1; b) the API Monogram Program requirements of API Q1, Annex A; c) the requirements contained in the API product specification(s) to which the organization is licensed; d) the requirements contained in the API Monogram Program License Agreement. A.3.2 Control of the Application and Removal of the API Monogram Each licensee shall control the application and removal of the API Monogram in accordance with the following. a) Products that do not conform to API specified requirements shall not bear the API Monogram. b) Each licensee shall develop and maintain an API Monogram marking procedure that documents the marking/ monogramming requirements specified by this annex and any applicable API product specification(s) and/or standard(s). The marking procedure shall: 1) define the authority responsible for application and removal of the API Monogram and license number; 2) define the method(s) used to apply the Monogram and license number; 3) identify the location on the product where the API Monogram and license number are to be applied; 4) require the application of the date of manufacture of the product in conjunction with the use of the API Monogram and license number; 5) require that the date of manufacture, at a minimum, be two digits representing the month and two digits representing the year (e.g. 05-12 for May 2012) unless otherwise stipulated in the applicable API product specification(s) or standard(s); and 6) define the application of all other required API product specification(s) and/or standard(s) marking requirements. c) Only an API licensee shall apply the API Monogram and its designated license number to API monogrammable products. d) The API Monogram and license number, when issued, are site-specific and subsequently the API Monogram shall only be applied at that site specific licensed facility location. e) The API Monogram may be applied at any time appropriate during the production process but shall be removed in accordance with the licensee’s API Monogram marking procedure if the product is subsequently found to be out of conformance with any of the requirements of the applicable API product specification(s) and/or standard(s) and API Monogram Program. SPECIFICATION FOR PIPELINE AND PIPING VALVES Alternative Marking of Products License Agreement, available on the API Monogram Program website at http:// www.api.org/alternative-marking. A.3.3 Design and Design Documentation Each licensee and/or applicant for licensing shall maintain current design documentation as identified in API Q1 for all of the applicable products that fall under the scope of each Monogram license. The design document information shall provide objective evidence that the product design meets the requirements of the applicable and most current API product specification(s) and/or standard(s). The design documentation shall be made available during API audits of the facility. In specific instances, the exclusion of design activities is allowed under the Monogram Program, as detailed in Advisory # 6, available on API Monogram Program website at http://www.api.org/advisories. A.3.4 Manufacturing Capability The API Monogram Program is designed to identify facilities that have demonstrated the ability to manufacture equipment that conforms to API specifications and/or standards. API may refuse initial licensing or suspend current licensing based on a facility’s level of manufacturing capability. If API determines that an additional review is warranted, API may perform additional audits (at the organization’s expense) of any subcontractors to ensure their conformance with the requirements of the applicable API product specification(s) and/or standard(s). A.3.5 Use of the API Monogram in Advertising An API Monogram licensee shall not use the API Monogram and/or license number on letterheads, buildings or other structures, websites or in any advertising without an express statement of fact describing the scope of Licensee’s authorization (license number and product specification). The Licensee should contact API for guidance on the use of the API Monogram other than on products. A.4 Product Marking Requirements A.4.1 General These marking requirements shall apply only to those API Licensees wishing to mark applicable products in conjunction with the requirements of the API Monogram Program. A.4.2 Product Specification Identification Manufacturers shall mark products as specified by the applicable API specifications or standards. Marking shall include reference to the applicable API specification and/or standard. Unless otherwise specified, reference to the API specifications and/or standards shall be, as a minimum, “API [Document Number]” (e.g. API 6A, or API 600). Unless otherwise specified, when space allows, the marking may include use of “Spec” or “Std,” as applicable (e.g. API Spec 6A or API Std 600). A.4.3 Units Products shall be marked with units as specified in the API specification and/or standard. If not specified, equipment shall be marked with U.S. customary (USC) units. Use of dual units [USC units and metric (SI) units] may be acceptable, if such units are allowed by the applicable product specification and/or standard. 41 42 API SPECIFICATION 6D A.4.4 Nameplates Nameplates, when applicable, shall be made of a corrosion-resistant material unless otherwise specified by the API specification and/or standard. Nameplate shall be located as specified by the API specification and/or standard. If the location is not specified, then the licensee shall develop and maintain a procedure detailing the location to which the nameplate shall be applied. Nameplates may be attached at any time during the manufacturing process. The API Monogram and license number shall be marked on the nameplate, in addition to the other product marking requirements specified by the applicable product specification and/or standard. A.4.5 License Number The API Monogram license number shall not be used unless it is marked in conjunction with the API Monogram. The license number shall be used in close proximity to the API Monogram. A.5 API Monogram Program: Nonconformance Reporting API solicits information on products that are found to be nonconforming with API specified requirements, as well as field failures (or malfunctions), which are judged to be caused by either specification and/or standard deficiencies or nonconformities against API specified requirements. Customers are requested to report to API all problems with API monogrammed products. A nonconformance may be reported using the API Nonconformance Reporting System available at http://compositelist.api.org/ncr.aspx. Annex B (informative) Valve Configurations This annex shows typical configurations for gate, plug, ball, and check valves with flanged and welding ends. Figure B.1—Expanding-gate/Rising-stem Gate Valve Figure B.2—Slab-gate/Through-conduit Rising-stem Gate Valve Figure B.3—Plug Valve Figure B.4—Top-entry Trunnion Mounted Ball Valve Figure B.5—Three-piece Trunnion Mounted Ball Valve Figure B.6—Welded-body Trunnion Mounted Ball Valve Figure B.7—Reduced-opening Swing Check Valve Figure B.8—Full-opening Swing Check Valve Figure B.9—Single-plate Wafer-type Check Valve, Long Pattern Figure B.10—Typical Dual-plate Wafer-type Check Valve, Long Pattern Figure B.11—Single-plate Wafer-type Check Valve, Short Pattern Figure B.12—Axial Flow Check Valve Figure B.13—Piston Check Valve Figure B.14—Floating Ball Valve 44 Key 1 stem indicator OoOOAnNnNouakWDNDN 2 stem enclosure 3 handwheel 4 yoke nut 5 yoke 6 stem 7 yoke bolting 8 stem packing 9 relief valve 10 bonnet 11 bonnet bolting 12 gate guide 13 gate assembly 14 seat ring 15 body 16 support ribs or legs 17 raised face 18 welding end 19 ring joint raised-face face-to-face dimension A B welding-end end-to-end dimension C ring joint end-to-end dimension API SPECIFICATION 6D 17 A 1 2 3 4 5 6 7 11 8 9 10 13 14 15 12 16 18 19 Key 1 stem indicator 2 stem enclosure 3 handwheel 4 yoke nut 5 yoke 6 stem 7 yoke bolting 8 stem packing 9 relief valve 10 bonnet 11 bonnet bolting 12 gate 13 seat ring 14 body 15 support ribs or legs 16 raised face 17 welding end 18 ring joint A raised-face face-to-face dimension B welding-end end-to-end dimension C ring joint end-to-end dimension NOTE See Table C.1 to Table C.5 for dimensions A, B, and C. SPECIFICATION FOR PIPELINE AND PIPING VALVES 16 A 1 2 3 4 5 6 7 11 8 9 10 12 13 14 15 17 17 18 45 46 Key 1 lubricator screw ANOaARWBN 2 gland studs and nuts 3 gland 4 cover studs and nuts 5 cover 6 cover gasket 7 stem packing 8 lubricant check valve 9 plug 10 body 11 stop collar 12 raised face 13 welding end 14 ring joint A raised-face face-to-face dimension B welding-end end-to-end dimension C ring joint end-to-end dimension API SPECIFICATION 6D 12 A 1 2 3 4 5 6 7 8 9 10 11 13 B C 14 Key 1 stem seal 2 bonnet cover eESN AARON 3 bonnet 4 body bolting 5 body 6 seat ring 7 stem 8 ball raised face 9 10 welding end 11 ring joint aR A raised-face face-to-face dimension B welding-end end-to-end dimension C ring joint end-to-end dimension NOTE See Table C.1 to Table C.5 for dimensions A, B, and C. SPECIFICATION FOR PIPELINE AND PIPING VALVES 9 A 10 B C 11 47 48 Key 1 stem FPOANODAKRWDND Be» 2 body cover 3 stem seal 4 body 5 seat ring 6 ball 7 body bolting 8 end connector raised face 10 welding end 11 ring joint A raised-face face-to-face dimension B welding-end end-to-end dimension C ring joint end-to-end dimension NOTE See Table C.1 to Table C.5 for dimensions A, B, and C. 9 10 API SPECIFICATION 6D A 1 2 3 4 5 6 7 8 B C 11 Key 1 stem 2 body cover 3 stem seal 4 body 5 seat ring 6 ball 7 end connector 8 raised face 9 welding end 10 ring joint A raised-face face-to-face dimension B welding-end end-to-end dimension C ring joint end-to-end dimension NOTE See Table C.1 to Table C.5 for dimensions A, B, and C. SPECIFICATION FOR PIPELINE AND PIPING VALVES 8 9 A B C 1 2 3 4 5 6 7 10 49 50 Key 1 cover bolting OWANOAKRWHN 2 cover 3 body 4 clapper disc arm 5 shaft 6 clapper disc 7 seat ring 8 support legs raised face 9 10 welding end 11 ring joint 12 direction of flow A raised-face face-to-face dimension B welding-end end-to-end dimension C ring joint end-to-end dimension NOTE See Table C.1 to Table C.5 for dimensions A, B, and C. 9 10 API SPECIFICATION 6D A B C 12 11 Key 1 cover bolting OMONODARWHNH 2 cover 3 body 4 clapper disc arm 5 shaft 6 clapper disc 7 seat ring 8 support legs raised face 9 10 welding end 11 ring joint 12 direction of flow A raised-face face-to-face dimension B welding-end end-to-end dimension C ring joint end-to-end dimension NOTE See Table C.1 to Table C.5 for dimensions A, B, and C. SPECIFICATION FOR PIPELINE AND PIPING VALVES 9 A 1 2 3 4 5 6 7 8 10 B C 12 11 51 52 API SPECIFICATION 6D 9 Key 1 body ODANOAKRWNH 2 hinge 3 nut 4 closure plate/stud assembly 5 seat ring 6 bearing spacers 7 hinge pin 8 hinge pin retainers 9 direction of flow Figure B.9—Single-plate Wafer-type Check Valve, Long Pattern Key 1 body 2 closure plate 3 stop pin 4 spring 5 hinge pin 6 plate lug bearings 7 body lug bearings 8 stop pin retainers hinge pin retainers 9 10 spring bearings 11 direction of flow SPECIFICATION FOR PIPELINE AND PIPING VALVES A - A 3 2 1 11 A 9 8 4 5 10 6 7 A 53 54 API SPECIFICATION 6D 6 2 1 3 4 5 7 Key 1 body NO oh WD 2 clapper 3 pin 4 clapper seal 5 body seal 6 lifting eye 7 direction of flow Figure B.11—Single-plate Wafer-type Check Valve, Short Pattern SPECIFICATION FOR PIPELINE AND PIPING VALVES B Key 1 body 2 rod guidance 3 disc 4 bearing 5 spring 6 flow direction A raised-face face-to-face dimension C B welding-end end-to-end dimension C ring joint end-to-end dimension NOTE See Table C.1 to Table C.5 for dimensions A, B, and C. 6 1 55 56 Key 1 cover bolting 2 cover 3 body 4 piston 5 liner 6 seat ring support legs 7 raised face 9 10 welding end 11 ring joint 12 direction of flow A raised-face face-to-face dimension B welding-end end-to-end dimension C ring joint end-to-end dimension NOTE See Table C.1 to Table C.5 for dimensions A, B, and C. API SPECIFICATION 6D 1 2 3 4 5 6 7 11 Key 1 stem 2 stem seal 3 body 4 seat ring 5 ball 6 body bolting 7 end connector 8 raised face 9 welding end 10 ring joint A raised-face face-to-face dimension B welding-end end-to-end dimension C ring joint end-to-end dimension SPECIFICATION FOR PIPELINE AND PIPING VALVES 8 A 1 2 3 4 5 6 7 B 9 C 10 57 Annex C (normative) Valve End-to-end and Face-to-face Dimensions This annex shows valve end-to-end and face-to-face dimensions for gate, plug, ball, and check valves with raised face, welding end, and ring joint. Table C.1—Gate Valves-Face-to-face (A) and End-to-end (B and C) Dimensions Table C.2—Plug valves-Face-to-face (A) and End-to-end (B and C) Dimensions Table C.3—Ball Valves-Face-to-face (A) and End-to-end (B and C) Dimensions Table C.4—Check Valves, Full Opening and Reduced Types-Face-to-face (A) and End-to-end (B and C) Dimensions Table C.5—Single- and Dual-plate, Long- and Short-pattern, Wafer-type Check Valves-Face-to-face Dimensions SPECIFICATION FOR PIPELINE AND PIPING VALVES Table C.1—Gate Valves—Face-to-face (A) and End-to-end (B and C) Dimensions Dimensions in inches (millimeters) 36 900",
+    "page": 51,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "API 600",
+      "API 6A",
+      "API ALL",
+      "API AND",
+      "API AUDITS",
+      "API BOARD",
+      "API CAN",
+      "API COMPOSITE",
+      "API DETERMINES",
+      "API FOR",
+      "API LICENSE",
+      "API LICENSEE",
+      "API LICENSEES",
+      "API LICENSES",
+      "API MAINTAINS",
+      "API MAY",
+      "API MONOGRAM",
+      "API MONOGRAMMABLE",
+      "API MONOGRAMMED",
+      "API NONCONFORMANCE",
+      "API PRODUCT",
+      "API Q1",
+      "API SOLICITS",
+      "API SPEC",
+      "API SPECIFICATION",
+      "API SPECIFICATIONS",
+      "API SPECIFIED",
+      "API STD",
+      "API.ORG"
+    ],
+    "applies_to": [
+      "Ball Valve",
+      "Check Valve",
+      "Gate Valve",
+      "Plug Valve"
+    ],
+    "datasheet_field": "Seat Leakage"
+  },
+  {
+    "standard": "API 6D",
+    "section": "40",
+    "clause": "40.00",
+    "title": "(1016)",
+    "text": " —",
+    "page": 73,
+    "rule_type": "informational",
+    "normative_references": [],
+    "applies_to": [
+      "All Valves"
+    ],
+    "datasheet_field": "General Requirement"
+  },
+  {
+    "standard": "API 6D",
+    "section": "69",
+    "clause": "69.13",
+    "title": "(1756)",
+    "text": " 59 60 API SPECIFICATION 6D Table C.1—Gate Valves—Face-to-face (A) and End-to-end (B and C) Dimensions (Continued) Dimensions in inches (millimeters) SPECIFICATION FOR PIPELINE AND PIPING VALVES Table C.1—Gate Valves—Face-to-face (A) and End-to-end (B and C) Dimensions (Continued) Dimensions in inches (millimeters) 61 62 API SPECIFICATION 6D Table C.1—Gate Valves—Face-to-face (A) and End-to-end (B and C) Dimensions (Continued) Dimensions in inches (millimeters) SPECIFICATION FOR PIPELINE AND PIPING VALVES Table C.2—Plug Valves—Face-to-face (A) and End-to-end (B and C) Dimensions Dimensions in inches (millimeters) 63 64 API SPECIFICATION 6D Table C.2—Plug Valves—Face-to-face (A) and End-to-end (B and C) Dimensions (Continued) Dimensions in inches (millimeters) (1626) (1654) (1626) (1626) (1654) 36 900 — — — 68.00 — 69.13 68.00 68.00 69.13 — — — (1727) (1756) (1727) (1727) (1756) SPECIFICATION FOR PIPELINE AND PIPING VALVES Table C.2—Plug Valves—Face-to-face (A) and End-to-end (B and C) Dimensions (Continued) Dimensions in inches (millimeters) 36 900 — — — — — — (1778) 74.00 (1880) | | | (1778) 74.00 (1880) (1794) 74.63 (1895) — — — 65 66 API SPECIFICATION 6D Table C.2—Plug Valves—Face-to-face (A) and End-to-end (B and C) Dimensions (Continued) Dimensions in inches (millimeters) SPECIFICATION FOR PIPELINE AND PIPING VALVES Table C.2—Plug Valves—Face-to-face (A) and End-to-end (B and C) Dimensions (Continued) Dimensions in inches (millimeters) 67 68 API SPECIFICATION 6D Table C.2—Plug Valves—Face-to-face (A) and End-to-end (B and C) Dimensions (Continued) Dimensions in inches (millimeters) (1422) (1445) SPECIFICATION FOR PIPELINE AND PIPING VALVES Table C.3—Ball Valves—Face-to-face (A) and End-to-end (B and C ) Dimensions Dimensions in inches (millimeters) 69 70 API SPECIFICATION 6D Table C.3—Ball Valves—Face-to-face (A) and End-to-end (B and C ) Dimensions (Continued) Dimensions in inches (millimeters) Full Bore and Reduced Bore Short Pattern, Full Bore, and Reduced Bore SPECIFICATION FOR PIPELINE AND PIPING VALVES Table C.3—Ball Valves—Face-to-face (A) and End-to-end (B and C ) Dimensions (Continued) Dimensions in inches (millimeters) 71 72 API SPECIFICATION 6D Table C.3—Ball Valves—Face-to-face (A) and End-to-end (B and C ) Dimensions (Continued) Dimensions in inches (millimeters) SPECIFICATION FOR PIPELINE AND PIPING VALVES Table C.3—Ball Valves—Face-to-face (A) and End-to-end (B and C ) Dimensions (Continued) Dimensions in inches (millimeters) 73 74 API SPECIFICATION 6D Table C.4—Check Valves, Full-opening and Reduced Types—Face-to-face (A) and End-to-end (B and C ) Dimensions Dimensions in inches (millimeters) SPECIFICATION FOR PIPELINE AND PIPING VALVES Table C.4—Check Valves, Full-opening and Reduced Types—Face-to-face (A) and End-to-end (B and C ) Dimensions (Continued) Dimensions in inches (millimeters) 75 76 API SPECIFICATION 6D Table C.4—Check Valves, Full-opening and Reduced Types—Face-to-face (A) and End-to-end (B and C ) Dimensions (Continued) Dimensions in inches (millimeters) (1549) (1549) (1568) (1943) (1943) (1972) SPECIFICATION FOR PIPELINE AND PIPING VALVES 77 Table C.5—Single- and Dual-plate, Long- and Short-pattern, Wafer-type Check Valves—Face-to-face Dimensions Face-to-face dimensions in inches (millimeters) Pattern Annex D (informative) Guidance for Travel Stops by Valve Type This annex provides guidance on travel stops by common valve type (see Table D.1). Table D.1—Valve Travel Stops Ball Plug— nonexpanding type Slab/parallel Through conduit gate valve Slab/parallel Through conduit gate valve Slab/parallel Through conduit gate valve Slab/parallel Through conduit gate valve Expanding gate Conventional, Expanding gate Conventional, Expanding gate Conventional, Check closed position. Annex E (informative) API 20 Series Supply Chain Management E.1 General This annex provides guidance on supply chain management to cover castings, forgings, and bolting. The standards referenced in this annex may become mandatory (normative) in future edition(s) of this standard. E.2 Castings Castings may be specified by the purchaser per API 20A for castings per specification levels CSL-1, CSL-2, CSL-3, or CSL-4. E.3 Open-die Forgings Open-die forgings may be specified by the purchaser per API 20B per specification levels FSL-1, FSL-2, FSL-3, or FSL-4. E.4 Closed-die Forgings Closed-die forgings may be specified by the purchaser per API 20C per specification levels FSL-1, FSL-2, FSL-3, or FSL-4. E.5 Carbon and Alloy Steel Bolting Carbon and alloy steel bolting may be specified by the purchaser per API 20E for bolting per specification levels BSL-1, BSL-2, or BSL-3. Annex F (normative) Qualification of Heat-treating Equipment F.1 General All heat treatment of parts and TCs shall be performed with equipment meeting the requirements of this annex. F.2 Temperature Tolerance The temperature at any point in the working zone shall not vary by more than ±25 °F (±13 °C) from the furnace set- point temperature after the furnace working zone has been brought up to temperature. Furnaces that are used for tempering, aging, and/or stress relieving shall not vary by more than ±15 °F (±8 °C) from the furnace set-point temperature after the furnace working zone has been brought up to temperature. F.3 Furnace Calibration F.3.1 General The following provided details on the types of furnaces to be surveyed. F.3.2 Temperature Survey Method for Calibration of Batch-type Furnaces A temperature survey within the furnace working zone(s) shall be performed on each furnace at the maximum and minimum temperatures for which each furnace is to be used. A minimum of nine thermocouple test locations shall be used for all furnaces having a working zone greater than 10 ft3 (0.3 m3). For each 125 ft3 (3.5 m3) of furnace working zone surveyed, at least one thermocouple test location shall be used, up to a maximum of 40 thermocouples. See Figure F.1 and Figure F.2 for examples of thermocouple locations. a) Top view b) Side view SPECIFICATION FOR PIPELINE AND PIPING VALVES 3 1,4 2 1,7 4,5,6 5 3,9 2,8 9 6,7 8 a) Side view b) Top view Figure F.2—Thermocouple Locations—Cylindrical Furnace (Working Zone) For furnaces having a working zone less than 10 ft3 (0.3 m3), the temperature survey may be made with a minimum of three thermocouples located either at the front, center, and rear or at the top, center, and bottom of the furnace working zone. After insertion of the temperature-sensing devices, readings shall be taken at least once every 3 min to determine when the temperature of the furnace working zone approaches the bottom of the temperature range being surveyed. Once the furnace temperature has reached the set-point temperature, the temperature of all test locations shall be recorded at 2-min intervals, maximum, for at least 10 min. Then readings shall be taken at 5-min intervals, maximum, for sufficient time (at least 30 min) to determine the recurrent temperature pattern of the furnace working zone. Before the furnace set-point temperature is reached, none of the temperature readings shall exceed the set-point temperature by more than ±25 °F (±13 °C). After the furnace control set-point temperature is reached, no temperature reading shall vary beyond the limits specified. The temperatures within each furnace shall be surveyed within one year prior to use of the furnace for heat treatment. F.3.3 Temperature Survey Method for Recalibration of Batch-type Furnaces When a furnace is repaired or rebuilt, a new temperature survey shall be carried out before the furnace is used for heat treatment, subject to the following. 81 82 API SPECIFICATION 6D The SAE AMS 2750 sections on furnace modifications and furnace repairs shall be used to determine whether a new furnace survey is required. All furnace repairs and modifications shall be documented and the responsible Quality Assurance organization shall make determination whether an additional furnace survey and calibration is required based on the repairs or modifications in accordance with AMS 2750. F.3.4 Continuous-type Furnaces Method Furnaces used for continuous heat treatment shall be calibrated in accordance with procedures specified in SAE AMS-2750. F.4 Instruments F.4.1 General Automatic controlling and recording instruments shall be used. Thermocouples shall be located in the furnace working zone(s) and protected from furnace atmospheres by means of suitable protective devices. F.4.2 Accuracy The controlling and recording instruments used for the heat-treatment processes shall be accurate to ±1 % of their full-scale range. F.4.3 Calibration Temperature-controlling and temperature-recording instruments shall be calibrated at least once every three months. Equipment used to calibrate the production equipment shall be accurate to ±0.25 % of full-scale range. Annex G (normative) Requirements for Nondestructive Examination G.1 General This annex specifies the requirements for NDE that shall be performed by the manufacturer if specified by the purchaser. G.2 Radiographic Testing (RT) on 100 % of Critical Areas of Castings Examination shall be carried out in accordance with ASME B16.34, Appendix I. Acceptance shall be in accordance with ASME B16.34, Appendix I. G.3 RT on 100 % of Accessible Areas of Castings Examination shall be carried out in accordance with ASME B16.34, Appendix I. Acceptance shall be in accordance with ASME B16.34, Appendix I. G.4 Ultrasonic Testing (UT) on 100 % of Critical Areas of Castings Examination shall be carried out in accordance with ASME B16.34, Appendix IV. Acceptance shall be in accordance with ASME B16.34, Appendix IV. G.5 UT on 100 % of Accessible Areas of Castings Examination shall be carried out in accordance with ASME B16.34, Appendix IV. Acceptance shall be in accordance with ASME B16.34, Appendix IV. G.6 Magnetic-particle Testing (MT) on 100 % of Castings on External and Internal Surface per ASME BPVC, Sections V and VIII Examination shall be carried out in accordance with ASME BPVC, Section V, Article 7. Acceptance shall be in accordance with ASME BPVC, Section VIII, Division 1, Appendix 7. G.7 MT on 100 % of Castings on External and Internal Surface Area per ASME B16.34 Modified. Examination shall be carried out in accordance with ASME B16.34, Appendix II. Acceptance shall be in accordance with ASME B16.34, Appendix II, except round or linear indication shall not exceed 5 mm (0.197 in.). 84 API SPECIFICATION 6D G.8 Penetrant Testing (PT) on 100 % of Castings on External and Internal Surface Area per ASME BPVC, Sections V and VIII Examination shall be carried out in accordance with ASME BPVC, Section V, Article 6. Acceptance shall be in accordance with ASME BPVC, Section VIII, Division 1, Appendix 7. G.9 PT on 100 % of Castings on External and Internal Surface Area per ASME B16.34 Modified Examination shall be carried out in accordance with ASME B16.34, Appendix III. Acceptance shall be in accordance with ASME B16.34, Appendix III, except round or linear indication shall not exceed 5 mm (0.197 in.). G.10 UT of Forgings and Plate on 100 % of Surface Area Examination shall be carried out in accordance with ASME B16.34, Appendix IV. Acceptance shall be in accordance with ASME B16.34, Appendix IV. G.11 MT of Forgings on 100 % of Surface Area Examination shall be carried out in accordance with ASME BPVC, Section V, Article 7. Acceptance shall be in accordance with ASME BPVC, Section VIII, Division 1, Appendix 6. G.12 PT of Forgings on 100 % of Surface Area Examination shall be carried out in accordance with ASME BPVC, Section V, Article 6. Acceptance shall be in accordance with ASME BPVC, Section VIII, Division 1, Appendix 8. G.13 RT of Weldments on 100 % of Weld Examination shall be carried out in accordance with ASME BPVC, Section V, Article 2. Acceptance shall be in accordance with ASME BPVC, Section VIII, Division 1, UW-51 for linear indications and ASME BPVC, Section VIII, Division 1, Appendix 4 for rounded indications. G.14 UT of Full-penetration Welds on 100 % of Weld Examination shall be carried out in accordance with ASME BPVC, Section V, Article 4. Acceptance shall be in accordance with ASME BPVC, Section VIII, Division 1, Appendix 12. G.15 MT of Welds on 100 % of Weld Surface Area Examination shall be carried out in accordance with ASME BPVC, Section V, Article 7. SPECIFICATION FOR PIPELINE AND PIPING VALVES G.16 PT of Welds on 100 % of Weld Surface Area Examination shall be carried out in accordance with ASME BPVC, Section V, Article 6. Acceptance shall be in accordance with ASME BPVC, Section VIII, Division 1, Appendix 8. G.17 UT of Weld Overlay on 100 % of Surface Examination shall be carried out in accordance with ASME BPVC, Section V, Article 4 straight beam method. Acceptance criteria shall be in accordance with ASTM A578A/A578M standard Level C. G.18 MT on 100 % of Bolting Surface Area Examination shall be carried out in accordance with ASME BPVC, Section V, Article 7. Acceptance shall be in accordance with ASME BPVC, Section VIII, Division 1, Appendix 6. G.19 PT on 100 % of Bolting Surface Area Examination shall be carried out in accordance with ASME BPVC, Section V, Article 6. Acceptance shall be in accordance with ASME BPVC, Section VIII, Division 1, Appendix 8. G.20 MT on 100 % of Machined Surfaces Examination shall be carried out in accordance with ASME BPVC, Section V, Article 7. Acceptance shall be in accordance with ASME BPVC, Section VIII, Division 1, Appendix 6. G.21 PT on 100 % of Machined Surfaces Examination shall be carried out in accordance with ASME BPVC, Section V, Article 6. Acceptance shall be in accordance with ASME BPVC, Section VIII, Division 1, Appendix 8. G.22 MT on 100 % of Sealing (Including Seating) Surfaces Examination shall be carried out in accordance with ASME BPVC, Section V, Article 7. Acceptance criteria for machined sealing surfaces shall be in accordance with ASME BPVC, Section VIII, Division 1, Appendix 6. In addition to the stated acceptance criteria, no rounded or linear indications in pressure-contact sealing surfaces are allowed. G.23 PT on 100 % of Sealing (Including Seating) Surfaces Examination shall be carried out in accordance with ASME BPVC, Section V, Article 6. Acceptance criteria for machined sealing surfaces shall be in accordance with ASME BPVC, Section VIII, Division 1, Appendix 8. 85 86 API SPECIFICATION 6D G.24 PT on 100 % of Weld Bevels of Welding Ends After Machining Examination shall be carried out in accordance with ASME BPVC, Section V, Article 6. Acceptance shall be in accordance with ASME BPVC, Section VIII, Division 1, Appendix 8. G.25 PT on 100 % of Weld Overlay Area Examination shall be carried out in accordance with ASME BPVC, Section V, Article 6. Acceptance criteria for nonmachined overlay shall be in accordance with ASME BPVC, Section VIII, Division 1, Appendix 8, except that relevant indications (rounded and linear) of less than 5 mm are acceptable. Acceptance criteria for machined overlay shall be in accordance with ASME BPVC, Section VIII, Division 1, Appendix 8, except that there shall be no indications in the seal areas. G.26 MT on 100 % of Weld Bevels of Welding Ends After Machining Examination shall be carried out in accordance with ASME BPVC, Section V, Article 7. Acceptance shall be in accordance with ASME BPVC, Section VIII, Division 1, Appendix 6. G.27 NDE Volumetric and Surface on 100% of Welding Ends After Machining Volumetric NDE examination of welding ends (see G.2, G.4, or G.10) shall be performed for a minimum length equal to 1.5 times the mating pipe wall thickness or 50 mm, whichever is greater. Surface NDE shall be performed on the machined ends of the valve-weld bevel per G.24 or G.26. Annex H (normative) Supplementary Test Requirements H.1 General This annex specifies requirements for supplementary testing, which shall be performed by the manufacturer if specified by the purchaser. The frequency of testing shall also be specified by the purchaser, if not defined in this annex. H.2 Hydrostatic Testing By agreement, hydrostatic testing may be performed at pressures higher than specified in 9.3 and 9.4 and/or for periods longer than specified in Table 4, Table 5, and Table 6. H.3 Low-pressure Gas Seat Testing H.3.1 General The valve shall be drained of hydrostatic test fluid prior to the start of the low-pressure gas seat test. H.3.2 Type I The seat test specified in 9.4 shall be repeated at a test pressure between 5 psi and 14.5 psi (0.34 barg and 1 bar) using air or nitrogen as the test medium. H.3.3 Type II The seat test specified in 9.4 shall be repeated at a test pressure between 80 psi and 100 psi (5.5 bar and 6.9 bar) using air or nitrogen as the test medium. H.3.4 Acceptance The acceptable leakage rate for low-pressure gas seat testing shall be: — ISO 5208, Rate A (no visible leakage), for soft-seated valves and lubricated-plug valves; — ISO 5208, Rate D, for metal-seated valves. H.4 High-pressure Gas Testing H.4.1 General Warning—High-pressure gas testing involves potential hazards. Appropriate safety precautions should be taken. H.4.2 High-pressure Gas Shell Testing 88 API SPECIFICATION 6D pressure shall be 1.1 times the pressure rating determined in accordance with 5.2 for the material at 100 °F (38 °C). The test duration shall be in accordance with Table H.1. As an alternate the valve may be submerged in water during this test using nitrogen as the test medium. H.4.2.2 Acceptance Criteria Acceptance criteria shall be as follows. — No visually detectable leakage allowed through any pressure-containing part. A maximum of 0.27 cc/min of (nitrogen + helium) from each mechanical joint. — When the valve is tested by submerged method, no visible leakage is allowed. H.4.3 High-pressure Gas Seat Testing H.4.3.1 General Valves shall have a high-pressure gas seat test performed using inert gas as the test medium. The minimum test pressure shall be 1.1 times the pressure rating determined in accordance with 5.2 for the material at 100 °F (38 °C). The test duration shall be in accordance with Table H.1. Table H.1—Minimum Duration of Gas Shell and Seat Tests H.4.3.2 Acceptance Criteria Leakage for soft-seated valves and lubricated plug valves shall not exceed ISO 5208, Rate A (no visible leakage). For metal-seated valves, except check valves, the leakage rate shall not be more than two times ISO 5208, Rate D, unless otherwise agreed. For metal-seated check valves, the leakage rate shall not exceed ISO 5208, Rate EE. H.5 Antistatic Testing The electrical resistance between the obturator and the valve body and between the stem/shaft and the valve body shall be measured using a direct-current power source not exceeding 12 V. The resistance shall be measured on dry valves before pressure testing and shall not exceed 10 . H.6 Torque/Thrust Functional Testing The maximum torque or thrust required to operate ball, gate or plug valves shall be measured at the pressure specified by the purchaser for the following valve operations: SPECIFICATION FOR PIPELINE AND PIPING VALVES d) as in Item c) but with the other side of the obturator pressurized. Torque or thrust values shall be measured with seats free of sealant except where the sealant is the primary means of sealing. If necessary for assembly, a lubricant with a viscosity not exceeding that of SAE 10W motor oil or equivalent may be used. Thrust and torque testing shall be performed following high-pressure hydrostatic seat testing and, if specified, prior to any low-pressure gas seat testing. The measured torque or thrust results shall be recorded and shall not exceed the manufacturer’s documented breakaway torque/thrust. H.7 Drive Train Strength Test H.7.1 General The drive train strength test for ball, gate or plug valves shall be measured when specified by the purchaser. The test torque shall be the greater of: a) twice the manufacturer's predicted breakaway torque/thrust; or b) twice the measured breakaway torque/thrust. The test torque shall be applied with obturator blocked for a minimum time of 1 min. NOTE For gate valves, the thrust can be tensile or compressive, whichever is the most stringent condition. H.7.2 Acceptance Criteria The test shall not cause any permanent visible deformation of the drive train. For ball and plug valves, the total torsional deflection of the extended drive train when delivering the design torque shall not exceed the overlap contact angle between the seat and obturator. H.8 Cavity Relief Testing H.8.1 Frequency Each valve shall be tested. Cavity relief testing is not required if protection of the cavity against over-pressure is ensured, for both the open and the closed position, by a hole in the obturator or around the seat seal. H.8.2 Trunnion-mounted Ball Valves and Through-conduit Gate Valves with Internal-relieving Seats The procedure for cavity-relief testing of trunnion-mounted ball valves and through-conduit gate valves with internal- relieving seats shall be as follows. a) Fill the valve in the half-open position with water. 89 90 API SPECIFICATION 6D d) For valve types with second-seat relief, continue to increase the pressure to the cavity until the second seat relieves; record the relief pressure of the second seat. Failure to relieve at a pressure less than the valve cavity relief pressure per 5.8 shall be cause for rejection. H.9 Double Block and Bleed (DBB) Valves H.9.1 General With the valve unseated and partially open, the valve and its cavity shall be completely filled with test fluid. The valve shall then be closed and the valve body vent valve opened to allow excess test fluid to overflow from the valve-cavity test connection. The test pressure shall be applied simultaneously from both valve ends. Seat tightness shall be monitored via overflow through the valve cavity connection. H.9.2 Acceptance Acceptance criteria shall be per the requirements of 9.4.3, except the metal-to-metal seat test leakage rate shall not be more than two times ISO 5208, Rate D. H.10 Double Isolation and Bleed DIB-1 (Both Seats Bidirectional) H.10.1 General Each seat shall be tested in both directions. Cavity-relief valves shall be removed if fitted. The valve and cavity shall be filled with test fluid, with the valve unseated and partially open, until the test fluid overflows through the cavity relief connection. To test for seat leakage in the direction of the cavity, the valve shall be closed. The test pressure shall be applied successively to each valve end to test each seat separately from the upstream side. Leakage shall be monitored via the valve cavity pressure relief connection. Thereafter, each seat shall be tested as a downstream seat. Both ends of the valve shall have the ends open to atmosphere and the valve cavity filled with test fluid. Pressure shall then be applied whilst monitoring leakage through each seat at both ends of the valve. Some valve types can require the balancing of the upstream and valve cavity pressure during the downstream seat test in which case only one end of the valve shall be open to atmosphere. H.10.2 Acceptance Acceptance criteria shall be per the requirements of 9.4.3, except the metal-to-metal seat test leakage rate shall not be more than two times ISO 5208, Rate D. H.11 Double Isolation and Bleed DIB-2 (One Seat Unidirectional and One Seat Bidirectional) H.11.1 General SPECIFICATION FOR PIPELINE AND PIPING VALVES To test for seat leakage in the direction of the cavity, the valve shall be closed. The test pressure shall be applied successively to each valve end to test each seat separately from the upstream side. Leakage shall be monitored via the valve cavity pressure relief connection. To test the bidirectional seat from the cavity test, pressure shall be applied simultaneously to the valve cavity and upstream end. Monitor leakage at the downstream end of the valve. H.11.2 Acceptance Acceptance criteria shall be per the requirements of 9.4.3, except the metal-to-metal seat test leakage rate shall not be more than two times ISO 5208, Rate D. H.12 Test Sequence for Valves Required for Double Isolation and Bleed (DIB) Operations H.12.1 General The following steps shall be performed on each end or each side of the valve. — Step 1: With valve partly open, fill valve with test medium and pressurize to valve design pressure. — Step 2: Close valve. — Step 3: Reduce pressure on downstream side of valve to zero and monitor cavity pressure. — Step 4: Monitor leakage between cavity and downstream side. — Step 5: Reduce pressure in cavity slowly, and monitor upstream pressure, and leakage to the downstream side. — Step 6: Reintroduce pressure into the cavity slowly up to 145 psi (10 bar) and monitor leakage to the downstream side. — Step 7: Reduce pressure in cavity slowly and monitor leakage to the downstream side. — Step 8: With cavity and downstream vented to zero, measure upstream seat performance by monitoring leakage at the cavity port. — Step 9: If applicable to the valve type, repeat Steps 1 through 8 on the opposite side of the valve. H.12.2 Test Medium Test fluid shall be fresh water in accordance with 9.1 or nitrogen gas, as specified. H.12.3 Acceptance Leakage for soft-seated valves shall not exceed ISO 5208, Rate A (no visible detectable leakage for the duration of the test at test pressure). For metal-seated valves the leakage rate shall not exceed ISO 5208, Rate C; however, for valves in gas service the leakage rate shall not exceed ISO 5208, Rate D. 91 Annex I (informative) Requirements for Extended Hydrostatic Shell Test Duration and Records Retention for Valves in Jurisdictional Pipeline Systems I.1 General This annex provides a recommended practice pertaining to valves used in jurisdictional pipeline systems. Valves used in transportation of natural and other gas and hazardous liquids or carbon dioxide by pipeline are usually regulated by the national governments of the countries in which the pipeline is located. This annex specifies the requirements for extended hydrostatic shell testing that shall be performed by the manufacturer if specified by the purchaser. This annex also specifies the test records to be provided to the purchaser and record retention requirements. I.2 Hydrostatic Shell Testing Requirements I.2.1 General The hydrostatic shell test shall be in accordance with 9.1 and 9.3 of this specification with test duration of at least four (4) hours. I.2.2 Test Record Requirements Test records shall contain the following as a minimum and be provided to the purchaser. a) The name of the manufacturer, name of the organization that performs testing (if other than the valve manufacturer), the identification of the individual responsible for performing the test, date, time, and location of test. b) Serial number, size, class, and end connection. c) Test medium (fluid) used. d) The beginning, ending, and actual test pressure and temperature readings, unless otherwise agreed. e) The test duration. f) A chart recording or digital record of the pressure showing the raise from zero to pressure at the beginning of the test and return to zero at the end. g) Any significant variations in pressure or temperature for the particular test. h) Any leaks or failures and their disposition. i) Certificates of calibration for all instrumentations used in the test, such as pressure transducers, pressure gauges, temperature devices, and chart recorders. I.2.3 Minimum Requirements for Pressure Transducers, Pressure Gauges, Temperature Devices, and Chart Recorders SPECIFICATION FOR PIPELINE AND PIPING VALVES I.2.4 Record Retention Requirement Test records in I.2.2 shall be shall be provided to the purchaser and maintained by the manufacturer in accordance with Section 13 of this specification. 93 Annex J (normative) Quality Specification Level (QSL) for Pipeline Valves J.1 General This annex specifies quality levels for pipeline valves. QSL-1 is the quality level as specified in API 6D. QSL-2 to QSL-4, which are quality levels, are optional and may be specified by the purchaser. The QSLs increase in stringency of requirements with the QSL number. The QSLs include specific requirements for NDE, pressure testing, and documentation of the manufacturing process. When any of the QSLs are specified by the purchaser, all the requirements of a specific QSL shall be provided. J.2 Specification of Quality Levels for NDE Table J.1 specifies the additional NDE requirements by inspection code for QSL-3 and QSL-4. These requirements vary by the type of raw material for the item being inspected. There are no additional NDE requirements for QSL-1 and QSL-2. Table J.2 specifies the extent, method, and acceptance criteria for the various inspection codes used in Table J.1. Table J.1—NDE Requirements SPECIFICATION FOR PIPELINE AND PIPING VALVES Table J.1—NDE Requirements (Continued) NOTE 1 See Table J.2 for specification of the examinations referred to in this table. N/A means that the manufacturer is not allowed to use this material form for that specific part. NOTE 2 All the NDE activities listed above for a specific product form or forms shall be conducted. a RT1 may be replaced by UT4 by agreement. b NDE back 50 mm from weld end. c MT or PT to be performed prior to coating, plating, or overlay. d Trunnion may be pressure containing or pressure controlling, depending on design type. If the trunnion is a pressure-containing part, then the requirements for body apply. e NDE requirements of pipe pups shall be established by agreement. f RT1 plus UT1 may be replaced by RT3. g Requirements for examination of bar material shall be as for forgings. J.3 Hydrostatic/Gas Testing Hydrostatic/gas testing shall be performed for QSL-1, QSL-2, QSL-3, and QSL-4 as identified in Table J.3. The high-pressure shell and seat gas test listed in QSL-3 and QSL-4 shall be required only when the valve is intended for gas service. High-pressure shell and seat gas testing per QSL4 shall be performed submerged in a water bath. All QSL-4 pressure tests shall be recorded on time-based equipment. J.4 Documentation Table J.4 specifies the final assembly documentation requirements for QSL-1, QSL-2, QSL-3, and QSL-4. There are no additional documentation requirements for QSL-1. 95 96 API SPECIFICATION 6D Table J.2—Extent, Method, and Acceptance Criteria of NDE/Item Examination Code G.6, G.7, G.11, G.15, G.18, G.20, G.8, G.9, G.12, G.16, G.19, G.21, SPECIFICATION FOR PIPELINE AND PIPING VALVES Table J.3—Pressure Testing Requirements for Quality Specification Levels Quality Specification Level closed. 97 | 98 API SPECIFICATION 6D Table J.3—Pressure Testing Requirements for Quality Specification Levels (Continued) Quality Specification Level NOTE 1 Check valves shall only have a single seat tested. Table J.4—Documentation Requirements Annex K (informative) Isolation Valve Features K.1 General Table K.1 is intended to give informative guidance on typical valve functions/features and is not intended to either be all-inclusive or restrictive. Individual valve designs exist that have unique sealing characteristics for which the table may not be appropriate or applicable. The user should take guidance from the manufacturer on establishing particular valve features. The user is responsible for ensuring the operational requirements are consistent with particular valve features including sealing capability and function. The table and sketches are intended to give definition of the terms “block and bleed” (Figure K.1 and Figure K.2), “double block and bleed” (Figure K.3 and Figure K.4), and “double isolation and bleed” (Figure K.5 and Figure K.6) in a single valve or double valve arrangement as defined by this specification. Other documents, including applicable federal regulations, may have a different definition of these terms. K.2 Block and Bleed (BB) BB may be achieved by a connection in the pipework/pipeline downstream of the block valve or from a connection on the valve body when the valve is an upstream seating type. Pressure source Block Open end/ equipment Bleed Figure K.1—Block and Bleed—Type A Pressure source Block Open end/ equipment Bleed 100 API SPECIFICATION 6D K.3 Double Block and Bleed (DBB) The DBB feature of the valve or valves is the ability to segregate two pressure sources and to bleed/vent pressure in the void between the two sealing elements (blocks). The bleed may be in the pipework/pipeline when two valves are used, or in the valve body between the two seats when the valve has the DBB feature. Pressure source Block Block Pressure source Bleed Figure K.3—Double Block and Bleed—Type A Pressure source Block Pressure source Block Bleed Figure K.4—Double Block and Bleed—Type B K.4 Double Isolation and Bleed (DIB) The DIB feature of the valve or valves is the ability to provide two sealing elements to a single pressure source, and to bleed/vent between the two sealing elements. Note that some documents dealing with isolation of equipment may refer to this feature as double block and bleed. Pressure source Block Block Open end/ equipment Bleed Figure K.5—Double Isolation and Bleed—Type A Pressure source Block Block Open end/ equipment SPECIFICATION FOR PIPELINE AND PIPING VALVES Table K.1—Isolation Valve Types NOTE 1 The term upstream and downstream refer to the pressure source and open end/equipment respectively and do not refer to flow direction. NOTE 2 Not possible to bleed from valve body, but bleed may be in downstream pipework/pipeline. NOTE 3 Depending on detail design of the valve, some valves may have preferred sealing direction and/or a specified sequence of operation. NOTE 4 Depending on detailed design. NOTE 5 Downstream seat may provide a second barrier at pressures below the cavity relieving pressure, but will not provide a high pressure barrier. NOTE 6 Depending on detailed design and ability to achieve testing per H.12. 101 Annex L (normative) External Coating for End Connections L.1 General This annex provides coating guidelines of both flange and weld end connections and shall be performed after all testing is completed. L.2 Raised Face Valves with raised-face end connections shall have the entire flange coated except for the raised portion (see Figure L.1). Do not coat this area Coating area a e r a g n i t a o C Coating area Figure L.1—Raised Face L.3 Ring Type Joint or Raised Face Ring Type Joint Valves with ring type joint or raised-face ring type joint end connections shall have the entire flange coated except for the portion from the ring joint O.D. to valve bore (see Figure L.2). L.4 Weld End Valves with weld end connections shall have the entire surface coated except for the portion from the O.D. that intersects the weld bevel to valve bore (see Figure L.3). SPECIFICATION FOR PIPELINE AND PIPING VALVES a e r a g n i t a o C Coating area Coating area Do not coat this area Coating area Raised face ring joint Coating area Figure L.2—Ring Type Joint or Raised Face Ring Type Joint Coating area Coating area Coating area Do not coat this area Figure L.3—Weld End Do not coat this area 1 in. Coating area 103 Annex M (informative) Marking Example M.1 General To illustrate the requirements for marking specified in this specification, an 8 (DN 200) carbon steel gate valve, pressure Class 600 with ring joint end flanges, a (664 mm) face-to-face dimension, a maximum operating pressure rating of 10 MPa (100 bar), 13 % chromium steel trim, and manufactured in June 2017 should be marked as follows. M.2 On the Body M.3 On the Bonnet/Cover A516-70/12345 M.4 On Nameplate Annex N (informative) Supplementary Documentation Requirements The purchaser may select supplementary documentation from the list below at time of order placement. a) calibration records (purchaser to identify requirements for equipment when ordering); b) certificate of conformance to ANSI NACE MR0175/ISO 15156 (all parts) for sour service valves; c) certificate of conformance to NACE MR0103 for sour service valves; d) coating/plating certification; e) cross-sectional drawings with parts and materials list; f) current quality management system certificate; g) design calculations for pressure-containing parts and/or the drive train; h) design calculations for pressure-controlling parts; i) design verification by certification body/agency; fire type-test certificate; j) k) flow coefficient, Cv or Kv; l) general arrangements drawings; m) hardness test report on pressure-containing parts; n) hardness test report on pressure-controlling parts; o) heat-treatment certification records (e.g. charts); p) installation, operation, and maintenance instructions/manuals; q) material inspection certificates in accordance with EN 10204 or ISO 10474, as applicable (the purchaser specifies the type of certification, and for which parts, when ordering); r) NDE personnel qualification records; s) NDE procedures; t) NDE records; u) PQR; v) pressure test report (including pressure, test duration, test medium, and acceptance criteria); Annex O (informative) Purchasing Guidelines O.1 General This annex provides guidelines to assist the purchaser with valve type selection and specification of specific requirements when ordering valves. O.2 Field Testing Pressures during the testing of installed valves should not exceed the pressure rating of the valve by more than 50 % when testing with the valve partially open or by more than 10 % when testing against a closed valve. Tests specified with the valve half-open may also be performed with the valve fully open, provided the body cavity is simultaneously filled and pressurized through a cavity connection. NOTE The maximum test pressure for valves fitted with an external pressure relief can be lower (see 5.8). O.3 Pressure Relief Certain valve designs trap pressure in the valve body cavity when the valve is in the fully open and/or closed position. High internal pressures can result from the thermal expansion of the fluid trapped in these confined areas. If the valve has no self-relieving design provision, pressure-relief fittings shall be fitted in the valve body in accordance with 5.8. O.4 Pigging The purchaser should examine the valve design for piggability when ordering valves for use in pipelines requiring pigging. NOTE 1 Venturi or reduced-bore valves are not suitable for most pigging operations, including intelligent pigging, but can allow the passage of foam pigs. NOTE 2 A valve in which the drive member or the obturator obstructs the bore in the otherwise fully open position (e.g. a dual- plate check valve) is not piggable. NOTE 3 Certain full-opening valves with pockets can allow bypass of fluid around a short pig or sphere. O.5 Fire Type-testing The fire-tested design of valves shall be qualified by fire type-testing in accordance with one of the following: API 6FA, API 6FD, API 607, or ISO 10497. NOTE For the purposes of this specification, the terms “fire type-test” and “fire test” are synonymous. O.6 Additional Testing SPECIFICATION FOR PIPELINE AND PIPING VALVES O.7 Valve Datasheet The valve datasheet in Table O.1 can be used to assist with the specification of valves for ordering. O.8 Gearbox Handwheel If specified by the purchaser, the handwheel of the gearbox input shaft shall be provided with a torque-limiting device, such as a shear pin, to prevent damage to the drive train. 107 108 API SPECIFICATION 6D Table O.1—Valve Datasheet Ring gasket or other gasket type and size ____________________________________________________________ NOTE Gaskets are not furnished as a part of the valve. Welding end? Yes ______ No _______ SPECIFICATION FOR PIPELINE AND PIPING VALVES Table O.1—Valve Datasheet (Continued) 109 Bibliography [1] API Specification 6DSS, Specification for Subsea Pipeline Valves [2] API Specification Q1, Specification for Quality Management System Requirements for Manufacturing Organizations for the Petroleum and Natural Gas Industry [3] API Specification 20A, Carbon Steel, Alloy Steel, Stainless Steel, and Nickel Base Alloy Castings for Use in the Petroleum and Natural Gas Industry [4] API Specification 20B, Open Die Shaped Forgings for Use in the Petroleum and Natural Gas Industry [5] API Specification 20C, Closed Die Forgings for Use in the Petroleum and Natural Gas Industry [6] API Specification 20E, Alloy and Carbon Steel Bolting for Use in the Petroleum and Natural Gas Industries [7] ASTM E29, Standard Practice for Using Significant Digits in Test Data to Determine Conformance with Specifications [8] ASTM A577, Standard Specification for Ultrasonic Angle-Beam Examination of Steel Plates [9] EN 12516-1 9, Industrial valves—Shell design strength—Part 1: Tabulation method for steel valve shells [10] EN 12516-2, Industrial valves—Shell design strength—Part 2: Calculation method for steel valve shells [11] EN 13445-3, Unfired pressure vessels—Part 3: Design [12] ISO 5211 10, Industrial valves—Part-turn actuator attachments [13] ISO 9001, Quality management systems—Requirements [14] MSS SP-25 11, Standard Marking System for Valves, Fittings, Flanges and Unions [15] SAE AMS-H-6875G 12, Heat Treatment of Steel Raw Material (reference [16] has been moved to Section 2, Normative References) 9 European Committee for Standardization, Avenue Marnix 17, B-1000 Brussels, Belgium, www.cen.eu. 10 International Organization for Standardization, 1, ch. de la Voie-Creuse, Case postale 56, CH-1211 Geneva 20, Switzerland, www.iso.org. 11 Manufacturers Standardization Society of the Valve and Fittings Industry, Inc., 127 Park Street, NE, Vienna, Virginia 22180- 4602, www.mss-hq.com. 12 SAE International (formerly the Society of Automotive Engineers), 400 Commonwealth Drive, Warrendale, Pennsylvania 15096-0001, www.sae.org. SPECIFICATION FOR PIPELINE AND PIPING VALVES 111 mm energy, | AMERICAN PETROLEUM INSTITUTE 1220 L Street, NW Washington, DC 20005-4070 USA 202-682-8000 Additional copies are available online at www.api.org/pubs Information about API publications, programs and services is available on the web at www.api.org.",
+    "page": 73,
+    "rule_type": "mandatory",
+    "normative_references": [
+      "API 20",
+      "API 20A",
+      "API 20B",
+      "API 20C",
+      "API 20E",
+      "API 607",
+      "API 6D",
+      "API 6FA",
+      "API 6FD",
+      "API PUBLICATIONS",
+      "API SPECIFICATION",
+      "API.ORG",
+      "ASME B16.34",
+      "ASME BPVC",
+      "ASTM A577",
+      "ASTM A578A",
+      "ASTM E29",
+      "EN 10204",
+      "EN 12516",
+      "EN 13445",
+      "ISO 10474",
+      "ISO 10497",
+      "ISO 15156",
+      "ISO 5208",
+      "ISO 5211",
+      "ISO 9001",
+      "MSS SP-25",
+      "MSS-HQ",
+      "NACE MR0103",
+      "NACE MR0175"
+    ],
+    "applies_to": [
+      "Ball Valve",
+      "Check Valve",
+      "Gate Valve",
+      "Plug Valve"
+    ],
+    "datasheet_field": "Fire Safe Design"
+  }
+]

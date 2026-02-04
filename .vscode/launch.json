@@ -1,0 +1,57 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Generate Datasheet (BSFA1R)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/valve_datasheet_automation/main.py",
+            "args": ["generate", "BSFA1R", "--flat"],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Generate with Traceability",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/valve_datasheet_automation/main.py",
+            "args": ["generate", "BSFA1R", "-o", "output.json", "--traceability"],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Decode VDS Only",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/valve_datasheet_automation/main.py",
+            "args": ["decode", "BSFA1R"],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Run Demo",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/valve_datasheet_automation/demo.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Run Verification",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/verify_datasheet.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Run Tests",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": ["valve_datasheet_automation/tests/", "-v"],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "valve_type": "Ball Valve",
+    "keywords": ["ball", "ball valve", "floating ball", "trunnion"]
+  },
+  {
+    "valve_type": "Gate Valve",
+    "keywords": ["gate", "gate valve"]
+  },
+  {
+    "valve_type": "Plug Valve",
+    "keywords": ["plug", "plug valve"]
+  },
+  {
+    "valve_type": "Check Valve",
+    "keywords": ["check", "check valve"]
+  }
+]

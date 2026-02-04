@@ -1,0 +1,267 @@
+# Material Mappings Configuration
+# =================================
+# Maps base materials to specific valve component materials.
+# Used when resolving material fields based on PMS base material.
+
+version: "1.0"
+
+# Base Material Definitions
+base_materials:
+  # ====================
+  # CARBON STEEL
+  # ====================
+  CS:
+    description: "Carbon Steel"
+    material_group: "1.1"
+    components:
+      body:
+        forged: "ASTM A105N"
+        cast: "ASTM A216 WCB"
+        size_threshold: '1.5"'  # Forged below, cast above
+      ball: "ASTM A182-F316"
+      stem: "ASTM A182 F316"
+      gland: "ASTM A182 F6A CL 2"
+      bolts: "ASTM A193 Gr. B7"
+      nuts: "ASTM A194 Gr. 2H"
+      gaskets:
+        RF: "SS316/SS316L Spiral Wound with F.G. filler"
+        RTJ: "SS316/SS316L Ring Joint (R or RX type)"
+      spring: "Inconel 750"
+      gland_packing: "Graphite / PTFE"
+
+  # ====================
+  # CARBON STEEL - NACE
+  # ====================
+  CS_NACE:
+    description: "Carbon Steel (NACE Compliant)"
+    material_group: "1.1"
+    inherits: "CS"
+    additional_requirements:
+      - "NACE MR0175 / ISO 15156 compliant"
+      - "Maximum hardness 22 HRC"
+    component_overrides:
+      bolts: "ASTM A193 Gr. B7M"
+      nuts: "ASTM A194 Gr. 2HM"
+
+  # ====================
+  # LOW TEMP CARBON STEEL
+  # ====================
+  LTCS:
+    description: "Low Temperature Carbon Steel"
+    material_group: "1.1"
+    components:
+      body:
+        forged: "ASTM A350 LF2"
+        cast: "ASTM A352 LCB"
+      ball: "ASTM A182-F316"
+      stem: "ASTM A182 F316"
+      gland: "ASTM A182 F6A CL 2"
+      bolts: "ASTM A320 Gr. L7"
+      nuts: "ASTM A194 Gr. 4"
+      gaskets:
+        RF: "SS316/SS316L Spiral Wound with F.G. filler"
+        RTJ: "SS316/SS316L Ring Joint (R or RX type)"
+      spring: "Inconel 750"
+      gland_packing: "Graphite / PTFE"
+    additional_requirements:
+      - "Impact tested at -46°C minimum"
+
+  # ====================
+  # LOW TEMP CS - NACE
+  # ====================
+  LTCS_NACE:
+    description: "Low Temperature Carbon Steel (NACE Compliant)"
+    material_group: "1.1"
+    inherits: "LTCS"
+    additional_requirements:
+      - "NACE MR0175 / ISO 15156 compliant"
+      - "Impact tested at -46°C minimum"
+    component_overrides:
+      bolts: "ASTM A320 Gr. L7M"
+      nuts: "ASTM A194 Gr. 7M"
+
+  # ====================
+  # STAINLESS STEEL 316L
+  # ====================
+  SS316L:
+    description: "Stainless Steel 316L"
+    material_group: "2.3"
+    components:
+      body:
+        forged: "ASTM A182 F316L"
+        cast: "ASTM A351 CF3M"
+      ball: "ASTM A182-F316L"
+      stem: "ASTM A182 F316L"
+      gland: "ASTM A182 F316L"
+      bolts: "ASTM A193 Gr. B8M CL 2"
+      nuts: "ASTM A194 Gr. 8M"
+      gaskets:
+        RF: "SS316L Spiral Wound with F.G. filler"
+        RTJ: "SS316L Ring Joint (R or RX type)"
+      spring: "Inconel 750"
+      gland_packing: "Graphite / PTFE"
+
+  # ====================
+  # SS316L - NACE
+  # ====================
+  SS316L_NACE:
+    description: "Stainless Steel 316L (NACE Compliant)"
+    material_group: "2.3"
+    inherits: "SS316L"
+    additional_requirements:
+      - "NACE MR0175 / ISO 15156 compliant"
+      - "Solution annealed"
+
+  # ====================
+  # DUPLEX STAINLESS STEEL
+  # ====================
+  DSS:
+    description: "Duplex Stainless Steel"
+    material_group: "2.8"
+    components:
+      body:
+        forged: "ASTM A182 F51"
+        cast: "ASTM A890 4A"
+      ball: "ASTM A182 F60"
+      stem: "ASTM A182 F60"
+      gland: "ASTM A182 F60"
+      bolts: "ASTM A182 F60"
+      nuts: "ASTM A182 F60"
+      gaskets:
+        RF: "DSS Spiral Wound with F.G. filler"
+        RTJ: "DSS Ring Joint (R or RX type)"
+      spring: "Inconel 750"
+      gland_packing: "Graphite"
+
+  # ====================
+  # DSS - NACE
+  # ====================
+  DSS_NACE:
+    description: "Duplex Stainless Steel (NACE Compliant)"
+    material_group: "2.8"
+    inherits: "DSS"
+    additional_requirements:
+      - "NACE MR0175 / ISO 15156 compliant"
+      - "PREN >= 40"
+
+  # ====================
+  # SUPER DUPLEX
+  # ====================
+  SDSS:
+    description: "Super Duplex Stainless Steel"
+    material_group: "2.8"
+    components:
+      body:
+        forged: "ASTM A182 F53"
+        cast: "ASTM A890 5A"
+      ball: "ASTM A182 F53"
+      stem: "ASTM A182 F53"
+      gland: "ASTM A182 F53"
+      bolts: "ASTM A182 F53"
+      nuts: "ASTM A182 F53"
+      gaskets:
+        RF: "SDSS Spiral Wound with F.G. filler"
+        RTJ: "SDSS Ring Joint (R or RX type)"
+      spring: "Inconel 750"
+      gland_packing: "Graphite"
+
+  # ====================
+  # SDSS - NACE
+  # ====================
+  SDSS_NACE:
+    description: "Super Duplex Stainless Steel (NACE Compliant)"
+    material_group: "2.8"
+    inherits: "SDSS"
+    additional_requirements:
+      - "NACE MR0175 / ISO 15156 compliant"
+      - "PREN >= 40"
+
+# Seat Material Definitions
+seat_materials:
+  soft_seated:
+    materials:
+      PTFE:
+        name: "Reinforced PTFE"
+        temperature_range: "-29°C to 200°C"
+        suitable_for:
+          - CS
+          - SS316L
+        chemical_resistance: "Excellent"
+
+      PEEK:
+        name: "PEEK"
+        temperature_range: "-46°C to 260°C"
+        suitable_for:
+          - all
+        chemical_resistance: "Excellent"
+        high_temp_suitable: true
+
+      TFM:
+        name: "TFM (Modified PTFE)"
+        temperature_range: "-200°C to 200°C"
+        suitable_for:
+          - cryogenic
+        chemical_resistance: "Excellent"
+
+  metal_seated:
+    materials:
+      TCC_COATED:
+        name: "Metal seated, hard faced, Renewable"
+        description: "TCC Coated 150μ to 250μ thick with minimum surface hardness 1050 Vickers"
+        temperature_range: "-46°C to 450°C"
+        suitable_for:
+          - all
+        high_temp_suitable: true
+        erosion_resistant: true
+
+      STELLITE:
+        name: "Stellite Overlay"
+        description: "Stellite 6 or 21 overlay"
+        temperature_range: "-46°C to 550°C"
+        suitable_for:
+          - all
+        high_temp_suitable: true
+        erosion_resistant: true
+
+# Coating Specifications
+coatings:
+  fastener_coating:
+    PTFE:
+      name: "PTFE Coating"
+      standard: "As per manufacturer's standard"
+      torque_coefficient: "0.08-0.12"
+
+    XYLAN:
+      name: "Xylan Coating"
+      standard: "As per manufacturer's standard"
+      torque_coefficient: "0.10-0.15"
+
+    PTFE_XYLAN:
+      name: "PTFE/Xylan Coated"
+      description: "Combined PTFE and Xylan coating"
+      standard: "As per manufacturer's standard"
+
+  body_coating:
+    PAINT:
+      name: "Painted"
+      standard: "As per General Specification for Paint and Protective Coating"
+
+# Special Material Requirements
+special_requirements:
+  nace_compliance:
+    standard: "NACE MR0175 / ISO 15156"
+    hardness_limits:
+      carbon_steel: "22 HRC maximum"
+      stainless_steel: "As per NACE MR0175"
+    testing_requirements:
+      - "Hardness testing on each heat"
+      - "NACE compliance certificate required"
+
+  low_temperature:
+    testing:
+      - "Charpy V-notch impact testing"
+      - "Test temperature at or below design minimum"
+    minimum_temp: "-46°C"
+    material_requirements:
+      - "Impact tested materials only"
+      - "Certificates to show impact values"
