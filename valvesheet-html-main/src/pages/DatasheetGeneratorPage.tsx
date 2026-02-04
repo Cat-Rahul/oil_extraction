@@ -32,7 +32,18 @@ import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import api, { type DatasheetResponse, type FlatDatasheetResponse } from "@/services/api";
+import api, { type DatasheetResponse, type FlatDatasheetResponse, type VDSListResponse } from "@/services/api";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Command,
+  CommandInput,
+  CommandEmpty,
+  CommandGroup,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command";
+import { cn } from "@/lib/utils";
+import html2pdf from 'html2pdf.js';
 
 // Valve types configuration
 const valveTypes = [
@@ -162,7 +173,27 @@ export default function DatasheetGeneratorPage() {
   const [isDataLoaded, setIsDataLoaded] = useState(false);
   const [completionPercentage, setCompletionPercentage] = useState(0);
   const [validationStatus, setValidationStatus] = useState<string | null>(null);
+  const [openVdsSelect, setOpenVdsSelect] = useState(false);
+  const [allVdsNumbers, setAllVdsNumbers] = useState<string[]>([]);
   const { toast } = useToast();
+
+  // Fetch all VDS numbers for the autocomplete
+  useEffect(() => {
+    const fetchAllVds = async () => {
+      try {
+        const response: VDSListResponse = await api.getVDSNumbers();
+        setAllVdsNumbers(response.vds_numbers);
+      } catch (error) {
+        console.error("Failed to fetch all VDS numbers:", error);
+        toast({
+          title: "Error",
+          description: "Failed to load VDS suggestions.",
+          variant: "destructive",
+        });
+      }
+    };
+    fetchAllVds();
+  }, [toast]);
 
   const updateField = (field: string, value: string | boolean) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -360,16 +391,21 @@ export default function DatasheetGeneratorPage() {
       description: `Creating PDF for VDS: ${formData.vdsNumber || "Draft"}`,
     });
 
-    const printContent = generatePrintableContent();
-    const printWindow = window.open("", "_blank");
-    if (printWindow) {
-      printWindow.document.write(printContent);
-      printWindow.document.close();
-      printWindow.onload = () => {
-        printWindow.print();
-        printWindow.close();
-      };
-    }
+    const content = generatePrintableContent();
+    const element = document.createElement('div');
+    element.innerHTML = content;
+
+    html2pdf().from(element).set({
+      margin: 10,
+      filename: `valve_datasheet_${formData.vdsNumber || "draft"}.pdf`,
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    }).save();
+
+    toast({
+      title: "PDF Ready",
+      description: "Your datasheet has been downloaded as PDF",
+    });
   };
 
   const generatePrintableContent = () => {
@@ -618,25 +654,64 @@ export default function DatasheetGeneratorPage() {
                       VDS Number
                     </Label>
                     <div className="flex gap-2">
-                      <div className="relative flex-1">
-                        <Input
-                          value={formData.vdsNumber}
-                          onChange={(e) => handleVdsInputChange(e.target.value)}
-                          placeholder="Enter VDS (e.g., BSFA1R)"
-                          className={`font-mono text-sm pr-10 ${
-                            fetchError ? "border-destructive" : isDataLoaded ? "border-green-500" : ""
-                          }`}
-                        />
-                        {isFetching && (
-                          <Loader2 className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 animate-spin text-muted-foreground" />
-                        )}
-                        {isDataLoaded && !isFetching && (
-                          <CheckCircle2 className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-green-500" />
-                        )}
-                        {fetchError && !isFetching && (
-                          <AlertCircle className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-destructive" />
-                        )}
-                      </div>
+                      <Popover open={openVdsSelect} onOpenChange={setOpenVdsSelect}>
+                        <PopoverTrigger asChild>
+                          <Button
+                            variant="outline"
+                            role="combobox"
+                            aria-expanded={openVdsSelect}
+                            className={cn(
+                              "w-full justify-between font-mono text-sm",
+                              formData.vdsNumber ? "" : "text-muted-foreground",
+                              fetchError ? "border-destructive" : isDataLoaded ? "border-green-500" : ""
+                            )}
+                          >
+                            {formData.vdsNumber
+                              ? formData.vdsNumber
+                              : "Select VDS Number..."}
+                            {isFetching && (
+                              <Loader2 className="ml-2 h-4 w-4 shrink-0 opacity-50 animate-spin" />
+                            )}
+                            {isDataLoaded && !isFetching && (
+                              <CheckCircle2 className="ml-2 h-4 w-4 shrink-0 text-green-500" />
+                            )}
+                            {fetchError && !isFetching && (
+                              <AlertCircle className="ml-2 h-4 w-4 shrink-0 text-destructive" />
+                            )}
+                          </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0">
+                          <Command>
+                            <CommandInput
+                              placeholder="Search VDS number..."
+                              value={vdsInput}
+                              onValueChange={(val) => setVdsInput(val.toUpperCase())}
+                            />
+                            <CommandEmpty>No VDS number found.</CommandEmpty>
+                            <CommandGroup>
+                              <CommandList>
+                                {allVdsNumbers
+                                  .filter((vds) => vds.toUpperCase().includes(vdsInput))
+                                  .map((vds) => (
+                                    <CommandItem
+                                      key={vds}
+                                      value={vds}
+                                      onSelect={(currentValue) => {
+                                        const selectedVds = currentValue.toUpperCase();
+                                        setVdsInput(selectedVds);
+                                        updateField("vdsNumber", selectedVds);
+                                        fetchDatasheet(selectedVds);
+                                        setOpenVdsSelect(false);
+                                      }}
+                                    >
+                                      {vds}
+                                    </CommandItem>
+                                  ))}
+                              </CommandList>
+                            </CommandGroup>
+                          </Command>
+                        </PopoverContent>
+                      </Popover>
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <Button
