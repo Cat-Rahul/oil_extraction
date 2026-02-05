@@ -191,6 +191,24 @@ sections:
         default: "Valve lockable using padlock - Full Open, Fully Closed"
         description: "Locks from VDS Index"
 
+      back_seat_construction:
+        display_name: "Back Seat"
+        source: VDS_INDEX
+        is_required: false
+        description: "Back seat construction (Gate/Globe valves)"
+
+      packing_construction:
+        display_name: "Packing"
+        source: VDS_INDEX
+        is_required: false
+        description: "Packing construction (Gate/Globe valves)"
+
+      bonnet_construction:
+        display_name: "Bonnet"
+        source: VDS_INDEX
+        is_required: false
+        description: "Bonnet construction (Needle valves)"
+
   # ====================
   # MATERIAL SECTION
   # ====================
@@ -301,6 +319,18 @@ sections:
         is_required: true
         default: "ASTM A194 Gr. 2HM, PTFE/Xylan Coated"
         description: "Nuts from VDS Index"
+
+      needle_material:
+        display_name: "Needle Material"
+        source: VDS_INDEX
+        is_required: false
+        description: "Needle material (Needle/DBB valves)"
+
+      hinge_pin_material:
+        display_name: "Hinge / Hinge Pin Material"
+        source: VDS_INDEX
+        is_required: false
+        description: "Hinge/Hinge Pin material (Check valves)"
 
   # ====================
   # TESTING SECTION

@@ -7,10 +7,13 @@ from VDS numbers.
 
 from datetime import datetime
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Dict, List
 
-from .vds_decoder import VDSDecoder, VDSDecodingError
+import yaml
+
+from .vds_decoder import VDSDecoder, VDSDecodingError, ValveTypePrefix
 from .field_resolver import FieldResolver
+from .excel_parser import ExcelParser
 from ..models.vds import DecodedVDS
 from ..models.datasheet import (
     ValveDatasheet,
@@ -58,6 +61,7 @@ class DatasheetEngine:
         self,
         config_dir: Optional[Path] = None,
         data_dir: Optional[Path] = None,
+        field_applicability_path: Optional[Path] = None,
     ):
         """
         Initialize engine with configuration directory.
@@ -65,6 +69,7 @@ class DatasheetEngine:
         Args:
             config_dir: Path to configuration files
             data_dir: Path to data files (PMS, clauses, VDS index)
+            field_applicability_path: Path to the Excel file defining field applicability
         """
         self.config_dir = config_dir or Path(__file__).parent.parent / "config"
         self.data_dir = data_dir
@@ -80,6 +85,19 @@ class DatasheetEngine:
         self.standards_repo = self._init_standards_repo()
         self.vds_index_repo = self._init_vds_index_repo()
 
+        # Load field applicability
+        self.field_applicability: Dict[str, List[str]] = {}
+        if field_applicability_path and field_applicability_path.exists():
+            try:
+                excel_parser = ExcelParser()
+                self.field_applicability = excel_parser.parse_field_applicability(field_applicability_path)
+            except Exception as e:
+                print(f"Warning: Could not load field applicability Excel: {e}")
+        
+        # Load valve type templates
+        templates_path = self.config_dir / "valve_type_templates.yaml"
+        self._valve_type_templates = self._load_valve_type_templates(templates_path)
+
         # Initialize field resolver
         field_mappings_path = self.config_dir / "field_mappings.yaml"
         self.resolver = FieldResolver(
@@ -87,6 +105,7 @@ class DatasheetEngine:
             standards_repo=self.standards_repo,
             vds_index_repo=self.vds_index_repo,
             config_path=field_mappings_path if field_mappings_path.exists() else None,
+            field_applicability=self.field_applicability,
         )
 
     def _init_pms_repo(self) -> PMSRepository:
@@ -142,6 +161,21 @@ class DatasheetEngine:
             repo.add_default_entries()
 
         return repo
+
+    def _load_valve_type_templates(self, path: Path) -> dict:
+        """Load valve type template definitions from YAML."""
+        if path.exists():
+            with open(path, 'r', encoding='utf-8') as f:
+                return yaml.safe_load(f) or {}
+        return {}
+
+    def get_valve_type_templates(self) -> dict:
+        """Return valve type templates for API consumption."""
+        return self._valve_type_templates.get('valve_type_templates', {})
+
+    def get_default_template_key(self) -> str:
+        """Return the default template key."""
+        return self._valve_type_templates.get('default_template', 'BALL')
 
     def generate(self, vds_no: str) -> ValveDatasheet:
         """
@@ -234,12 +268,14 @@ class DatasheetEngine:
             # Construction (includes valve-type-specific fields)
             'body_construction', 'ball_construction', 'disc_construction',
             'wedge_construction', 'stem_construction', 'shaft_construction',
-            'seat_construction', 'locks',
+            'seat_construction', 'locks', 'back_seat_construction',
+            'packing_construction', 'bonnet_construction',
             # Material (includes valve-type-specific fields)
             'body_material', 'ball_material', 'disc_material', 'wedge_material',
             'trim_material', 'seat_material', 'seal_material', 'stem_material',
             'shaft_material', 'gland_material', 'gland_packing',
             'lever_handwheel', 'spring_material', 'gaskets', 'bolts', 'nuts',
+            'needle_material', 'hinge_pin_material',
             # Testing
             'marking_purchaser', 'marking_manufacturer', 'inspection_testing',
             'leakage_rate', 'hydrotest_shell', 'hydrotest_closure',
@@ -299,6 +335,9 @@ class DatasheetEngine:
             shaft_construction=get_optional_field('shaft_construction'),
             seat_construction=get_field('seat_construction'),
             locks=get_optional_field('locks'),
+            back_seat_construction=get_optional_field('back_seat_construction'),
+            packing_construction=get_optional_field('packing_construction'),
+            bonnet_construction=get_optional_field('bonnet_construction'),
             # Material (optional fields based on valve type)
             body_material=get_field('body_material'),
             ball_material=get_optional_field('ball_material'),
@@ -316,6 +355,8 @@ class DatasheetEngine:
             gaskets=get_field('gaskets'),
             bolts=get_field('bolts'),
             nuts=get_field('nuts'),
+            needle_material=get_optional_field('needle_material'),
+            hinge_pin_material=get_optional_field('hinge_pin_material'),
             # Testing
             marking_purchaser=get_field('marking_purchaser'),
             marking_manufacturer=get_field('marking_manufacturer'),

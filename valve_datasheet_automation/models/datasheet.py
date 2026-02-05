@@ -21,6 +21,7 @@ class FieldSource(str, Enum):
     PROJECT_SPECIFIC = "Project Specific"
     CALCULATED = "Calculated"
     FIXED = "Fixed value"
+    NOT_APPLICABLE = "Not Applicable for this Valve Type"
     UNKNOWN = "Unknown source"
 
     @property
@@ -213,6 +214,9 @@ class ValveDatasheet(BaseModel):
     shaft_construction: Optional[DatasheetField] = Field(default=None, description="Shaft Construction (Butterfly valves)")
     seat_construction: DatasheetField = Field(..., description="Seat Construction")
     locks: Optional[DatasheetField] = Field(default=None, description="Locks")
+    back_seat_construction: Optional[DatasheetField] = Field(default=None, description="Back Seat Construction (Gate/Globe valves)")
+    packing_construction: Optional[DatasheetField] = Field(default=None, description="Packing Construction (Gate/Globe valves)")
+    bonnet_construction: Optional[DatasheetField] = Field(default=None, description="Bonnet Construction (Needle valves)")
 
     # === MATERIAL SECTION ===
     body_material: DatasheetField = Field(..., description="Body Material")
@@ -231,6 +235,8 @@ class ValveDatasheet(BaseModel):
     gaskets: DatasheetField = Field(..., description="Gaskets")
     bolts: DatasheetField = Field(..., description="Bolts")
     nuts: DatasheetField = Field(..., description="Nuts")
+    needle_material: Optional[DatasheetField] = Field(default=None, description="Needle Material (Needle/DBB valves)")
+    hinge_pin_material: Optional[DatasheetField] = Field(default=None, description="Hinge/Hinge Pin Material (Check valves)")
 
     # === TESTING SECTION ===
     marking_purchaser: DatasheetField = Field(..., description="Marking - Purchaser")
@@ -280,12 +286,14 @@ class ValveDatasheet(BaseModel):
             # Construction (includes optional valve-type-specific fields)
             'body_construction', 'ball_construction', 'disc_construction',
             'wedge_construction', 'stem_construction', 'shaft_construction',
-            'seat_construction', 'locks',
+            'seat_construction', 'locks', 'back_seat_construction',
+            'packing_construction', 'bonnet_construction',
             # Material (includes optional valve-type-specific fields)
             'body_material', 'ball_material', 'disc_material', 'wedge_material',
             'trim_material', 'seat_material', 'seal_material', 'stem_material',
             'shaft_material', 'gland_material', 'gland_packing',
             'lever_handwheel', 'spring_material', 'gaskets', 'bolts', 'nuts',
+            'needle_material', 'hinge_pin_material',
             # Testing
             'marking_purchaser', 'marking_manufacturer', 'inspection_testing',
             'leakage_rate', 'hydrotest_shell', 'hydrotest_closure',

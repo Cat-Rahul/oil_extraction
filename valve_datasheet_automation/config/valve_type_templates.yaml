@@ -1,0 +1,173 @@
+# Valve Type Field Templates
+# ==========================
+# Defines which Construction and Material fields apply to each valve type.
+# Used by the API to serve dynamic field templates to the frontend.
+#
+# Each template entry contains:
+#   - display_name: Human-readable valve type name
+#   - prefixes: VDS number prefixes that map to this template
+#   - construction_fields: List of {key, label} for Construction section
+#   - material_fields: List of {key, label} for Material section
+
+version: "1.0"
+
+default_template: "BALL"
+
+valve_type_templates:
+  BALL:
+    display_name: "Ball Valve"
+    prefixes: ["BS", "BSF", "BSR"]
+    construction_fields:
+      - { key: "body_construction", label: "Body" }
+      - { key: "ball_construction", label: "Ball" }
+      - { key: "stem_construction", label: "Stem" }
+      - { key: "seat_construction", label: "Seat" }
+      - { key: "locks", label: "Locks" }
+    material_fields:
+      - { key: "body_material", label: "Body" }
+      - { key: "ball_material", label: "Ball" }
+      - { key: "stem_material", label: "Stem" }
+      - { key: "seat_material", label: "Seat" }
+      - { key: "gland_material", label: "Gland" }
+      - { key: "gland_packing", label: "Gland Packing" }
+      - { key: "lever_handwheel", label: "Lever / Handwheel" }
+      - { key: "spring_material", label: "Spring" }
+      - { key: "gaskets", label: "Gaskets" }
+      - { key: "bolts", label: "Bolts" }
+      - { key: "nuts", label: "Nuts" }
+
+  DDB:
+    display_name: "Double Block & Bleed Valve"
+    prefixes: ["DSR", "DSF"]
+    construction_fields:
+      - { key: "body_construction", label: "Body" }
+      - { key: "ball_construction", label: "Ball" }
+      - { key: "stem_construction", label: "Stem" }
+      - { key: "seat_construction", label: "Seat" }
+      - { key: "locks", label: "Locks" }
+    material_fields:
+      - { key: "body_material", label: "Body" }
+      - { key: "ball_material", label: "Ball" }
+      - { key: "stem_material", label: "Stem" }
+      - { key: "seat_material", label: "Seat" }
+      - { key: "gland_material", label: "Gland" }
+      - { key: "gland_packing", label: "Gland Packing" }
+      - { key: "lever_handwheel", label: "Lever / Handwheel" }
+      - { key: "spring_material", label: "Spring" }
+      - { key: "gaskets", label: "Gaskets" }
+      - { key: "bolts", label: "Bolts" }
+      - { key: "nuts", label: "Nuts" }
+      - { key: "trim_material", label: "Trim" }
+      - { key: "needle_material", label: "Needle" }
+
+  GATE:
+    display_name: "Gate Valve"
+    prefixes: ["GS", "GAW"]
+    construction_fields:
+      - { key: "body_construction", label: "Body" }
+      - { key: "stem_construction", label: "Stem" }
+      - { key: "seat_construction", label: "Seat" }
+      - { key: "locks", label: "Locks" }
+      - { key: "back_seat_construction", label: "Back Seat" }
+      - { key: "packing_construction", label: "Packing" }
+      - { key: "wedge_construction", label: "Wedge" }
+    material_fields:
+      - { key: "body_material", label: "Body" }
+      - { key: "stem_material", label: "Stem" }
+      - { key: "seat_material", label: "Seat" }
+      - { key: "gland_material", label: "Gland" }
+      - { key: "gland_packing", label: "Gland Packing" }
+      - { key: "lever_handwheel", label: "Lever / Handwheel" }
+      - { key: "gaskets", label: "Gaskets" }
+      - { key: "bolts", label: "Bolts" }
+      - { key: "nuts", label: "Nuts" }
+      - { key: "trim_material", label: "Trim" }
+      - { key: "wedge_material", label: "Wedge" }
+
+  GLOBE:
+    display_name: "Globe Valve"
+    prefixes: ["GLS"]
+    construction_fields:
+      - { key: "body_construction", label: "Body" }
+      - { key: "stem_construction", label: "Stem" }
+      - { key: "seat_construction", label: "Seat" }
+      - { key: "back_seat_construction", label: "Back Seat" }
+      - { key: "packing_construction", label: "Packing" }
+      - { key: "disc_construction", label: "Disc" }
+    material_fields:
+      - { key: "body_material", label: "Body" }
+      - { key: "stem_material", label: "Stem" }
+      - { key: "seat_material", label: "Seat" }
+      - { key: "gland_material", label: "Gland" }
+      - { key: "gland_packing", label: "Gland Packing" }
+      - { key: "lever_handwheel", label: "Lever / Handwheel" }
+      - { key: "gaskets", label: "Gaskets" }
+      - { key: "bolts", label: "Bolts" }
+      - { key: "nuts", label: "Nuts" }
+      - { key: "disc_material", label: "Disc Material" }
+      - { key: "trim_material", label: "Trim" }
+
+  BUTTERFLY:
+    display_name: "Butterfly Valve"
+    prefixes: ["BFD"]
+    construction_fields:
+      - { key: "body_construction", label: "Body" }
+      - { key: "stem_construction", label: "Stem" }
+      - { key: "seat_construction", label: "Seat" }
+      - { key: "disc_construction", label: "Disc" }
+      - { key: "shaft_construction", label: "Shaft" }
+    material_fields:
+      - { key: "body_material", label: "Body" }
+      - { key: "stem_material", label: "Stem" }
+      - { key: "seat_material", label: "Seat" }
+      - { key: "gland_material", label: "Gland" }
+      - { key: "gland_packing", label: "Gland Packing" }
+      - { key: "lever_handwheel", label: "Lever / Handwheel" }
+      - { key: "gaskets", label: "Gaskets" }
+      - { key: "bolts", label: "Bolts" }
+      - { key: "nuts", label: "Nuts" }
+      - { key: "disc_material", label: "Disc Material" }
+      - { key: "shaft_material", label: "Shaft" }
+
+  CHECK:
+    display_name: "Check Valve"
+    prefixes: ["CS", "CHP", "CSW", "CDP"]
+    construction_fields:
+      - { key: "body_construction", label: "Body" }
+      - { key: "seat_construction", label: "Seat" }
+      - { key: "disc_construction", label: "Disc" }
+    material_fields:
+      - { key: "body_material", label: "Body" }
+      - { key: "seat_material", label: "Seat" }
+      - { key: "spring_material", label: "Spring" }
+      - { key: "gaskets", label: "Gaskets" }
+      - { key: "bolts", label: "Bolts" }
+      - { key: "nuts", label: "Nuts" }
+      - { key: "disc_material", label: "Disc Material" }
+      - { key: "trim_material", label: "Trim" }
+      - { key: "hinge_pin_material", label: "Hinge / Hinge Pin" }
+
+  NEEDLE:
+    display_name: "Needle Valve"
+    prefixes: ["NEE"]
+    construction_fields:
+      - { key: "body_construction", label: "Body" }
+      - { key: "ball_construction", label: "Ball" }
+      - { key: "stem_construction", label: "Stem" }
+      - { key: "seat_construction", label: "Seat" }
+      - { key: "locks", label: "Locks" }
+      - { key: "bonnet_construction", label: "Bonnet" }
+    material_fields:
+      - { key: "body_material", label: "Body" }
+      - { key: "ball_material", label: "Ball" }
+      - { key: "stem_material", label: "Stem" }
+      - { key: "seat_material", label: "Seat" }
+      - { key: "gland_material", label: "Gland" }
+      - { key: "gland_packing", label: "Gland Packing" }
+      - { key: "lever_handwheel", label: "Lever / Handwheel" }
+      - { key: "spring_material", label: "Spring" }
+      - { key: "gaskets", label: "Gaskets" }
+      - { key: "bolts", label: "Bolts" }
+      - { key: "nuts", label: "Nuts" }
+      - { key: "trim_material", label: "Trim" }
+      - { key: "needle_material", label: "Needle" }

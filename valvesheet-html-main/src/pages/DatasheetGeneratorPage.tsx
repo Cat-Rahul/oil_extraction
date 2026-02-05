@@ -32,7 +32,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import api, { type DatasheetResponse, type FlatDatasheetResponse, type VDSListResponse } from "@/services/api";
+import api, { type DatasheetResponse, type FlatDatasheetResponse, type VDSListResponse, type ValveTypeTemplatesResponse } from "@/services/api";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import {
   Command,
@@ -120,6 +120,56 @@ const steps = [
   { id: 6, title: "Notes", icon: Clipboard, description: "General notes & remarks" },
 ];
 
+// Mapping from backend field keys to form data keys
+const fieldKeyToFormKey: Record<string, string> = {
+  // Construction
+  body_construction: "bodyConstruction",
+  ball_construction: "ballType",
+  stem_construction: "stemType",
+  seat_construction: "seatType",
+  disc_construction: "discConstruction",
+  wedge_construction: "wedgeConstruction",
+  shaft_construction: "shaftConstruction",
+  back_seat_construction: "backSeatConstruction",
+  packing_construction: "packingConstruction",
+  bonnet_construction: "bonnetConstruction",
+  locks: "locks",
+  // Material
+  body_material: "bodyMaterial",
+  ball_material: "ballMaterial",
+  stem_material: "stemMaterial",
+  seat_material: "seatMaterial",
+  seal_material: "sealMaterial",
+  gland_material: "glandMaterial",
+  gland_packing: "glandPacking",
+  lever_handwheel: "leverMaterial",
+  spring_material: "springMaterial",
+  gaskets: "gasketMaterial",
+  bolts: "boltMaterial",
+  nuts: "nutMaterial",
+  disc_material: "discMaterial",
+  wedge_material: "wedgeMaterial",
+  trim_material: "trimMaterial",
+  shaft_material: "shaftMaterial",
+  needle_material: "needleMaterial",
+  hinge_pin_material: "hingePinMaterial",
+};
+
+// Resolve template key from valve type form value
+const resolveTemplateKey = (valveTypeValue: string): string => {
+  const typeMap: Record<string, string> = {
+    ball: "BALL",
+    gate: "GATE",
+    globe: "GLOBE",
+    check: "CHECK",
+    butterfly: "BUTTERFLY",
+    dbb: "DDB",
+    needle: "NEEDLE",
+    plug: "BALL",
+  };
+  return typeMap[valveTypeValue] || "BALL";
+};
+
 // Default form data
 const defaultFormData = {
   vdsNumber: "",
@@ -135,12 +185,21 @@ const defaultFormData = {
   sourService: "",
   endConnection: "",
   faceToFace: "",
+  // Construction fields (all valve types)
   bodyConstruction: "",
   ballType: "",
   stemType: "",
   seatType: "",
+  discConstruction: "",
+  wedgeConstruction: "",
+  shaftConstruction: "",
+  backSeatConstruction: "",
+  packingConstruction: "",
+  bonnetConstruction: "",
+  locks: "",
   lockable: true,
   operationMode: "",
+  // Material fields (all valve types)
   bodyMaterial: "",
   ballMaterial: "",
   seatMaterial: "",
@@ -153,6 +212,13 @@ const defaultFormData = {
   gasketMaterial: "",
   boltMaterial: "",
   nutMaterial: "",
+  discMaterial: "",
+  wedgeMaterial: "",
+  trimMaterial: "",
+  shaftMaterial: "",
+  needleMaterial: "",
+  hingePinMaterial: "",
+  // Testing
   shellTestPressure: "",
   closureTestPressure: "",
   pneumaticTestPressure: "",
@@ -175,9 +241,11 @@ export default function DatasheetGeneratorPage() {
   const [validationStatus, setValidationStatus] = useState<string | null>(null);
   const [openVdsSelect, setOpenVdsSelect] = useState(false);
   const [allVdsNumbers, setAllVdsNumbers] = useState<string[]>([]);
+  const [valveTypeTemplates, setValveTypeTemplates] = useState<ValveTypeTemplatesResponse | null>(null);
+  const [activeTemplateKey, setActiveTemplateKey] = useState<string>("BALL");
   const { toast } = useToast();
 
-  // Fetch all VDS numbers for the autocomplete
+  // Fetch all VDS numbers and valve type templates on mount
   useEffect(() => {
     const fetchAllVds = async () => {
       try {
@@ -192,8 +260,25 @@ export default function DatasheetGeneratorPage() {
         });
       }
     };
+    const fetchTemplates = async () => {
+      try {
+        const response = await api.getValveTypeTemplates();
+        setValveTypeTemplates(response);
+        setActiveTemplateKey(response.default_template);
+      } catch (error) {
+        console.error("Failed to fetch valve type templates:", error);
+      }
+    };
     fetchAllVds();
+    fetchTemplates();
   }, [toast]);
+
+  // Auto-switch template when valve type changes
+  useEffect(() => {
+    if (formData.valveType) {
+      setActiveTemplateKey(resolveTemplateKey(formData.valveType));
+    }
+  }, [formData.valveType]);
 
   const updateField = (field: string, value: string | boolean) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -208,15 +293,6 @@ export default function DatasheetGeneratorPage() {
       const val = d[key];
       if (val === null || val === undefined || val === "-") return "";
       return String(val);
-    };
-
-    // Helper to get first non-empty value from multiple keys
-    const strFirst = (...keys: string[]): string => {
-      for (const key of keys) {
-        const val = str(key);
-        if (val && val !== "-") return val;
-      }
-      return "";
     };
 
     // Map valve type from API response to form value
@@ -241,17 +317,13 @@ export default function DatasheetGeneratorPage() {
       return "full";
     };
 
-    // Get ball/disc/wedge construction based on valve type (use first available)
-    const ballOrWedgeConstruction = strFirst("ball_construction", "wedge_construction", "disc_construction");
-
-    // Get ball/disc/wedge material based on valve type (use first available)
-    const ballOrWedgeMaterial = strFirst("ball_material", "wedge_material", "disc_material", "trim_material");
+    const resolvedValveType = mapValveType(str("valve_type"));
 
     setFormData({
       vdsNumber: data.vds_no,
       pipingClass: str("piping_class"),
       sizeRange: str("size_range"),
-      valveType: mapValveType(str("valve_type")),
+      valveType: resolvedValveType,
       boreType: mapBoreType(str("valve_type")),
       service: str("service"),
       valveStandard: str("valve_standard"),
@@ -261,14 +333,23 @@ export default function DatasheetGeneratorPage() {
       sourService: str("sour_service"),
       endConnection: str("end_connections"),
       faceToFace: str("face_to_face"),
+      // Construction fields - map each directly
       bodyConstruction: str("body_construction"),
-      ballType: ballOrWedgeConstruction,
+      ballType: str("ball_construction"),
       stemType: str("stem_construction"),
       seatType: str("seat_construction"),
+      discConstruction: str("disc_construction"),
+      wedgeConstruction: str("wedge_construction"),
+      shaftConstruction: str("shaft_construction"),
+      backSeatConstruction: str("back_seat_construction"),
+      packingConstruction: str("packing_construction"),
+      bonnetConstruction: str("bonnet_construction"),
+      locks: str("locks"),
       lockable: true,
       operationMode: str("operation"),
+      // Material fields - map each directly
       bodyMaterial: str("body_material"),
-      ballMaterial: ballOrWedgeMaterial,
+      ballMaterial: str("ball_material"),
       seatMaterial: str("seat_material"),
       sealMaterial: str("seal_material"),
       stemMaterial: str("stem_material"),
@@ -279,6 +360,13 @@ export default function DatasheetGeneratorPage() {
       gasketMaterial: str("gaskets"),
       boltMaterial: str("bolts"),
       nutMaterial: str("nuts"),
+      discMaterial: str("disc_material"),
+      wedgeMaterial: str("wedge_material"),
+      trimMaterial: str("trim_material"),
+      shaftMaterial: str("shaft_material"),
+      needleMaterial: str("needle_material"),
+      hingePinMaterial: str("hinge_pin_material"),
+      // Testing
       shellTestPressure: str("hydrotest_shell"),
       closureTestPressure: str("hydrotest_closure"),
       pneumaticTestPressure: str("pneumatic_test"),
@@ -289,6 +377,9 @@ export default function DatasheetGeneratorPage() {
       sourServiceReq: str("sour_service").toLowerCase().includes("nace") ? "nace-mr0175" : "none",
       notes: "",
     });
+
+    // Auto-switch template based on decoded valve type
+    setActiveTemplateKey(resolveTemplateKey(resolvedValveType));
 
     setCompletionPercentage(data.completion_percentage);
     setValidationStatus(data.validation_status);
@@ -409,6 +500,26 @@ export default function DatasheetGeneratorPage() {
   };
 
   const generatePrintableContent = () => {
+    const template = valveTypeTemplates?.templates[activeTemplateKey];
+    const fd = formData as Record<string, unknown>;
+
+    // Dynamic construction rows
+    const constructionRows = (template?.construction_fields || [])
+      .filter(f => f.key !== "locks")
+      .map(f => {
+        const formKey = fieldKeyToFormKey[f.key] || f.key;
+        const value = (fd[formKey] as string) || "";
+        return `<div class="field"><div class="label">${f.label}</div><div class="value">${value || "-"}</div></div>`;
+      }).join("\n          ");
+
+    // Dynamic material rows
+    const materialRows = (template?.material_fields || [])
+      .map(f => {
+        const formKey = fieldKeyToFormKey[f.key] || f.key;
+        const value = (fd[formKey] as string) || "";
+        return `<tr><td>${f.label}</td><td>${value || "-"}</td></tr>`;
+      }).join("\n          ");
+
     return `
       <!DOCTYPE html>
       <html>
@@ -457,28 +568,14 @@ export default function DatasheetGeneratorPage() {
 
         <h2>2. Construction Details</h2>
         <div class="grid">
-          <div class="field"><div class="label">Body Construction</div><div class="value">${formData.bodyConstruction}</div></div>
-          <div class="field"><div class="label">Ball Type</div><div class="value">${formData.ballType}</div></div>
-          <div class="field"><div class="label">Stem Type</div><div class="value">${formData.stemType}</div></div>
-          <div class="field"><div class="label">Seat Type</div><div class="value">${formData.seatType}</div></div>
+          ${constructionRows}
           <div class="field"><div class="label">Operation Mode</div><div class="value">${formData.operationMode}</div></div>
         </div>
 
         <h2>3. Materials Specification</h2>
         <table>
           <tr><th>Component</th><th>Material</th></tr>
-          <tr><td>Body</td><td>${formData.bodyMaterial}</td></tr>
-          <tr><td>Ball/Disc</td><td>${formData.ballMaterial}</td></tr>
-          <tr><td>Stem</td><td>${formData.stemMaterial}</td></tr>
-          <tr><td>Seat</td><td>${formData.seatMaterial}</td></tr>
-          <tr><td>Seal</td><td>${formData.sealMaterial}</td></tr>
-          <tr><td>Gland</td><td>${formData.glandMaterial}</td></tr>
-          <tr><td>Gland Packing</td><td>${formData.glandPacking}</td></tr>
-          <tr><td>Spring</td><td>${formData.springMaterial}</td></tr>
-          <tr><td>Gasket</td><td>${formData.gasketMaterial}</td></tr>
-          <tr><td>Bolts</td><td>${formData.boltMaterial}</td></tr>
-          <tr><td>Nuts</td><td>${formData.nutMaterial}</td></tr>
-          <tr><td>Lever/Handwheel</td><td>${formData.leverMaterial}</td></tr>
+          ${materialRows}
         </table>
 
         <h2>4. Test Pressures</h2>
@@ -533,6 +630,9 @@ export default function DatasheetGeneratorPage() {
   };
 
   const generateCSVContent = () => {
+    const template = valveTypeTemplates?.templates[activeTemplateKey];
+    const fd = formData as Record<string, unknown>;
+
     // Helper to escape CSV values
     const escapeCSV = (val: string) => {
       if (!val) return "";
@@ -541,6 +641,23 @@ export default function DatasheetGeneratorPage() {
       }
       return val;
     };
+
+    // Dynamic construction rows
+    const constructionRows: string[][] = (template?.construction_fields || [])
+      .filter(f => f.key !== "locks")
+      .map(f => {
+        const formKey = fieldKeyToFormKey[f.key] || f.key;
+        return [f.label, escapeCSV((fd[formKey] as string) || "")];
+      });
+    constructionRows.push(["Operation Mode", escapeCSV(formData.operationMode)]);
+    constructionRows.push(["Lockable", formData.locks || "Yes - Full Open and Fully Closed"]);
+
+    // Dynamic material rows
+    const materialRows: string[][] = (template?.material_fields || [])
+      .map(f => {
+        const formKey = fieldKeyToFormKey[f.key] || f.key;
+        return [f.label, escapeCSV((fd[formKey] as string) || "")];
+      });
 
     const rows = [
       ["VALVE DATASHEET SPECIFICATION"],
@@ -567,26 +684,10 @@ export default function DatasheetGeneratorPage() {
       ["Face to Face", escapeCSV(formData.faceToFace)],
       [""],
       ["=== CONSTRUCTION DETAILS ===", ""],
-      ["Body Construction", escapeCSV(formData.bodyConstruction)],
-      ["Ball/Disc Type", escapeCSV(formData.ballType)],
-      ["Stem Type", escapeCSV(formData.stemType)],
-      ["Seat Type", escapeCSV(formData.seatType)],
-      ["Operation Mode", escapeCSV(formData.operationMode)],
-      ["Lockable", "Yes - Full Open and Fully Closed"],
+      ...constructionRows,
       [""],
       ["=== MATERIALS SPECIFICATION ===", ""],
-      ["Body Material", escapeCSV(formData.bodyMaterial)],
-      ["Ball Material", escapeCSV(formData.ballMaterial)],
-      ["Stem Material", escapeCSV(formData.stemMaterial)],
-      ["Seat Material", escapeCSV(formData.seatMaterial)],
-      ["Seal Material", escapeCSV(formData.sealMaterial)],
-      ["Gland Material", escapeCSV(formData.glandMaterial)],
-      ["Gland Packing", escapeCSV(formData.glandPacking)],
-      ["Spring Material", escapeCSV(formData.springMaterial)],
-      ["Gasket Material", escapeCSV(formData.gasketMaterial)],
-      ["Bolt Material", escapeCSV(formData.boltMaterial)],
-      ["Nut Material", escapeCSV(formData.nutMaterial)],
-      ["Lever/Handwheel Material", escapeCSV(formData.leverMaterial)],
+      ...materialRows,
       [""],
       ["=== TEST PRESSURES ===", ""],
       ["Shell Test Pressure (Hydrotest)", escapeCSV(formData.shellTestPressure)],
@@ -909,49 +1010,43 @@ export default function DatasheetGeneratorPage() {
           </div>
         );
 
-      case 2:
+      case 2: {
+        const template = valveTypeTemplates?.templates[activeTemplateKey];
+        const constructionFields = template?.construction_fields || [
+          { key: "body_construction", label: "Body" },
+          { key: "ball_construction", label: "Ball" },
+          { key: "stem_construction", label: "Stem" },
+          { key: "seat_construction", label: "Seat" },
+          { key: "locks", label: "Locks" },
+        ];
+        const hasLocks = constructionFields.some(f => f.key === "locks");
+        const inputFields = constructionFields.filter(f => f.key !== "locks");
+
         return (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <Card className="border-border">
               <CardHeader className="pb-4">
-                <CardTitle className="text-base">Body & Ball Construction</CardTitle>
+                <CardTitle className="text-base">
+                  {template?.display_name || "Ball Valve"} - Construction
+                </CardTitle>
                 <CardDescription>Valve body and internal components</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="space-y-2">
-                  <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                    Body Construction
-                  </Label>
-                  <Input
-                    value={formData.bodyConstruction}
-                    onChange={(e) => updateField("bodyConstruction", e.target.value)}
-                    placeholder="e.g., Two piece split body"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Ball Type</Label>
-                  <Input
-                    value={formData.ballType}
-                    onChange={(e) => updateField("ballType", e.target.value)}
-                    placeholder="e.g., Floating Ball"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Stem Type</Label>
-                  <Input
-                    value={formData.stemType}
-                    onChange={(e) => updateField("stemType", e.target.value)}
-                    placeholder="e.g., Anti-static, Anti blowout proof"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Seat Type</Label>
-                  <Input
-                    value={formData.seatType}
-                    onChange={(e) => updateField("seatType", e.target.value)}
-                    placeholder="e.g., Soft Seated, Self-relieving"
-                  />
-                </div>
+                {inputFields.map((field) => {
+                  const formKey = fieldKeyToFormKey[field.key] || field.key;
+                  return (
+                    <div key={field.key} className="space-y-2">
+                      <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                        {field.label}
+                      </Label>
+                      <Input
+                        value={(formData as Record<string, unknown>)[formKey] as string || ""}
+                        onChange={(e) => updateField(formKey, e.target.value)}
+                        placeholder={`Enter ${field.label.toLowerCase()}`}
+                      />
+                    </div>
+                  );
+                })}
               </CardContent>
             </Card>
 
@@ -965,7 +1060,6 @@ export default function DatasheetGeneratorPage() {
                   <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
                     Operation Mode
                   </Label>
-                  {/* If operation mode from API is a detailed description, show as text; otherwise use Select */}
                   {formData.operationMode && !operationModes.some(om => om.value === formData.operationMode) ? (
                     <div className="p-3 bg-muted/30 border rounded-md text-sm">
                       {formData.operationMode}
@@ -985,18 +1079,22 @@ export default function DatasheetGeneratorPage() {
                     </Select>
                   )}
                 </div>
-                <div className="p-4 bg-muted/50 rounded-lg border border-border">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <Lock className="w-4 h-4 text-validated" />
-                      <div>
-                        <p className="text-sm font-medium">Lockable Position</p>
-                        <p className="text-xs text-muted-foreground">Full Open, Fully Closed</p>
+                {hasLocks && (
+                  <div className="p-4 bg-muted/50 rounded-lg border border-border">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <Lock className="w-4 h-4 text-validated" />
+                        <div>
+                          <p className="text-sm font-medium">Lockable Position</p>
+                          <p className="text-xs text-muted-foreground">
+                            {formData.locks || "Full Open, Fully Closed"}
+                          </p>
+                        </div>
                       </div>
+                      <Badge className="bg-validated-bg text-validated border-0">Enabled</Badge>
                     </div>
-                    <Badge className="bg-validated-bg text-validated border-0">Enabled</Badge>
                   </div>
-                </div>
+                )}
                 <div className="p-4 bg-muted/50 rounded-lg border border-border">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
@@ -1013,122 +1111,62 @@ export default function DatasheetGeneratorPage() {
             </Card>
           </div>
         );
+      }
 
-      case 3:
+      case 3: {
+        const template = valveTypeTemplates?.templates[activeTemplateKey];
+        const materialFields = template?.material_fields || [
+          { key: "body_material", label: "Body" },
+          { key: "ball_material", label: "Ball" },
+          { key: "stem_material", label: "Stem" },
+          { key: "seat_material", label: "Seat" },
+          { key: "gland_material", label: "Gland" },
+          { key: "gland_packing", label: "Gland Packing" },
+          { key: "lever_handwheel", label: "Lever / Handwheel" },
+          { key: "spring_material", label: "Spring" },
+          { key: "gaskets", label: "Gaskets" },
+          { key: "bolts", label: "Bolts" },
+          { key: "nuts", label: "Nuts" },
+        ];
+
+        // Split into 3 groups for the 3-column layout
+        const groupSize = Math.ceil(materialFields.length / 3);
+        const groups = [
+          { title: "Primary Materials", desc: "Structural components", fields: materialFields.slice(0, groupSize) },
+          { title: "Sealing Materials", desc: "Seats, seals & packing", fields: materialFields.slice(groupSize, groupSize * 2) },
+          { title: "Hardware Materials", desc: "Fasteners & accessories", fields: materialFields.slice(groupSize * 2) },
+        ].filter(g => g.fields.length > 0);
+
         return (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <Card className="border-border">
-              <CardHeader className="pb-4">
-                <CardTitle className="text-base">Primary Materials</CardTitle>
-                <CardDescription>Body, ball & stem</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-2">
-                  <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                    Body Material
-                  </Label>
-                  <Input value={formData.bodyMaterial} onChange={(e) => updateField("bodyMaterial", e.target.value)} />
-                </div>
-                <div className="space-y-2">
-                  <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                    Ball Material
-                  </Label>
-                  <Input value={formData.ballMaterial} onChange={(e) => updateField("ballMaterial", e.target.value)} />
-                </div>
-                <div className="space-y-2">
-                  <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                    Stem Material
-                  </Label>
-                  <Input value={formData.stemMaterial} onChange={(e) => updateField("stemMaterial", e.target.value)} />
-                </div>
-                <div className="space-y-2">
-                  <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                    Gland Material
-                  </Label>
-                  <Input
-                    value={formData.glandMaterial}
-                    onChange={(e) => updateField("glandMaterial", e.target.value)}
-                  />
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border">
-              <CardHeader className="pb-4">
-                <CardTitle className="text-base">Sealing Materials</CardTitle>
-                <CardDescription>Seats, seals & packing</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-2">
-                  <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                    Seat Material
-                  </Label>
-                  <Input value={formData.seatMaterial} onChange={(e) => updateField("seatMaterial", e.target.value)} />
-                </div>
-                <div className="space-y-2">
-                  <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                    Seal Material
-                  </Label>
-                  <Input value={formData.sealMaterial} onChange={(e) => updateField("sealMaterial", e.target.value)} />
-                </div>
-                <div className="space-y-2">
-                  <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                    Gland Packing
-                  </Label>
-                  <Input value={formData.glandPacking} onChange={(e) => updateField("glandPacking", e.target.value)} />
-                </div>
-                <div className="space-y-2">
-                  <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                    Spring Material
-                  </Label>
-                  <Input
-                    value={formData.springMaterial}
-                    onChange={(e) => updateField("springMaterial", e.target.value)}
-                  />
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border">
-              <CardHeader className="pb-4">
-                <CardTitle className="text-base">Hardware Materials</CardTitle>
-                <CardDescription>Bolts, nuts & gaskets</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-2">
-                  <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                    Gasket Material
-                  </Label>
-                  <Input
-                    value={formData.gasketMaterial}
-                    onChange={(e) => updateField("gasketMaterial", e.target.value)}
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                    Bolt Material
-                  </Label>
-                  <Input value={formData.boltMaterial} onChange={(e) => updateField("boltMaterial", e.target.value)} />
-                </div>
-                <div className="space-y-2">
-                  <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                    Nut Material
-                  </Label>
-                  <Input value={formData.nutMaterial} onChange={(e) => updateField("nutMaterial", e.target.value)} />
-                </div>
-                <div className="space-y-2">
-                  <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                    Lever Material
-                  </Label>
-                  <Input
-                    value={formData.leverMaterial}
-                    onChange={(e) => updateField("leverMaterial", e.target.value)}
-                  />
-                </div>
-              </CardContent>
-            </Card>
+          <div className={`grid grid-cols-1 ${groups.length === 2 ? "lg:grid-cols-2" : "lg:grid-cols-3"} gap-6`}>
+            {groups.map((group) => (
+              <Card key={group.title} className="border-border">
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-base">{group.title}</CardTitle>
+                  <CardDescription>{group.desc}</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  {group.fields.map((field) => {
+                    const formKey = fieldKeyToFormKey[field.key] || field.key;
+                    return (
+                      <div key={field.key} className="space-y-2">
+                        <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                          {field.label}
+                        </Label>
+                        <Input
+                          value={(formData as Record<string, unknown>)[formKey] as string || ""}
+                          onChange={(e) => updateField(formKey, e.target.value)}
+                          placeholder={`Enter ${field.label.toLowerCase()}`}
+                        />
+                      </div>
+                    );
+                  })}
+                </CardContent>
+              </Card>
+            ))}
           </div>
         );
+      }
 
       case 4:
         return (

@@ -28,6 +28,9 @@ from .schemas import (
     ValveTypeInfo,
     VDSListResponse,
     HealthResponse,
+    ValveTypeTemplatesResponse,
+    ValveTypeTemplate,
+    TemplateFieldInfo,
 )
 
 
@@ -355,6 +358,39 @@ async def get_bore_types():
     ]
 
     return {"bore_types": bore_types}
+
+
+@router.get("/metadata/valve-type-templates", response_model=ValveTypeTemplatesResponse, tags=["Metadata"])
+async def get_valve_type_templates():
+    """
+    Get valve type field templates for dynamic UI rendering.
+
+    Returns construction and material field lists for each valve type,
+    used by the frontend to render the correct fields based on valve type.
+    """
+    engine = get_engine()
+    raw_templates = engine.get_valve_type_templates()
+    default_key = engine.get_default_template_key()
+
+    templates = {}
+    for key, tmpl in raw_templates.items():
+        templates[key] = ValveTypeTemplate(
+            display_name=tmpl.get('display_name', key),
+            prefixes=tmpl.get('prefixes', []),
+            construction_fields=[
+                TemplateFieldInfo(key=f['key'], label=f['label'])
+                for f in tmpl.get('construction_fields', [])
+            ],
+            material_fields=[
+                TemplateFieldInfo(key=f['key'], label=f['label'])
+                for f in tmpl.get('material_fields', [])
+            ],
+        )
+
+    return ValveTypeTemplatesResponse(
+        templates=templates,
+        default_template=default_key,
+    )
 
 
 # === Helper Functions ===

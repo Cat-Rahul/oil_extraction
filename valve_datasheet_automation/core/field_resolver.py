@@ -58,6 +58,7 @@ class FieldResolver:
         standards_repo: StandardsRepository,
         vds_index_repo: VDSIndexRepository,
         config_path: Optional[Path] = None,
+        field_applicability: Optional[Dict[str, List[str]]] = None,
     ):
         """
         Initialize resolver with data sources and configuration.
@@ -67,11 +68,13 @@ class FieldResolver:
             standards_repo: Standards/clauses repository
             vds_index_repo: VDS index repository
             config_path: Path to field_mappings.yaml
+            field_applicability: Dictionary mapping template names to applicable field lists
         """
         self.pms = pms_repo
         self.standards = standards_repo
         self.vds_index = vds_index_repo
         self.field_configs = self._load_config(config_path) if config_path else {}
+        self.field_applicability = field_applicability or {}
 
         # Load material mappings
         self.material_mappings = {}
@@ -125,6 +128,18 @@ class FieldResolver:
         section = config.get('section', 'General')
         is_required = config.get('is_required', False)
         display_name = config.get('display_name', field_name.replace('_', ' ').title())
+
+        # Check if field is applicable for this valve type
+        valve_type_full_name = decoded_vds.valve_type_prefix.full_name
+        if self.field_applicability and valve_type_full_name in self.field_applicability:
+            if field_name not in self.field_applicability[valve_type_full_name]:
+                return create_field(
+                    field_name=field_name,
+                    section=section,
+                    value=None,
+                    source_type=FieldSource.NOT_APPLICABLE,
+                    notes=f"Not applicable for {valve_type_full_name}",
+                )
 
         # Map string source to enum
         source_enum = self._map_source_type(source_type)

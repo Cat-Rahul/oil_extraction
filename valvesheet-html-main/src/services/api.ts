@@ -98,6 +98,23 @@ export interface VDSListResponse {
   total: number;
 }
 
+export interface TemplateFieldInfo {
+  key: string;
+  label: string;
+}
+
+export interface ValveTypeTemplate {
+  display_name: string;
+  prefixes: string[];
+  construction_fields: TemplateFieldInfo[];
+  material_fields: TemplateFieldInfo[];
+}
+
+export interface ValveTypeTemplatesResponse {
+  templates: Record<string, ValveTypeTemplate>;
+  default_template: string;
+}
+
 export interface HealthResponse {
   status: string;
   version: string;
@@ -262,6 +279,14 @@ export async function getBoreTypes(): Promise<{ bore_types: { code: string; name
   return handleResponse<{ bore_types: { code: string; name: string }[] }>(response);
 }
 
+/**
+ * Get valve type field templates for dynamic UI rendering
+ */
+export async function getValveTypeTemplates(): Promise<ValveTypeTemplatesResponse> {
+  const response = await fetch(`${API_BASE_URL}/metadata/valve-type-templates`);
+  return handleResponse<ValveTypeTemplatesResponse>(response);
+}
+
 // === Default Export ===
 
 const api = {
@@ -277,6 +302,7 @@ const api = {
   getVDSNumbers,
   getEndConnections,
   getBoreTypes,
+  getValveTypeTemplates,
 };
 
 export default api;

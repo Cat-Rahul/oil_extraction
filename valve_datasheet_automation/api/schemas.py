@@ -144,3 +144,25 @@ class HealthResponse(BaseModel):
     data_loaded: bool
     vds_index_count: int
     piping_classes_count: int
+
+
+# === Valve Type Template Schemas ===
+
+class TemplateFieldInfo(BaseModel):
+    """A single field in a valve type template."""
+    key: str
+    label: str
+
+
+class ValveTypeTemplate(BaseModel):
+    """Template definition for a valve type."""
+    display_name: str
+    prefixes: list[str]
+    construction_fields: list[TemplateFieldInfo]
+    material_fields: list[TemplateFieldInfo]
+
+
+class ValveTypeTemplatesResponse(BaseModel):
+    """Response containing all valve type templates."""
+    templates: dict[str, ValveTypeTemplate]
+    default_template: str
