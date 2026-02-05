@@ -12,6 +12,8 @@ import argparse
 import sys
 from pathlib import Path
 
+import os
+
 # Add project to path
 sys.path.insert(0, str(Path(__file__).parent))
 
@@ -28,8 +30,8 @@ def main():
     parser.add_argument(
         "--port",
         type=int,
-        default=8000,
-        help="Port to bind to (default: 8000)"
+        default=int(os.getenv("PORT", 8000)),
+        help="Port to bind to (default: 8000 or from PORT env var)"
     )
     parser.add_argument(
         "--reload",
