@@ -249,7 +249,7 @@ export default function DatasheetGeneratorPage() {
   useEffect(() => {
     const fetchAllVds = async () => {
       try {
-        const response: VDSListResponse = await api.getVDSNumbers();
+        const response: VDSListResponse = await api.getVDSNumbers({ limit: 1000 });
         setAllVdsNumbers(response.vds_numbers);
       } catch (error) {
         console.error("Failed to fetch all VDS numbers:", error);

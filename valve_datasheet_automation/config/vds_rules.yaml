@@ -26,6 +26,7 @@ valve_type_prefixes:
       - F  # Full bore
       - R  # Reduced bore
       - M  # Metal seated
+    default_bore: "F"
 
   GS:
     name: "Gate Valve"

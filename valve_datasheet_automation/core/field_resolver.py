@@ -8,7 +8,7 @@ based on configured mappings.
 import re
 import yaml
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any, Dict, List, Optional
 
 from ..models.vds import DecodedVDS
 from ..models.datasheet import (

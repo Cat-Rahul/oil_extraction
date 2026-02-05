@@ -35,16 +35,16 @@ const navItems = [
     href: "/preview",
     icon: Eye,
   },
-  {
-    title: "Standards & Traceability",
-    href: "/standards",
-    icon: BookOpen,
-  },
-  {
-    title: "Validation",
-    href: "/validation",
-    icon: ShieldCheck,
-  },
+  // {
+  //   title: "Standards & Traceability",
+  //   href: "/standards",
+  //   icon: BookOpen,
+  // },
+  // {
+  //   title: "Validation",
+  //   href: "/validation",
+  //   icon: ShieldCheck,
+  // },
   {
     title: "Approval & Versions",
     href: "/approval",
