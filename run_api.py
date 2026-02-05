@@ -9,13 +9,9 @@ Usage:
 """
 
 import argparse
-import sys
 from pathlib import Path
 
 import os
-
-# Add project to path
-sys.path.insert(0, str(Path(__file__).parent))
 
 
 def main():
@@ -36,8 +32,8 @@ def main():
     parser.add_argument(
         "--reload",
         action="store_true",
-        default=True,
-        help="Enable auto-reload on code changes (default: True)"
+        default=False,
+        help="Enable auto-reload on code changes (default: False)"
     )
     parser.add_argument(
         "--no-reload",
