@@ -449,12 +449,17 @@ async def ml_model_info():
 
 
 @router.get("/ml/predict/{vds_no}", response_model=HybridPredictionResponse, tags=["ML"])
-async def ml_predict(vds_no: str):
+async def ml_predict(
+    vds_no: str,
+    include_empty: bool = Query(False, description="Include empty/non-applicable fields")
+):
     """
     Predict all datasheet fields for a VDS number using HYBRID approach.
 
-    Uses rule-based extraction for piping_class and sour_service (100% accurate),
-    and ML prediction for other fields. This is the production-recommended endpoint.
+    Uses VDS Index lookup for known VDS (100% match), falls back to rule-based + ML.
+
+    By default, excludes empty fields (e.g., ball_construction for butterfly valves).
+    Set include_empty=true to get all 39 fields.
 
     Returns predictions with per-field confidence scores and source info.
     """
@@ -466,7 +471,7 @@ async def ml_predict(vds_no: str):
         )
 
     try:
-        result = predictor.predict_with_confidence(vds_no)
+        result = predictor.predict_with_confidence(vds_no, include_empty=include_empty)
         predictions = {
             field: HybridPredictionFieldResponse(
                 value=info["value"],
@@ -486,11 +491,15 @@ async def ml_predict(vds_no: str):
 
 
 @router.get("/ml/predict/{vds_no}/flat", response_model=HybridFlatPredictionResponse, tags=["ML"])
-async def ml_predict_flat(vds_no: str):
+async def ml_predict_flat(
+    vds_no: str,
+    include_empty: bool = Query(False, description="Include empty/non-applicable fields")
+):
     """
     Predict datasheet fields (flat format, values only) using HYBRID approach.
 
-    Production-recommended endpoint with rule-based piping_class extraction.
+    By default, only returns fields applicable to this valve type.
+    Set include_empty=true to get all 39 fields.
     """
     predictor = _get_predictor()
     if not predictor.is_available:
@@ -500,7 +509,7 @@ async def ml_predict_flat(vds_no: str):
         )
 
     try:
-        result = predictor.predict(vds_no)
+        result = predictor.predict(vds_no, include_empty=include_empty)
         return HybridFlatPredictionResponse(
             vds_no=vds_no,
             data=result,

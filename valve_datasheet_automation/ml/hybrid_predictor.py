@@ -276,7 +276,14 @@ class HybridPredictor:
         vds_upper = vds_no.upper().strip()
         return self.vds_index.get(vds_upper)
 
-    def predict(self, vds_no: str) -> dict:
+    def _filter_empty_fields(self, data: dict) -> dict:
+        """Remove fields with empty or '-' values (not applicable for this valve type)."""
+        return {
+            k: v for k, v in data.items()
+            if v and v.strip() and v.strip() != "-"
+        }
+
+    def predict(self, vds_no: str, include_empty: bool = False) -> dict:
         """
         Predict all datasheet fields.
 
@@ -286,6 +293,7 @@ class HybridPredictor:
 
         Args:
             vds_no: VDS number string (e.g., "BFDA30WF")
+            include_empty: If False, excludes empty/non-applicable fields
 
         Returns:
             dict of field_name -> predicted value string
@@ -296,11 +304,14 @@ class HybridPredictor:
         # Step 1: Try VDS Index lookup first (100% match with training data)
         index_data = self._lookup_vds_index(vds_no)
         if index_data:
-            # Return exact values from index
+            # Return ALL fields from index (not just TARGET_FIELDS)
+            # This ensures valve-type-specific fields like disc_construction are included
             result = {}
-            for field in TARGET_FIELDS:
-                result[field] = index_data.get(field, "")
-            return result
+            exclude_fields = {'source_file'}  # Internal fields to exclude
+            for field, value in index_data.items():
+                if field not in exclude_fields:
+                    result[field] = value
+            return result if include_empty else self._filter_empty_fields(result)
 
         # Step 2: VDS not in index - use rule-based + ML fallback
         features = parse_vds_features(vds_no)
@@ -324,9 +335,9 @@ class HybridPredictor:
                     val = ""
                 result[field] = val
 
-        return result
+        return result if include_empty else self._filter_empty_fields(result)
 
-    def predict_with_confidence(self, vds_no: str) -> dict:
+    def predict_with_confidence(self, vds_no: str, include_empty: bool = False) -> dict:
         """
         Predict fields with confidence scores.
 
@@ -334,6 +345,10 @@ class HybridPredictor:
         1. VDS_INDEX: confidence = 1.0, source = "vds_index"
         2. RULE_BASED: confidence = 1.0, source = "rule_based"
         3. ML_PREDICTED: confidence from model, source = "ml_predicted"
+
+        Args:
+            vds_no: VDS number string
+            include_empty: If False, excludes empty/non-applicable fields
 
         Returns dict of field_name -> {"value": str, "confidence": float, "source": str}
         """
@@ -343,11 +358,18 @@ class HybridPredictor:
         # Step 1: Try VDS Index lookup first
         index_data = self._lookup_vds_index(vds_no)
         if index_data:
-            # Return exact values from index with 100% confidence
+            # Return ALL fields from index (not just TARGET_FIELDS)
+            # This ensures valve-type-specific fields like disc_construction are included
             result = {}
-            for field in TARGET_FIELDS:
+            exclude_fields = {'source_file'}  # Internal fields to exclude
+            for field, val in index_data.items():
+                if field in exclude_fields:
+                    continue
+                # Skip empty fields if include_empty is False
+                if not include_empty and (not val or not str(val).strip() or str(val).strip() == "-"):
+                    continue
                 result[field] = {
-                    "value": index_data.get(field, ""),
+                    "value": val,
                     "confidence": 1.0,
                     "source": "vds_index",
                 }
@@ -365,8 +387,12 @@ class HybridPredictor:
         result = {}
         for i, field in enumerate(TARGET_FIELDS):
             if field in RULE_BASED_FIELDS:
+                val = rule_based_values[field]
+                # Skip empty fields if include_empty is False
+                if not include_empty and (not val or not val.strip() or val.strip() == "-"):
+                    continue
                 result[field] = {
-                    "value": rule_based_values[field],
+                    "value": val,
                     "confidence": 1.0,
                     "source": "rule_based",
                 }
@@ -376,6 +402,10 @@ class HybridPredictor:
                 val = enc.inverse_transform([pred_label])[0]
                 if val == DatasetBuilder.MISSING_LABEL:
                     val = ""
+
+                # Skip empty fields if include_empty is False
+                if not include_empty and (not val or not val.strip() or val.strip() == "-"):
+                    continue
 
                 # Get confidence
                 if probas.get(field) is not None and probas[field] is not None:
