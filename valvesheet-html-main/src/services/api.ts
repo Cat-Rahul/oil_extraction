@@ -123,6 +123,26 @@ export interface HealthResponse {
   piping_classes_count: number;
 }
 
+// ML Prediction Types
+export interface MLFlatPredictionResponse {
+  vds_no: string;
+  data: Record<string, string>;
+  rule_based_fields: string[];
+}
+
+export interface MLPredictionFieldResponse {
+  value: string;
+  confidence: number;
+  source: string;
+}
+
+export interface MLPredictionResponse {
+  vds_no: string;
+  predictions: Record<string, MLPredictionFieldResponse>;
+  rule_based_fields: string[];
+  ml_predicted_fields: string[];
+}
+
 export interface BatchResult {
   vds_no: string;
   status: "success" | "error";
@@ -287,6 +307,28 @@ export async function getValveTypeTemplates(): Promise<ValveTypeTemplatesRespons
   return handleResponse<ValveTypeTemplatesResponse>(response);
 }
 
+/**
+ * Get ML predictions for a VDS number (flat format with only non-empty fields)
+ */
+export async function getMLPrediction(vdsNo: string, includeEmpty: boolean = false): Promise<MLFlatPredictionResponse> {
+  const params = new URLSearchParams();
+  if (includeEmpty) params.set("include_empty", "true");
+  const url = `${API_BASE_URL}/ml/predict/${encodeURIComponent(vdsNo)}/flat?${params}`;
+  const response = await fetch(url);
+  return handleResponse<MLFlatPredictionResponse>(response);
+}
+
+/**
+ * Get ML predictions with confidence scores
+ */
+export async function getMLPredictionWithConfidence(vdsNo: string, includeEmpty: boolean = false): Promise<MLPredictionResponse> {
+  const params = new URLSearchParams();
+  if (includeEmpty) params.set("include_empty", "true");
+  const url = `${API_BASE_URL}/ml/predict/${encodeURIComponent(vdsNo)}?${params}`;
+  const response = await fetch(url);
+  return handleResponse<MLPredictionResponse>(response);
+}
+
 // === Default Export ===
 
 const api = {
@@ -303,6 +345,8 @@ const api = {
   getEndConnections,
   getBoreTypes,
   getValveTypeTemplates,
+  getMLPrediction,
+  getMLPredictionWithConfidence,
 };
 
 export default api;
