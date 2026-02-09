@@ -1,0 +1,410 @@
+{
+  "train_samples": 317,
+  "val_samples": 68,
+  "test_samples": 68,
+  "training_time_seconds": 39.9,
+  "validation": {
+    "per_field": {
+      "valve_type": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 9
+      },
+      "piping_class": {
+        "accuracy": 0.6471,
+        "f1_weighted": 0.6265,
+        "n_classes": 43
+      },
+      "size_range": {
+        "accuracy": 0.9265,
+        "f1_weighted": 0.9082,
+        "n_classes": 8
+      },
+      "service": {
+        "accuracy": 0.7206,
+        "f1_weighted": 0.6619,
+        "n_classes": 17
+      },
+      "valve_standard": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 8
+      },
+      "pressure_class": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 8
+      },
+      "design_pressure": {
+        "accuracy": 0.6765,
+        "f1_weighted": 0.6501,
+        "n_classes": 41
+      },
+      "corrosion_allowance": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 3
+      },
+      "sour_service": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 2
+      },
+      "end_connections": {
+        "accuracy": 0.9706,
+        "f1_weighted": 0.9755,
+        "n_classes": 11
+      },
+      "face_to_face": {
+        "accuracy": 0.9559,
+        "f1_weighted": 0.9537,
+        "n_classes": 5
+      },
+      "body_construction": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 8
+      },
+      "ball_construction": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 6
+      },
+      "stem_construction": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 4
+      },
+      "seat_construction": {
+        "accuracy": 0.9412,
+        "f1_weighted": 0.9534,
+        "n_classes": 9
+      },
+      "locks": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 2
+      },
+      "operation": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 13
+      },
+      "body_material": {
+        "accuracy": 0.9853,
+        "f1_weighted": 0.9853,
+        "n_classes": 14
+      },
+      "ball_material": {
+        "accuracy": 0.9412,
+        "f1_weighted": 0.9279,
+        "n_classes": 6
+      },
+      "seat_material": {
+        "accuracy": 0.9559,
+        "f1_weighted": 0.9349,
+        "n_classes": 9
+      },
+      "seal_material": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 3
+      },
+      "stem_material": {
+        "accuracy": 0.9559,
+        "f1_weighted": 0.9771,
+        "n_classes": 5
+      },
+      "gland_material": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 6
+      },
+      "gland_packing": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 2
+      },
+      "lever_handwheel": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 2
+      },
+      "spring_material": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 2
+      },
+      "gaskets": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 12
+      },
+      "bolts": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 5
+      },
+      "nuts": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 5
+      },
+      "marking_purchaser": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 1
+      },
+      "marking_manufacturer": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 1
+      },
+      "inspection_testing": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 1
+      },
+      "leakage_rate": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 1
+      },
+      "hydrotest_shell": {
+        "accuracy": 0.9559,
+        "f1_weighted": 0.9552,
+        "n_classes": 18
+      },
+      "hydrotest_closure": {
+        "accuracy": 0.9559,
+        "f1_weighted": 0.9552,
+        "n_classes": 18
+      },
+      "pneumatic_test": {
+        "accuracy": 0.9706,
+        "f1_weighted": 0.9851,
+        "n_classes": 1
+      },
+      "material_certification": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 1
+      },
+      "fire_rating": {
+        "accuracy": 0.9559,
+        "f1_weighted": 0.9518,
+        "n_classes": 3
+      },
+      "finish": {
+        "accuracy": 0.9853,
+        "f1_weighted": 0.9829,
+        "n_classes": 2
+      }
+    },
+    "overall_accuracy": 0.9615,
+    "exact_match_rate": 0.3235,
+    "n_samples": 68
+  },
+  "test": {
+    "per_field": {
+      "valve_type": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 9
+      },
+      "piping_class": {
+        "accuracy": 0.5294,
+        "f1_weighted": 0.5005,
+        "n_classes": 47
+      },
+      "size_range": {
+        "accuracy": 0.9706,
+        "f1_weighted": 0.9611,
+        "n_classes": 7
+      },
+      "service": {
+        "accuracy": 0.7794,
+        "f1_weighted": 0.7138,
+        "n_classes": 21
+      },
+      "valve_standard": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 8
+      },
+      "pressure_class": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 8
+      },
+      "design_pressure": {
+        "accuracy": 0.5735,
+        "f1_weighted": 0.5196,
+        "n_classes": 43
+      },
+      "corrosion_allowance": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 3
+      },
+      "sour_service": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 2
+      },
+      "end_connections": {
+        "accuracy": 0.9853,
+        "f1_weighted": 0.979,
+        "n_classes": 13
+      },
+      "face_to_face": {
+        "accuracy": 0.9706,
+        "f1_weighted": 0.9633,
+        "n_classes": 5
+      },
+      "body_construction": {
+        "accuracy": 0.9853,
+        "f1_weighted": 0.9782,
+        "n_classes": 9
+      },
+      "ball_construction": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 7
+      },
+      "stem_construction": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 4
+      },
+      "seat_construction": {
+        "accuracy": 0.9265,
+        "f1_weighted": 0.9269,
+        "n_classes": 9
+      },
+      "locks": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 2
+      },
+      "operation": {
+        "accuracy": 0.9853,
+        "f1_weighted": 0.9853,
+        "n_classes": 15
+      },
+      "body_material": {
+        "accuracy": 0.9706,
+        "f1_weighted": 0.9686,
+        "n_classes": 16
+      },
+      "ball_material": {
+        "accuracy": 0.9559,
+        "f1_weighted": 0.9561,
+        "n_classes": 5
+      },
+      "seat_material": {
+        "accuracy": 0.9559,
+        "f1_weighted": 0.9418,
+        "n_classes": 9
+      },
+      "seal_material": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 3
+      },
+      "stem_material": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 7
+      },
+      "gland_material": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 8
+      },
+      "gland_packing": {
+        "accuracy": 0.9853,
+        "f1_weighted": 0.9877,
+        "n_classes": 3
+      },
+      "lever_handwheel": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 2
+      },
+      "spring_material": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 2
+      },
+      "gaskets": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 11
+      },
+      "bolts": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 5
+      },
+      "nuts": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 5
+      },
+      "marking_purchaser": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 1
+      },
+      "marking_manufacturer": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 1
+      },
+      "inspection_testing": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 1
+      },
+      "leakage_rate": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 1
+      },
+      "hydrotest_shell": {
+        "accuracy": 0.9559,
+        "f1_weighted": 0.9559,
+        "n_classes": 19
+      },
+      "hydrotest_closure": {
+        "accuracy": 0.9559,
+        "f1_weighted": 0.9559,
+        "n_classes": 19
+      },
+      "pneumatic_test": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 1
+      },
+      "material_certification": {
+        "accuracy": 1.0,
+        "f1_weighted": 1.0,
+        "n_classes": 1
+      },
+      "fire_rating": {
+        "accuracy": 0.9853,
+        "f1_weighted": 0.9848,
+        "n_classes": 3
+      },
+      "finish": {
+        "accuracy": 0.9706,
+        "f1_weighted": 0.9561,
+        "n_classes": 2
+      }
+    },
+    "overall_accuracy": 0.96,
+    "exact_match_rate": 0.2647,
+    "n_samples": 68
+  }
+}

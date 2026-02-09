@@ -166,3 +166,75 @@ class ValveTypeTemplatesResponse(BaseModel):
     """Response containing all valve type templates."""
     templates: dict[str, ValveTypeTemplate]
     default_template: str
+
+
+# === ML Prediction Schemas ===
+
+class MLPredictionFieldResponse(BaseModel):
+    """A single ML-predicted field with confidence."""
+    value: str
+    confidence: float
+
+
+class MLPredictionResponse(BaseModel):
+    """Response from ML prediction endpoint."""
+    vds_no: str
+    source: str = "ml_model"
+    predictions: dict[str, MLPredictionFieldResponse]
+
+
+class MLFlatPredictionResponse(BaseModel):
+    """Flat ML prediction response (field_name -> value only)."""
+    vds_no: str
+    source: str = "ml_model"
+    data: dict[str, str]
+
+
+class MLModelInfoResponse(BaseModel):
+    """Info about the trained ML model."""
+    is_available: bool
+    train_samples: Optional[int] = None
+    test_accuracy: Optional[float] = None
+    exact_match_rate: Optional[float] = None
+    target_fields: list[str] = []
+
+
+# === Hybrid Predictor Schemas ===
+
+class HybridPredictionFieldResponse(BaseModel):
+    """A single field from hybrid prediction with source info."""
+    value: str
+    confidence: float
+    source: str  # "rule_based" or "ml_predicted"
+
+
+class HybridPredictionResponse(BaseModel):
+    """Response from hybrid prediction endpoint."""
+    vds_no: str
+    predictions: dict[str, HybridPredictionFieldResponse]
+    rule_based_fields: list[str]
+    ml_predicted_fields: list[str]
+
+
+class HybridFlatPredictionResponse(BaseModel):
+    """Flat hybrid prediction response."""
+    vds_no: str
+    data: dict[str, str]
+    rule_based_fields: list[str]
+
+
+class ComparisonFieldResponse(BaseModel):
+    """Comparison of a single field between pure ML and hybrid."""
+    pure_ml_value: str
+    pure_ml_confidence: float
+    hybrid_value: str
+    hybrid_confidence: float
+    source: str  # "rule_based" or "ml_predicted"
+    match: bool  # Whether pure_ml and hybrid values match
+
+
+class MLComparisonResponse(BaseModel):
+    """Response comparing pure ML vs hybrid predictions."""
+    vds_no: str
+    summary: dict[str, Any]  # Overall comparison stats
+    fields: dict[str, ComparisonFieldResponse]

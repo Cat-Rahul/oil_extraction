@@ -31,6 +31,15 @@ from .schemas import (
     ValveTypeTemplatesResponse,
     ValveTypeTemplate,
     TemplateFieldInfo,
+    MLPredictionResponse,
+    MLPredictionFieldResponse,
+    MLFlatPredictionResponse,
+    MLModelInfoResponse,
+    HybridPredictionResponse,
+    HybridPredictionFieldResponse,
+    HybridFlatPredictionResponse,
+    ComparisonFieldResponse,
+    MLComparisonResponse,
 )
 
 
@@ -391,6 +400,228 @@ async def get_valve_type_templates():
         templates=templates,
         default_template=default_key,
     )
+
+
+# === ML Prediction Endpoints ===
+
+# Lazy-loaded predictor singletons
+_predictor = None
+_pure_ml_predictor = None
+
+
+def _get_predictor():
+    """Get or initialize the HYBRID predictor (default for production)."""
+    global _predictor
+    if _predictor is None:
+        from ..ml.hybrid_predictor import HybridPredictor
+        _predictor = HybridPredictor()
+        if _predictor.is_available:
+            _predictor.load()
+    return _predictor
+
+
+def _get_pure_ml_predictor():
+    """Get or initialize the pure ML predictor (for comparison only)."""
+    global _pure_ml_predictor
+    if _pure_ml_predictor is None:
+        from ..ml.predictor import ValvePredictor
+        _pure_ml_predictor = ValvePredictor()
+        if _pure_ml_predictor.is_available:
+            _pure_ml_predictor.load()
+    return _pure_ml_predictor
+
+
+@router.get("/ml/info", response_model=MLModelInfoResponse, tags=["ML"])
+async def ml_model_info():
+    """Get information about the trained ML model."""
+    predictor = _get_predictor()
+    if not predictor.is_available:
+        return MLModelInfoResponse(is_available=False)
+
+    report = predictor.get_evaluation_report()
+    return MLModelInfoResponse(
+        is_available=True,
+        train_samples=report.get("train_samples"),
+        test_accuracy=report.get("test", {}).get("overall_accuracy"),
+        exact_match_rate=report.get("test", {}).get("exact_match_rate"),
+        target_fields=list(report.get("test", {}).get("per_field", {}).keys()),
+    )
+
+
+@router.get("/ml/predict/{vds_no}", response_model=HybridPredictionResponse, tags=["ML"])
+async def ml_predict(vds_no: str):
+    """
+    Predict all datasheet fields for a VDS number using HYBRID approach.
+
+    Uses rule-based extraction for piping_class and sour_service (100% accurate),
+    and ML prediction for other fields. This is the production-recommended endpoint.
+
+    Returns predictions with per-field confidence scores and source info.
+    """
+    predictor = _get_predictor()
+    if not predictor.is_available:
+        raise HTTPException(
+            status_code=503,
+            detail="ML model not trained. Run: python -m valve_datasheet_automation.ml.train"
+        )
+
+    try:
+        result = predictor.predict_with_confidence(vds_no)
+        predictions = {
+            field: HybridPredictionFieldResponse(
+                value=info["value"],
+                confidence=info["confidence"],
+                source=info["source"],
+            )
+            for field, info in result.items()
+        }
+        return HybridPredictionResponse(
+            vds_no=vds_no,
+            predictions=predictions,
+            rule_based_fields=list(predictor.get_rule_based_fields()),
+            ml_predicted_fields=list(predictor.get_ml_fields()),
+        )
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+
+@router.get("/ml/predict/{vds_no}/flat", response_model=HybridFlatPredictionResponse, tags=["ML"])
+async def ml_predict_flat(vds_no: str):
+    """
+    Predict datasheet fields (flat format, values only) using HYBRID approach.
+
+    Production-recommended endpoint with rule-based piping_class extraction.
+    """
+    predictor = _get_predictor()
+    if not predictor.is_available:
+        raise HTTPException(
+            status_code=503,
+            detail="ML model not trained. Run: python -m valve_datasheet_automation.ml.train"
+        )
+
+    try:
+        result = predictor.predict(vds_no)
+        return HybridFlatPredictionResponse(
+            vds_no=vds_no,
+            data=result,
+            rule_based_fields=list(predictor.get_rule_based_fields()),
+        )
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+
+# === Pure ML Endpoints (for comparison only) ===
+
+@router.get("/ml/pure/predict/{vds_no}", response_model=MLPredictionResponse, tags=["ML Pure"])
+async def ml_pure_predict(vds_no: str):
+    """
+    Predict using PURE ML only (no rule-based extraction).
+
+    WARNING: This endpoint has lower accuracy for piping_class (~81%).
+    Use /ml/predict/{vds_no} for production.
+    """
+    predictor = _get_pure_ml_predictor()
+    if not predictor.is_available:
+        raise HTTPException(
+            status_code=503,
+            detail="ML model not trained. Run: python -m valve_datasheet_automation.ml.train"
+        )
+
+    try:
+        result = predictor.predict_with_confidence(vds_no)
+        predictions = {
+            field: MLPredictionFieldResponse(
+                value=info["value"],
+                confidence=info["confidence"],
+            )
+            for field, info in result.items()
+        }
+        return MLPredictionResponse(
+            vds_no=vds_no,
+            source="pure_ml",
+            predictions=predictions,
+        )
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+
+# === Legacy Hybrid Endpoints (aliases to main endpoints) ===
+
+@router.get("/ml/hybrid/predict/{vds_no}", response_model=HybridPredictionResponse, tags=["ML"], include_in_schema=False)
+async def hybrid_predict(vds_no: str):
+    """Alias to /ml/predict/{vds_no} - kept for backward compatibility."""
+    return await ml_predict(vds_no)
+
+
+@router.get("/ml/hybrid/predict/{vds_no}/flat", response_model=HybridFlatPredictionResponse, tags=["ML"], include_in_schema=False)
+async def hybrid_predict_flat(vds_no: str):
+    """Alias to /ml/predict/{vds_no}/flat - kept for backward compatibility."""
+    return await ml_predict_flat(vds_no)
+
+
+@router.get("/ml/compare/{vds_no}", response_model=MLComparisonResponse, tags=["ML Hybrid"])
+async def compare_ml_vs_hybrid(vds_no: str):
+    """
+    Compare Pure ML vs Hybrid predictions for a VDS number.
+
+    Shows which fields differ and why. Use this to understand the
+    improvement from using rule-based extraction for deterministic fields.
+    """
+    pure_ml = _get_predictor()
+    hybrid = _get_hybrid_predictor()
+
+    if not pure_ml.is_available or not hybrid.is_available:
+        raise HTTPException(
+            status_code=503,
+            detail="ML model not trained. Run: python -m valve_datasheet_automation.ml.train"
+        )
+
+    try:
+        pure_ml_result = pure_ml.predict_with_confidence(vds_no)
+        hybrid_result = hybrid.predict_with_confidence(vds_no)
+
+        fields = {}
+        matches = 0
+        mismatches = 0
+        rule_based_fields = hybrid.get_rule_based_fields()
+
+        for field in pure_ml_result:
+            pure_val = pure_ml_result[field]["value"]
+            hybrid_val = hybrid_result[field]["value"]
+            is_match = pure_val == hybrid_val
+
+            if is_match:
+                matches += 1
+            else:
+                mismatches += 1
+
+            fields[field] = ComparisonFieldResponse(
+                pure_ml_value=pure_val,
+                pure_ml_confidence=pure_ml_result[field]["confidence"],
+                hybrid_value=hybrid_val,
+                hybrid_confidence=hybrid_result[field]["confidence"],
+                source=hybrid_result[field]["source"],
+                match=is_match,
+            )
+
+        summary = {
+            "total_fields": len(fields),
+            "matches": matches,
+            "mismatches": mismatches,
+            "rule_based_count": len(rule_based_fields),
+            "ml_predicted_count": len(fields) - len(rule_based_fields),
+            "mismatched_fields": [
+                f for f, info in fields.items() if not info.match
+            ],
+        }
+
+        return MLComparisonResponse(
+            vds_no=vds_no,
+            summary=summary,
+            fields=fields,
+        )
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
 
 
 # === Helper Functions ===

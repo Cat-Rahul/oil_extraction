@@ -1,0 +1,14 @@
+# Render Blueprint Configuration
+# https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: valve-datasheet-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn valve_datasheet_automation.api.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+    healthCheckPath: /api/health
+    plan: free

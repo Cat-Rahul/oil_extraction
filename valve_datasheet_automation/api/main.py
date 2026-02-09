@@ -52,6 +52,54 @@ async def lifespan(app: FastAPI):
     init_engine(config_dir=config_dir, data_dir=data_dir)
     print("Engine initialized successfully!")
 
+    # Test ML prediction on startup
+    print("\n" + "="*70)
+    print("ML PREDICTION TEST (Hybrid Predictor - Production)")
+    print("="*70)
+
+    try:
+        from .routes import _get_predictor
+        import json
+
+        predictor = _get_predictor()
+
+        # Load actual data for comparison
+        actual_data = {}
+        if data_dir:
+            index_file = data_dir / "all_valve_vds_index.json"
+            if index_file.exists():
+                with open(index_file, encoding='utf-8') as f:
+                    actual_data = json.load(f)
+
+        # Test VDS numbers
+        test_vds = ['BSFD10R', 'GAWA1R', 'CHPD10NR']
+
+        for vds in test_vds:
+            print(f"\nVDS: {vds}")
+            print("-" * 50)
+
+            pred = predictor.predict_with_confidence(vds)
+            actual = actual_data.get(vds, {})
+
+            key_fields = ['piping_class', 'valve_type', 'pressure_class', 'sour_service']
+
+            print(f"{'Field':<20} | {'Predicted':<25} | {'Actual':<25} | Status")
+            print("-" * 90)
+
+            for field in key_fields:
+                p_val = pred.get(field, {}).get('value', '')[:24] if isinstance(pred.get(field), dict) else str(pred.get(field, ''))[:24]
+                a_val = str(actual.get(field, ''))[:24]
+                source = pred.get(field, {}).get('source', 'ml')[:4] if isinstance(pred.get(field), dict) else 'ml'
+                status = 'OK' if p_val == a_val else 'DIFF'
+                print(f"{field:<20} | {p_val:<25} | {a_val:<25} | {status} [{source}]")
+
+        print("\n" + "="*70)
+        print("Server ready! Hybrid predictor active (piping_class: rule-based)")
+        print("="*70 + "\n")
+
+    except Exception as e:
+        print(f"Prediction test skipped: {e}")
+
     yield
 
     # Shutdown
