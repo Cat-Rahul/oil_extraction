@@ -702,24 +702,42 @@ export default function DatasheetGeneratorPage() {
   };
 
   const generatePrintableContent = () => {
-    const template = valveTypeTemplates?.templates[activeTemplateKey];
-    const fd = formData as Record<string, unknown>;
+    // Get dynamic fields from ML data
+    const constructionFieldKeys = fieldCategories.construction.filter(key => activeFields.has(key));
+    const materialFieldKeys = fieldCategories.materials.filter(key => activeFields.has(key));
+    const testingFieldKeys = fieldCategories.testing.filter(key => activeFields.has(key));
+    const complianceFieldKeys = fieldCategories.compliance.filter(key => activeFields.has(key));
 
-    // Dynamic construction rows
-    const constructionRows = (template?.construction_fields || [])
-      .filter(f => f.key !== "locks")
-      .map(f => {
-        const formKey = fieldKeyToFormKey[f.key] || f.key;
-        const value = (fd[formKey] as string) || "";
-        return `<div class="field"><div class="label">${f.label}</div><div class="value">${value || "-"}</div></div>`;
+    // Dynamic construction rows from ML data
+    const constructionRows = constructionFieldKeys
+      .map(key => {
+        const displayName = fieldDisplayNames[key] || key.replace(/_/g, " ");
+        const value = mlData[key] || "-";
+        return `<div class="field"><span class="label">${displayName}:</span> <span class="value">${value}</span></div>`;
       }).join("\n          ");
 
-    // Dynamic material rows
-    const materialRows = (template?.material_fields || [])
-      .map(f => {
-        const formKey = fieldKeyToFormKey[f.key] || f.key;
-        const value = (fd[formKey] as string) || "";
-        return `<tr><td>${f.label}</td><td>${value || "-"}</td></tr>`;
+    // Dynamic material rows from ML data
+    const materialRows = materialFieldKeys
+      .map(key => {
+        const displayName = fieldDisplayNames[key] || key.replace(/_/g, " ");
+        const value = mlData[key] || "-";
+        return `<tr><td>${displayName}</td><td>${value}</td></tr>`;
+      }).join("\n          ");
+
+    // Dynamic testing rows
+    const testingRows = testingFieldKeys
+      .map(key => {
+        const displayName = fieldDisplayNames[key] || key.replace(/_/g, " ");
+        const value = mlData[key] || "-";
+        return `<div class="field"><span class="label">${displayName}:</span> <span class="value">${value}</span></div>`;
+      }).join("\n          ");
+
+    // Dynamic compliance rows
+    const complianceRows = complianceFieldKeys
+      .map(key => {
+        const displayName = fieldDisplayNames[key] || key.replace(/_/g, " ");
+        const value = mlData[key] || "-";
+        return `<div class="field"><span class="label">${displayName}:</span> <span class="value">${value}</span></div>`;
       }).join("\n          ");
 
     return `
@@ -728,77 +746,53 @@ export default function DatasheetGeneratorPage() {
       <head>
         <title>Valve Datasheet - ${formData.vdsNumber || "Draft"}</title>
         <style>
-          body { font-family: 'Arial', sans-serif; margin: 40px; color: #333; }
-          h1 { color: #1e3a5f; border-bottom: 2px solid #1e3a5f; padding-bottom: 10px; }
-          h2 { color: #2563eb; margin-top: 30px; font-size: 16px; background: #f1f5f9; padding: 8px; }
-          .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-          .field { margin-bottom: 12px; }
-          .label { font-weight: bold; color: #64748b; font-size: 11px; text-transform: uppercase; }
-          .value { font-size: 14px; margin-top: 4px; padding: 6px; background: #f8fafc; border-left: 3px solid #2563eb; }
-          .header-info { display: flex; justify-content: space-between; margin-bottom: 20px; }
-          .badge { background: #22c55e; color: white; padding: 4px 12px; border-radius: 4px; font-size: 12px; }
-          table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-          th, td { border: 1px solid #e2e8f0; padding: 8px; text-align: left; font-size: 12px; }
+          @page { size: A4; margin: 10mm; }
+          body { font-family: 'Arial', sans-serif; margin: 10px; color: #333; font-size: 9px; }
+          h1 { color: #1e3a5f; border-bottom: 1px solid #1e3a5f; padding-bottom: 4px; margin: 0 0 8px 0; font-size: 14px; }
+          h2 { color: #2563eb; margin: 8px 0 4px 0; font-size: 10px; background: #f1f5f9; padding: 3px 6px; }
+          .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 12px; }
+          .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px 12px; }
+          .field { margin-bottom: 2px; line-height: 1.3; }
+          .label { font-weight: bold; color: #64748b; }
+          .value { color: #1e293b; }
+          .header-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+          .badge { background: #22c55e; color: white; padding: 2px 8px; border-radius: 3px; font-size: 8px; }
+          table { width: 100%; border-collapse: collapse; margin-top: 4px; font-size: 8px; }
+          th, td { border: 1px solid #e2e8f0; padding: 3px 5px; text-align: left; }
           th { background: #1e3a5f; color: white; }
+          .footer { margin-top: 8px; padding-top: 4px; border-top: 1px solid #e2e8f0; font-size: 8px; color: #64748b; }
         </style>
       </head>
       <body>
         <div class="header-info">
-          <div>
-            <h1>Valve Datasheet Specification</h1>
-            <p>VDS Number: <strong>${formData.vdsNumber || "DRAFT"}</strong></p>
-          </div>
-          <div>
-            <span class="badge">${isDataLoaded ? "Generated" : "Draft"}</span>
-          </div>
+          <h1>Valve Datasheet - ${formData.vdsNumber || "DRAFT"}</h1>
+          <span class="badge">${isDataLoaded ? "Generated" : "Draft"}</span>
         </div>
 
-        <h2>1. Basic Information</h2>
-        <div class="grid">
-          <div class="field"><div class="label">Valve Type</div><div class="value">${valveTypes.find((v) => v.value === formData.valveType)?.label || formData.valveType}</div></div>
-          <div class="field"><div class="label">Bore Type</div><div class="value">${formData.boreType === "full" ? "Full Bore" : "Reduced Bore"}</div></div>
-          <div class="field"><div class="label">Piping Class</div><div class="value">${formData.pipingClass}</div></div>
-          <div class="field"><div class="label">Size Range</div><div class="value">${formData.sizeRange}</div></div>
-          <div class="field"><div class="label">Valve Standard</div><div class="value">${formData.valveStandard}</div></div>
-          <div class="field"><div class="label">Pressure Class</div><div class="value">${formData.pressureClass}</div></div>
-          <div class="field"><div class="label">End Connection</div><div class="value">${formData.endConnection}</div></div>
-          <div class="field"><div class="label">Face to Face</div><div class="value">${formData.faceToFace}</div></div>
-          <div class="field"><div class="label">Design Pressure</div><div class="value">${formData.designPressure}</div></div>
-          <div class="field"><div class="label">Corrosion Allowance</div><div class="value">${formData.corrosionAllowance}</div></div>
-          <div class="field"><div class="label">Service</div><div class="value">${formData.service || "-"}</div></div>
+        <h2>Basic Information</h2>
+        <div class="grid-3">
+          <div class="field"><span class="label">Valve Type:</span> <span class="value">${mlData["valve_type"] || "-"}</span></div>
+          <div class="field"><span class="label">Piping Class:</span> <span class="value">${mlData["piping_class"] || "-"}</span></div>
+          <div class="field"><span class="label">Size Range:</span> <span class="value">${formData.sizeRange || "-"}</span></div>
+          <div class="field"><span class="label">Valve Standard:</span> <span class="value">${mlData["valve_standard"] || "-"}</span></div>
+          <div class="field"><span class="label">Pressure Class:</span> <span class="value">${mlData["pressure_class"] || "-"}</span></div>
+          <div class="field"><span class="label">Design Pressure:</span> <span class="value">${mlData["design_pressure"] || "-"}</span></div>
+          <div class="field"><span class="label">End Connection:</span> <span class="value">${mlData["end_connections"] || "-"}</span></div>
+          <div class="field"><span class="label">Face to Face:</span> <span class="value">${mlData["face_to_face"] || "-"}</span></div>
+          <div class="field"><span class="label">Corrosion Allowance:</span> <span class="value">${mlData["corrosion_allowance"] || "-"}</span></div>
+          <div class="field"><span class="label">Service:</span> <span class="value">${formData.service || "-"}</span></div>
+          <div class="field"><span class="label">Sour Service:</span> <span class="value">${mlData["sour_service"] || "-"}</span></div>
         </div>
 
-        <h2>2. Construction Details</h2>
-        <div class="grid">
-          ${constructionRows}
-          <div class="field"><div class="label">Operation Mode</div><div class="value">${formData.operationMode}</div></div>
-        </div>
+        ${constructionRows ? `<h2>Construction</h2><div class="grid">${constructionRows}</div>` : ""}
 
-        <h2>3. Materials Specification</h2>
-        <table>
-          <tr><th>Component</th><th>Material</th></tr>
-          ${materialRows}
-        </table>
+        ${materialRows ? `<h2>Materials</h2><table><tr><th>Component</th><th>Material</th></tr>${materialRows}</table>` : ""}
 
-        <h2>4. Test Pressures</h2>
-        <div class="grid">
-          <div class="field"><div class="label">Shell Test Pressure</div><div class="value">${formData.shellTestPressure || "Not specified"}</div></div>
-          <div class="field"><div class="label">Closure Test Pressure</div><div class="value">${formData.closureTestPressure || "Not specified"}</div></div>
-          <div class="field"><div class="label">Pneumatic LP Test</div><div class="value">${formData.pneumaticTestPressure || "Not specified"}</div></div>
-          <div class="field"><div class="label">Leakage Rate</div><div class="value">${formData.leakageRate}</div></div>
-        </div>
+        ${testingRows ? `<h2>Testing</h2><div class="grid">${testingRows}</div>` : ""}
 
-        <h2>5. Compliance</h2>
-        <div class="grid">
-          <div class="field"><div class="label">Fire Rating</div><div class="value">${formData.fireRating}</div></div>
-          <div class="field"><div class="label">Material Certification</div><div class="value">${formData.materialCertification}</div></div>
-          <div class="field"><div class="label">Inspection Standard</div><div class="value">${formData.inspectionStandard}</div></div>
-          <div class="field"><div class="label">Sour Service</div><div class="value">${formData.sourServiceReq === "none" ? "Not Required" : formData.sourServiceReq.toUpperCase()}</div></div>
-        </div>
+        ${complianceRows ? `<h2>Compliance</h2><div class="grid">${complianceRows}</div>` : ""}
 
-        ${formData.notes ? `<h2>6. Notes</h2><p>${formData.notes}</p>` : ""}
-
-        <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; font-size: 11px; color: #64748b;">
+        <div class="footer">
           Generated by ValveFlow Automata • ${new Date().toLocaleDateString()}
         </div>
       </body>
@@ -905,13 +899,6 @@ export default function DatasheetGeneratorPage() {
       [""],
       ["=== NOTES ===", ""],
       ["Notes", escapeCSV(formData.notes || "No additional notes")],
-      [""],
-      ["=== STANDARD NOTES ===", ""],
-      ["1", "This data sheet shall be completed and returned with the quotation."],
-      ["2", "Data sheet shall be read in conjunction with Piping Material Specification."],
-      ["3", "Hydrostatic shell test pressure shall be 1.5 times of Max. design pressure."],
-      ["4", escapeCSV("Ball, Stem and Gland material shall be forged. Castings are not acceptable.")],
-      ["5", "All stud bolts and nuts shall be XYLAR 2 + XYLAN 1070 coated."],
     ];
 
     return rows.map((row) => row.join(",")).join("\n");
@@ -948,7 +935,7 @@ export default function DatasheetGeneratorPage() {
             <Card className="border-border">
               <CardHeader className="pb-4">
                 <CardTitle className="text-base">Valve Identification</CardTitle>
-                <CardDescription>Enter VDS number to auto-populate fields</CardDescription>
+                <CardDescription>Valve identification</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
@@ -956,85 +943,77 @@ export default function DatasheetGeneratorPage() {
                     <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
                       VDS Number
                     </Label>
-                    <div className="flex gap-2">
-                      <Popover open={openVdsSelect} onOpenChange={setOpenVdsSelect}>
-                        <PopoverTrigger asChild>
-                          <Button
-                            variant="outline"
-                            role="combobox"
-                            aria-expanded={openVdsSelect}
+                    <div className="relative">
+                      <div className="flex gap-2">
+                        <div className="relative flex-1">
+                          <Input
+                            value={vdsInput}
+                            onChange={(e) => {
+                              const val = e.target.value.toUpperCase();
+                              setVdsInput(val);
+                              handleVdsInputChange(val);
+                              setOpenVdsSelect(val.length > 0);
+                            }}
+                            onFocus={() => setOpenVdsSelect(vdsInput.length > 0)}
+                            placeholder="Type VDS number..."
                             className={cn(
-                              "w-full justify-between font-mono text-sm",
-                              formData.vdsNumber ? "" : "text-muted-foreground",
+                              "font-mono text-sm",
                               fetchError ? "border-destructive" : isDataLoaded ? "border-green-500" : ""
                             )}
-                          >
-                            {formData.vdsNumber
-                              ? formData.vdsNumber
-                              : "Select VDS Number..."}
-                            {isFetching && (
-                              <Loader2 className="ml-2 h-4 w-4 shrink-0 opacity-50 animate-spin" />
-                            )}
-                            {isDataLoaded && !isFetching && (
-                              <CheckCircle2 className="ml-2 h-4 w-4 shrink-0 text-green-500" />
-                            )}
-                            {fetchError && !isFetching && (
-                              <AlertCircle className="ml-2 h-4 w-4 shrink-0 text-destructive" />
-                            )}
-                          </Button>
-                        </PopoverTrigger>
-                        <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0">
-                          <Command>
-                            <CommandInput
-                              placeholder="Search VDS number..."
-                              value={vdsInput}
-                              onValueChange={(val) => setVdsInput(val.toUpperCase())}
-                            />
-                            <CommandEmpty>No VDS number found.</CommandEmpty>
-                            <CommandGroup>
-                              <CommandList>
-                                {allVdsNumbers
-                                  .filter((vds) => vds.toUpperCase().includes(vdsInput))
-                                  .map((vds) => (
-                                    <CommandItem
-                                      key={vds}
-                                      value={vds}
-                                      onSelect={(currentValue) => {
-                                        const selectedVds = currentValue.toUpperCase();
-                                        setVdsInput(selectedVds);
-                                        updateField("vdsNumber", selectedVds);
-                                        fetchDatasheet(selectedVds);
-                                        setOpenVdsSelect(false);
-                                      }}
-                                    >
-                                      {vds}
-                                    </CommandItem>
-                                  ))}
-                              </CommandList>
-                            </CommandGroup>
-                          </Command>
-                        </PopoverContent>
-                      </Popover>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <Button
-                            variant="outline"
-                            size="icon"
-                            onClick={handleFetchDatasheet}
-                            disabled={isFetching || formData.vdsNumber.length < 5}
-                          >
-                            {isFetching ? <Loader2 className="w-4 h-4 animate-spin" /> : <Search className="w-4 h-4" />}
-                          </Button>
-                        </TooltipTrigger>
-                        <TooltipContent>Fetch Datasheet</TooltipContent>
-                      </Tooltip>
+                          />
+                          {isFetching && (
+                            <Loader2 className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 animate-spin text-muted-foreground" />
+                          )}
+                          {isDataLoaded && !isFetching && (
+                            <CheckCircle2 className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-green-500" />
+                          )}
+                        </div>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <Button
+                              variant="outline"
+                              size="icon"
+                              onClick={handleFetchDatasheet}
+                              disabled={isFetching || formData.vdsNumber.length < 5}
+                            >
+                              {isFetching ? <Loader2 className="w-4 h-4 animate-spin" /> : <Search className="w-4 h-4" />}
+                            </Button>
+                          </TooltipTrigger>
+                          <TooltipContent>Fetch Datasheet</TooltipContent>
+                        </Tooltip>
+                      </div>
+                      {/* Autocomplete dropdown */}
+                      {openVdsSelect && vdsInput.length > 0 && (
+                        <div className="absolute z-50 w-full mt-1 bg-popover border rounded-md shadow-md max-h-[200px] overflow-auto">
+                          {allVdsNumbers
+                            .filter((vds) => vds.toUpperCase().includes(vdsInput))
+                            .slice(0, 5)
+                            .map((vds) => (
+                              <div
+                                key={vds}
+                                className="px-3 py-2 text-sm cursor-pointer hover:bg-accent font-mono"
+                                onClick={() => {
+                                  setVdsInput(vds);
+                                  updateField("vdsNumber", vds);
+                                  fetchDatasheet(vds);
+                                  setOpenVdsSelect(false);
+                                }}
+                              >
+                                {vds}
+                              </div>
+                            ))}
+                          {allVdsNumbers.filter((vds) => vds.toUpperCase().includes(vdsInput)).length === 0 && (
+                            <div className="px-3 py-2 text-sm text-muted-foreground">No VDS found</div>
+                          )}
+                        </div>
+                      )}
                     </div>
                     {fetchError && (
                       <p className="text-xs text-destructive mt-1">{fetchError}</p>
                     )}
                     {isDataLoaded && (
                       <p className="text-xs text-green-600 mt-1">
-                        ML prediction loaded • {activeFields.size} fields • {completionPercentage.toFixed(0)}% complete
+                        {activeFields.size} fields loaded
                       </p>
                     )}
                   </div>
@@ -1084,77 +1063,32 @@ export default function DatasheetGeneratorPage() {
                       />
                     </div>
                   )}
-                  {/* Show dropdowns only when no data loaded */}
+                  {/* Show empty non-editable fields when no data loaded */}
                   {!isDataLoaded && (
                     <>
                       <div className="space-y-2">
                         <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                          Piping Class
-                        </Label>
-                        <Select value={formData.pipingClass} onValueChange={(v) => updateField("pipingClass", v)}>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select class" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            {pipingClasses.map((pc) => (
-                              <SelectItem key={pc.value} value={pc.value}>
-                                {pc.label}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
-                      </div>
-                      <div className="space-y-2">
-                        <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
                           Valve Type
                         </Label>
-                        <Select value={formData.valveType} onValueChange={(v) => updateField("valveType", v)}>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select type" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            {valveTypes.map((vt) => (
-                              <SelectItem key={vt.value} value={vt.value}>
-                                {vt.label}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
+                        <div className="p-3 bg-muted/30 border rounded-md text-sm text-muted-foreground">-</div>
                       </div>
                       <div className="space-y-2">
                         <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                          Bore Type
+                          Piping Class
                         </Label>
-                        <Select value={formData.boreType} onValueChange={(v) => updateField("boreType", v)}>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select bore" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="full">Full Bore</SelectItem>
-                            <SelectItem value="reduced">Reduced Bore</SelectItem>
-                          </SelectContent>
-                        </Select>
+                        <div className="p-3 bg-muted/30 border rounded-md text-sm text-muted-foreground">-</div>
                       </div>
                       <div className="space-y-2">
                         <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
                           Size Range
                         </Label>
-                        <Input
-                          value={formData.sizeRange}
-                          onChange={(e) => updateField("sizeRange", e.target.value)}
-                          placeholder='e.g., 1/2" - 24"'
-                        />
+                        <div className="p-3 bg-muted/30 border rounded-md text-sm text-muted-foreground">-</div>
                       </div>
-                      <div className="col-span-2 space-y-2">
+                      <div className="space-y-2">
                         <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                          Service Description
+                          Service
                         </Label>
-                        <Textarea
-                          value={formData.service}
-                          onChange={(e) => updateField("service", e.target.value)}
-                          placeholder="e.g., Cooling Water, Diesel, Steam"
-                          className="min-h-[80px] resize-none"
-                        />
+                        <div className="p-3 bg-muted/30 border rounded-md text-sm text-muted-foreground">-</div>
                       </div>
                     </>
                   )}
@@ -1167,7 +1101,7 @@ export default function DatasheetGeneratorPage() {
               <CardHeader className="pb-4">
                 <CardTitle className="text-base">Design Parameters</CardTitle>
                 <CardDescription>
-                  {isDataLoaded ? "Values from ML prediction" : "Pressure and temperature ratings"}
+                  Pressure and temperature ratings
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -1252,82 +1186,37 @@ export default function DatasheetGeneratorPage() {
                         <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
                           Valve Standard
                         </Label>
-                        <Select value={formData.valveStandard} onValueChange={(v) => updateField("valveStandard", v)}>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select standard" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            {valveStandards.map((vs) => (
-                              <SelectItem key={vs.value} value={vs.value}>
-                                {vs.label}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
+                        <div className="p-3 bg-muted/30 border rounded-md text-sm text-muted-foreground">-</div>
                       </div>
                       <div className="space-y-2">
                         <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
                           Pressure Class
                         </Label>
-                        <Select value={formData.pressureClass} onValueChange={(v) => updateField("pressureClass", v)}>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select class" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            {pressureClasses.map((pc) => (
-                              <SelectItem key={pc.value} value={pc.value}>
-                                {pc.label}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
-                      </div>
-                      <div className="col-span-2 space-y-2">
-                        <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                          Design Pressure (barg @ Temperature)
-                        </Label>
-                        <Input
-                          value={formData.designPressure}
-                          onChange={(e) => updateField("designPressure", e.target.value)}
-                          placeholder="e.g., 19.6 @ -29°C, 13.8 @ 200°C"
-                        />
+                        <div className="p-3 bg-muted/30 border rounded-md text-sm text-muted-foreground">-</div>
                       </div>
                       <div className="space-y-2">
                         <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                          Corrosion Allowance (mm)
+                          Design Pressure
                         </Label>
-                        <Input
-                          value={formData.corrosionAllowance}
-                          onChange={(e) => updateField("corrosionAllowance", e.target.value)}
-                          placeholder="e.g., 3"
-                        />
+                        <div className="p-3 bg-muted/30 border rounded-md text-sm text-muted-foreground">-</div>
+                      </div>
+                      <div className="space-y-2">
+                        <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                          Corrosion Allowance
+                        </Label>
+                        <div className="p-3 bg-muted/30 border rounded-md text-sm text-muted-foreground">-</div>
                       </div>
                       <div className="space-y-2">
                         <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
                           End Connection
                         </Label>
-                        <Select value={formData.endConnection} onValueChange={(v) => updateField("endConnection", v)}>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select connection" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            {endConnections.map((ec) => (
-                              <SelectItem key={ec.value} value={ec.value}>
-                                {ec.label}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
+                        <div className="p-3 bg-muted/30 border rounded-md text-sm text-muted-foreground">-</div>
                       </div>
-                      <div className="col-span-2 space-y-2">
+                      <div className="space-y-2">
                         <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                          Face to Face Dimension
+                          Face to Face
                         </Label>
-                        <Input
-                          value={formData.faceToFace}
-                          onChange={(e) => updateField("faceToFace", e.target.value)}
-                          placeholder="e.g., ASME B16.10 Long pattern"
-                        />
+                        <div className="p-3 bg-muted/30 border rounded-md text-sm text-muted-foreground">-</div>
                       </div>
                     </>
                   )}
@@ -1345,17 +1234,11 @@ export default function DatasheetGeneratorPage() {
           <Card className="border-border">
             <CardHeader className="pb-4">
               <CardTitle className="text-base">Construction Details</CardTitle>
-              <CardDescription>
-                {isDataLoaded && activeFields.size > 0
-                  ? `Showing ${constructionFieldKeys.length} fields from ML`
-                  : "Valve body and internal components"}
-              </CardDescription>
+              <CardDescription>Valve body and internal components</CardDescription>
             </CardHeader>
             <CardContent>
               {!isDataLoaded ? (
-                <div className="text-sm text-muted-foreground italic">
-                  Enter a VDS number to load construction fields
-                </div>
+                <div className="text-sm text-muted-foreground">-</div>
               ) : constructionFieldKeys.length === 0 ? (
                 <div className="text-sm text-muted-foreground italic">
                   No construction fields returned for this valve type
@@ -1392,12 +1275,10 @@ export default function DatasheetGeneratorPage() {
             <Card className="border-border">
               <CardHeader className="pb-4">
                 <CardTitle className="text-base">Materials Specification</CardTitle>
-                <CardDescription>Enter a VDS number to load material fields</CardDescription>
+                <CardDescription>Component materials</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="text-sm text-muted-foreground italic">
-                  Material fields will be dynamically loaded based on the valve type.
-                </div>
+                <div className="text-sm text-muted-foreground">-</div>
               </CardContent>
             </Card>
           );
@@ -1434,7 +1315,7 @@ export default function DatasheetGeneratorPage() {
                 <CardHeader className="pb-4">
                   <CardTitle className="text-base">{group.title}</CardTitle>
                   <CardDescription>
-                    {group.fields.length} fields from ML
+                    {group.fields.length} fields
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -1468,12 +1349,10 @@ export default function DatasheetGeneratorPage() {
             <Card className="border-border">
               <CardHeader className="pb-4">
                 <CardTitle className="text-base">Test Pressures</CardTitle>
-                <CardDescription>Enter a VDS number to load test requirements</CardDescription>
+                <CardDescription>Test requirements</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="text-sm text-muted-foreground italic">
-                  Test pressure fields will be dynamically loaded based on the valve type.
-                </div>
+                <div className="text-sm text-muted-foreground">-</div>
               </CardContent>
             </Card>
           );
@@ -1499,7 +1378,7 @@ export default function DatasheetGeneratorPage() {
           <Card className="border-border">
             <CardHeader className="pb-4">
               <CardTitle className="text-base">Test Pressures</CardTitle>
-              <CardDescription>{testingFieldKeys.length} testing fields from ML</CardDescription>
+              <CardDescription>{testingFieldKeys.length} fields</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -1591,12 +1470,10 @@ export default function DatasheetGeneratorPage() {
             <Card className="border-border">
               <CardHeader className="pb-4">
                 <CardTitle className="text-base">Compliance & Certification</CardTitle>
-                <CardDescription>Enter a VDS number to load compliance fields</CardDescription>
+                <CardDescription>Regulatory and certification requirements</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="text-sm text-muted-foreground italic">
-                  Compliance fields will be dynamically loaded based on the valve type.
-                </div>
+                <div className="text-sm text-muted-foreground">-</div>
               </CardContent>
             </Card>
           );
