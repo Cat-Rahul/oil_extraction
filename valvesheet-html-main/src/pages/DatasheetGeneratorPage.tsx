@@ -146,6 +146,7 @@ const fieldDisplayNames: Record<string, string> = {
   back_seat_construction: "Back Seat",
   packing_construction: "Packing",
   bonnet_construction: "Bonnet",
+  construction_bonnet: "Bonnet",
   locks: "Locks",
   operation: "Operation",
   // Materials (no "Material" suffix)
@@ -166,6 +167,8 @@ const fieldDisplayNames: Record<string, string> = {
   trim_material: "Trim",
   shaft_material: "Shaft",
   needle_material: "Needle",
+  material_needle_material: "Needle",
+  back_seat_material: "Back Seat",
   hinge_pin_material: "Hinge Pin",
   material_cover_material: "Cover",
   "material_hinge/_hinge_pin": "Hinge / Hinge Pin",
@@ -193,13 +196,14 @@ const fieldCategories: Record<string, string[]> = {
   construction: [
     "body_construction", "ball_construction", "stem_construction", "seat_construction",
     "disc_construction", "wedge_construction", "shaft_construction", "back_seat_construction",
-    "packing_construction", "bonnet_construction", "locks", "operation"
+    "packing_construction", "bonnet_construction", "construction_bonnet", "locks", "operation"
   ],
   materials: [
     "body_material", "ball_material", "stem_material", "seat_material", "seal_material",
     "gland_material", "gland_packing", "lever_handwheel", "spring_material", "gaskets",
     "bolts", "nuts", "disc_material", "wedge_material", "trim_material", "shaft_material",
-    "needle_material", "hinge_pin_material", "material_cover_material", "material_hinge/_hinge_pin"
+    "needle_material", "material_needle_material", "back_seat_material", "hinge_pin_material",
+    "material_cover_material", "material_hinge/_hinge_pin"
   ],
   testing: [
     "hydrotest_shell", "hydrotest_closure", "pneumatic_test", "leakage_rate", "inspection_testing"
@@ -1333,27 +1337,27 @@ export default function DatasheetGeneratorPage() {
         const constructionFieldKeys = fieldCategories.construction.filter(key => activeFields.has(key));
 
         return (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <Card className="border-border">
-              <CardHeader className="pb-4">
-                <CardTitle className="text-base">Construction Details</CardTitle>
-                <CardDescription>
-                  {isDataLoaded && activeFields.size > 0
-                    ? `Showing ${constructionFieldKeys.length} fields from ML`
-                    : "Valve body and internal components"}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {!isDataLoaded ? (
-                  <div className="text-sm text-muted-foreground italic">
-                    Enter a VDS number to load construction fields
-                  </div>
-                ) : constructionFieldKeys.length === 0 ? (
-                  <div className="text-sm text-muted-foreground italic">
-                    No construction fields returned for this valve type
-                  </div>
-                ) : (
-                  constructionFieldKeys.map((fieldKey) => {
+          <Card className="border-border">
+            <CardHeader className="pb-4">
+              <CardTitle className="text-base">Construction Details</CardTitle>
+              <CardDescription>
+                {isDataLoaded && activeFields.size > 0
+                  ? `Showing ${constructionFieldKeys.length} fields from ML`
+                  : "Valve body and internal components"}
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              {!isDataLoaded ? (
+                <div className="text-sm text-muted-foreground italic">
+                  Enter a VDS number to load construction fields
+                </div>
+              ) : constructionFieldKeys.length === 0 ? (
+                <div className="text-sm text-muted-foreground italic">
+                  No construction fields returned for this valve type
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {constructionFieldKeys.map((fieldKey) => {
                     const displayName = fieldDisplayNames[fieldKey] || fieldKey.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
                     const value = mlData[fieldKey] || "";
                     return (
@@ -1366,32 +1370,11 @@ export default function DatasheetGeneratorPage() {
                         </div>
                       </div>
                     );
-                  })
-                )}
-              </CardContent>
-            </Card>
-
-            <Card className="border-border">
-              <CardHeader className="pb-4">
-                <CardTitle className="text-base">Position Indicator</CardTitle>
-                <CardDescription>Standard features</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="p-4 bg-muted/50 rounded-lg border border-border">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <Info className="w-4 h-4 text-primary" />
-                      <div>
-                        <p className="text-sm font-medium">Position Indicator</p>
-                        <p className="text-xs text-muted-foreground">Fully enclosed, dust proof</p>
-                      </div>
-                    </div>
-                    <Badge className="bg-primary/10 text-primary border-0">Included</Badge>
-                  </div>
+                  })}
                 </div>
-              </CardContent>
-            </Card>
-          </div>
+              )}
+            </CardContent>
+          </Card>
         );
       }
 
