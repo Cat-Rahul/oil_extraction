@@ -1064,9 +1064,11 @@ export default function DatasheetGeneratorPage() {
                       <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
                         Size Range
                       </Label>
-                      <div className="p-3 bg-muted/30 border rounded-md text-sm">
-                        {mlData["size_range"] || "-"}
-                      </div>
+                      <Input
+                        value={formData.sizeRange}
+                        onChange={(e) => updateField("sizeRange", e.target.value)}
+                        placeholder='e.g., 1/2" - 24"'
+                      />
                     </div>
                   )}
                   {isDataLoaded && activeFields.has("service") && (
@@ -1074,9 +1076,12 @@ export default function DatasheetGeneratorPage() {
                       <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
                         Service Description
                       </Label>
-                      <div className="p-3 bg-muted/30 border rounded-md text-sm">
-                        {mlData["service"] || "-"}
-                      </div>
+                      <Textarea
+                        value={formData.service}
+                        onChange={(e) => updateField("service", e.target.value)}
+                        placeholder="e.g., Cooling Water, Diesel, Steam"
+                        className="min-h-[80px] resize-none"
+                      />
                     </div>
                   )}
                   {/* Show dropdowns only when no data loaded */}
