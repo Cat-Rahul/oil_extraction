@@ -20,7 +20,7 @@ const recentActivity = [
     description: "Pressure Control Valve - Gas Compression",
     status: "generated" as const,
     timestamp: "4h ago",
-    user: "J. Morrison",
+    user: "Feroz Ahmad",
   },
   {
     tagNumber: "20-XV-3088",
@@ -41,7 +41,7 @@ const recentActivity = [
     description: "Hand Control Valve - Chemical Injection",
     status: "draft" as const,
     timestamp: "1d ago",
-    user: "J. Morrison",
+    user: "Feroz Ahmad",
   },
 ];
 

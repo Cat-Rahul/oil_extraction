@@ -39,7 +39,7 @@ const versions = [
     version: "v3",
     status: "current",
     date: "2024-01-15 16:20",
-    author: "J. Morrison",
+    author: "Feroz Ahmad",
     changes: "Confirmed 4\" size per sizing calculation",
   },
   {
@@ -62,7 +62,7 @@ const pendingApprovals = [
   {
     tag: "20-PCV-3102",
     description: "Pressure Control Valve - Gas Compression",
-    submittedBy: "J. Morrison",
+    submittedBy: "Feroz Ahmad",
     submittedAt: "2h ago",
     status: "pending",
     reviewers: ["M. Chen", "S. Patel"],
@@ -81,7 +81,7 @@ const pendingApprovals = [
     submittedBy: "S. Patel",
     submittedAt: "1d ago",
     status: "pending",
-    reviewers: ["J. Morrison", "M. Chen"],
+    reviewers: ["Feroz Ahmad", "M. Chen"],
   },
 ];
 
@@ -94,7 +94,7 @@ const reviewComments = [
     status: "open",
   },
   {
-    reviewer: "J. Morrison",
+    reviewer: "Feroz Ahmad",
     role: "Lead Process Engineer",
     date: "2024-01-15 16:18",
     comment: "Size reduction confirmed per sizing calculation SC-3102-001. Reduced bore is intentional for better control.",

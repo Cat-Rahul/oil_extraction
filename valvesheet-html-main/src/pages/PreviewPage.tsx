@@ -464,7 +464,7 @@ export default function PreviewPage() {
                   </div>
                   <div className="p-3 bg-muted/30 rounded-lg">
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="text-xs font-medium">J. Morrison</span>
+                      <span className="text-xs font-medium">Feroz Ahmad</span>
                       <span className="text-[10px] text-muted-foreground">4h ago</span>
                     </div>
                     <p className="text-sm text-muted-foreground">Material selection per project spec rev. 3.0</p>

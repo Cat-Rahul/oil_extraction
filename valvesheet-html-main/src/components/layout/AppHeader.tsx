@@ -61,7 +61,7 @@ export function AppHeader({ title, breadcrumbs }: AppHeaderProps) {
               <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center">
                 <User className="w-4 h-4 text-primary" />
               </div>
-              <span className="text-sm font-medium">J. Morrison</span>
+              <span className="text-sm font-medium">Feroz Ahmad</span>
               <ChevronDown className="w-3 h-3 text-muted-foreground" />
             </Button>
           </DropdownMenuTrigger>

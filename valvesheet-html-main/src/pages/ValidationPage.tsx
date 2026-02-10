@@ -75,7 +75,7 @@ const validationRules = [
 const auditLog = [
   {
     timestamp: "2024-01-15 14:32:15",
-    user: "J. Morrison",
+    user: "Feroz Ahmad",
     action: "Generated",
     description: "Initial datasheet generation from PMS and process data",
     tag: "20-PCV-3102",
@@ -96,7 +96,7 @@ const auditLog = [
   },
   {
     timestamp: "2024-01-15 16:20:00",
-    user: "J. Morrison",
+    user: "Feroz Ahmad",
     action: "Modified",
     description: "Confirmed 4\" size is intentional per sizing calculation",
     tag: "20-PCV-3102",
