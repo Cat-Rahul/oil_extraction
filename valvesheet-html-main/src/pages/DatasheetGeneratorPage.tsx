@@ -135,39 +135,39 @@ const fieldDisplayNames: Record<string, string> = {
   sour_service: "Sour Service",
   end_connections: "End Connection",
   face_to_face: "Face to Face",
-  // Construction
-  body_construction: "Body Construction",
-  ball_construction: "Ball Construction",
-  stem_construction: "Stem Construction",
-  seat_construction: "Seat Construction",
-  disc_construction: "Disc Construction",
-  wedge_construction: "Wedge Construction",
-  shaft_construction: "Shaft Construction",
-  back_seat_construction: "Back Seat Construction",
-  packing_construction: "Packing Construction",
-  bonnet_construction: "Bonnet Construction",
+  // Construction (no "Construction" suffix)
+  body_construction: "Body",
+  ball_construction: "Ball",
+  stem_construction: "Stem",
+  seat_construction: "Seat",
+  disc_construction: "Disc",
+  wedge_construction: "Wedge",
+  shaft_construction: "Shaft",
+  back_seat_construction: "Back Seat",
+  packing_construction: "Packing",
+  bonnet_construction: "Bonnet",
   locks: "Locks",
   operation: "Operation",
-  // Materials
-  body_material: "Body Material",
-  ball_material: "Ball Material",
-  stem_material: "Stem Material",
-  seat_material: "Seat Material",
-  seal_material: "Seal Material",
-  gland_material: "Gland Material",
+  // Materials (no "Material" suffix)
+  body_material: "Body",
+  ball_material: "Ball",
+  stem_material: "Stem",
+  seat_material: "Seat",
+  seal_material: "Seal",
+  gland_material: "Gland",
   gland_packing: "Gland Packing",
   lever_handwheel: "Lever / Handwheel",
-  spring_material: "Spring Material",
+  spring_material: "Spring",
   gaskets: "Gaskets",
   bolts: "Bolts",
   nuts: "Nuts",
-  disc_material: "Disc Material",
-  wedge_material: "Wedge Material",
-  trim_material: "Trim Material",
-  shaft_material: "Shaft Material",
-  needle_material: "Needle Material",
-  hinge_pin_material: "Hinge Pin Material",
-  material_cover_material: "Cover Material",
+  disc_material: "Disc",
+  wedge_material: "Wedge",
+  trim_material: "Trim",
+  shaft_material: "Shaft",
+  needle_material: "Needle",
+  hinge_pin_material: "Hinge Pin",
+  material_cover_material: "Cover",
   "material_hinge/_hinge_pin": "Hinge / Hinge Pin",
   // Testing
   hydrotest_shell: "Shell Test Pressure",
@@ -1329,11 +1329,8 @@ export default function DatasheetGeneratorPage() {
         );
 
       case 2: {
-        // Get construction fields dynamically from ML data
+        // Get construction fields dynamically from ML data (including locks and operation)
         const constructionFieldKeys = fieldCategories.construction.filter(key => activeFields.has(key));
-        const hasLocks = activeFields.has("locks");
-        const hasOperation = activeFields.has("operation");
-        const inputFields = constructionFieldKeys.filter(key => key !== "locks" && key !== "operation");
 
         return (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -1342,7 +1339,7 @@ export default function DatasheetGeneratorPage() {
                 <CardTitle className="text-base">Construction Details</CardTitle>
                 <CardDescription>
                   {isDataLoaded && activeFields.size > 0
-                    ? `Showing ${inputFields.length} construction fields from ML`
+                    ? `Showing ${constructionFieldKeys.length} fields from ML`
                     : "Valve body and internal components"}
                 </CardDescription>
               </CardHeader>
@@ -1351,12 +1348,12 @@ export default function DatasheetGeneratorPage() {
                   <div className="text-sm text-muted-foreground italic">
                     Enter a VDS number to load construction fields
                   </div>
-                ) : inputFields.length === 0 ? (
+                ) : constructionFieldKeys.length === 0 ? (
                   <div className="text-sm text-muted-foreground italic">
                     No construction fields returned for this valve type
                   </div>
                 ) : (
-                  inputFields.map((fieldKey) => {
+                  constructionFieldKeys.map((fieldKey) => {
                     const displayName = fieldDisplayNames[fieldKey] || fieldKey.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
                     const value = mlData[fieldKey] || "";
                     return (
@@ -1376,46 +1373,22 @@ export default function DatasheetGeneratorPage() {
 
             <Card className="border-border">
               <CardHeader className="pb-4">
-                <CardTitle className="text-base">Operation & Locks</CardTitle>
-                <CardDescription>Valve operation method</CardDescription>
+                <CardTitle className="text-base">Position Indicator</CardTitle>
+                <CardDescription>Standard features</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                {hasOperation && (
-                  <div className="space-y-2">
-                    <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                      Operation
-                    </Label>
-                    <div className="p-3 bg-muted/30 border rounded-md text-sm">
-                      {mlData["operation"] || "-"}
-                    </div>
-                  </div>
-                )}
-                {hasLocks && (
-                  <div className="p-4 bg-muted/50 rounded-lg border border-border">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <Lock className="w-4 h-4 text-validated" />
-                        <div>
-                          <p className="text-sm font-medium">Lockable Position</p>
-                          <p className="text-xs text-muted-foreground">
-                            {mlData["locks"] || "Full Open, Fully Closed"}
-                          </p>
-                        </div>
+                <div className="p-4 bg-muted/50 rounded-lg border border-border">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <Info className="w-4 h-4 text-primary" />
+                      <div>
+                        <p className="text-sm font-medium">Position Indicator</p>
+                        <p className="text-xs text-muted-foreground">Fully enclosed, dust proof</p>
                       </div>
-                      <Badge className="bg-validated-bg text-validated border-0">Enabled</Badge>
                     </div>
+                    <Badge className="bg-primary/10 text-primary border-0">Included</Badge>
                   </div>
-                )}
-                {!hasOperation && !hasLocks && isDataLoaded && (
-                  <div className="text-sm text-muted-foreground italic">
-                    No operation/locks fields returned for this valve type
-                  </div>
-                )}
-                {!isDataLoaded && (
-                  <div className="text-sm text-muted-foreground italic">
-                    Enter a VDS number to load operation details
-                  </div>
-                )}
+                </div>
               </CardContent>
             </Card>
           </div>
