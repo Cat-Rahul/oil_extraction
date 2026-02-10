@@ -1053,7 +1053,7 @@ export default function DatasheetGeneratorPage() {
                   {isDataLoaded && activeFields.has("service") && (
                     <div className="col-span-2 space-y-2">
                       <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                        Service Description
+                        Service
                       </Label>
                       <Textarea
                         value={formData.service}
@@ -1314,9 +1314,6 @@ export default function DatasheetGeneratorPage() {
               <Card key={group.title} className="border-border">
                 <CardHeader className="pb-4">
                   <CardTitle className="text-base">{group.title}</CardTitle>
-                  <CardDescription>
-                    {group.fields.length} fields
-                  </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   {group.fields.map((fieldKey) => {
@@ -1378,7 +1375,6 @@ export default function DatasheetGeneratorPage() {
           <Card className="border-border">
             <CardHeader className="pb-4">
               <CardTitle className="text-base">Test Pressures</CardTitle>
-              <CardDescription>{testingFieldKeys.length} fields</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -1580,25 +1576,14 @@ export default function DatasheetGeneratorPage() {
               <CardDescription>Project-specific notes and deviations</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <Textarea
-                value={formData.notes}
-                onChange={(e) => updateField("notes", e.target.value)}
-                placeholder="Enter project-specific notes, assumptions, and deviations..."
-                className="min-h-[200px] resize-none"
-              />
-
-              <div className="p-4 bg-muted/50 rounded-lg border border-border">
-                <p className="text-sm font-medium mb-3">Standard Notes</p>
-                <div className="space-y-2 text-xs text-muted-foreground">
-                  <p>1. This data sheet shall be completed and returned with the quotation.</p>
-                  <p>2. Data sheet shall be read in conjunction with Piping Material Specification.</p>
-                  <p>3. Hydrostatic shell test pressure shall be 1.5 times of Max. design pressure.</p>
-                  <p>4. Ball, Stem and Gland material shall be forged. Castings are not acceptable.</p>
-                  <p>5. All stud bolts and nuts shall be XYLAR 2 + XYLAN 1070 coated.</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+            <Textarea
+              value={formData.notes}
+              onChange={(e) => updateField("notes", e.target.value)}
+              placeholder="Enter project-specific notes, assumptions, and deviations..."
+              className="min-h-[200px] resize-none"
+            />
+          </CardContent>
+        </Card>
         );
 
       default:
